@@ -5,7 +5,7 @@ using namespace std;
 
 int main(void) {
 
-	int index = -1, key, i;
+	int index = -1, key, i; //vc copiou isso ahahah
 
 	cout << "Enter key:";
 	cin >> key;
