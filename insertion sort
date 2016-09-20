@@ -1,0 +1,55 @@
+package sorting;
+
+public class InsertionSort {
+	public static void main(String[] args) {
+		new InsertionSort();
+	}
+	
+	public InsertionSort() {
+		int[] arr=new int[]{4, 2, 9, 6, 23, 12, 34, 0, 1};
+		
+		System.out.println("Before Sorting...");
+		printArray(arr);
+		//sortWay1(arr);
+		sortWay2(arr);
+		System.out.println();
+		System.out.println("After Sorting...");
+		printArray(arr);
+	}
+	
+	//My Way
+	private void sortWay1(int[] arr) {
+		int j,k;
+		for (int i = 0; i < arr.length-1; i++) {
+			j=i+1;
+			if(arr[i] > arr[j]){
+				int tmp = arr[j];
+				for (k = j-1; k >= 0 && tmp < arr[k]; k--) {
+					arr[j]=arr[j-1];
+					j--;
+				}
+				arr[j]=tmp;
+			}
+		}
+	}
+	
+	//Standard Way
+	private void sortWay2(int[] arr) {
+		int j;
+		for (int i = 1; i < arr.length; i++) {
+			int tmp=arr[i];
+			j=i;
+			while( j>0 && arr[j-1]>tmp){
+				arr[j]=arr[j-1];
+				j--;
+			}
+			arr[j]=tmp;
+		}
+	}
+	
+	private void printArray(int arr[]){
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+}
