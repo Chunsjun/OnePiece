@@ -1,0 +1,104 @@
+ getJobs: function(req, res){ 
+ 
+
+ 		var params = req.params.all(), 
+ 				date = Date.now(); 
+ 
+
+ 		if(!params.sort){ 
+ 			params.sort = 'DESC'; 
+ 		} 
+ 
+ 
+ 		if(!params.attr){ 
+ 			params.attr = 'datePublished'; 
+ 		} 
+ 
+ 
+ 		var sortString = params.attr + ' ' + params.sort; 
+ 
+ 
+ 		var terms = params.terms, 
+ 				termsTrim = terms.replace(/\s+/g, ''), 
+ 				termQuery = termsTrim.split(','); 
+ 
+ 
+ 				termQuery.push(terms); 
+ 
+ 
+ 			console.log(terms); 
+ 
+ 
+ 		var jobQuery = Job.find({ 
+ 			or : [ 
+ 				{ 
+ 					title : { 
+ 						contains: terms 
+ 					} 
+ 				}, 
+ 				{ 
+ 					company: { 
+ 						contains: terms 
+ 					} 
+ 				}, 
+ 				{ 
+ 					specialty: { 
+ 						contains: terms 
+ 					} 
+ 				}, 
+ 				{ 
+ 					jobtitle: { 
+ 						contains: terms 
+ 					} 
+ 				}, 
+ 				{ 
+ 					description: { 
+ 						contains: terms 
+ 					} 
+ 				} 
+ 			], 
+ 			published: true, 
+ 			expires: { 
+ 				'>=' : date 
+ 			}, 
+ 			city: params.city, 
+ 			state: params.state 
+ 		}); 
+ 
+ 
+ 		if(!params.offset){ 
+ 			params.offset = 0; 
+ 		} 
+ 		if(!params.count){ 
+ 			params.count = 4; 
+ 		} 
+ 
+ 
+ 		jobQuery.limit(params.count); 
+ 
+ 
+ 		jobQuery.skip(params.offset); 
+ 
+
+ 		jobQuery.sort(sortString); 
+ 
+ 
+ 		jobQuery.exec(function(err, jobs){ 
+ 			if(err){ 
+ 				return res.json({ 
+ 					error: { 
+ 						message: err 
+ 					} 
+ 				}); 
+ 			} 
+ 			if(jobs){ 
+ 				return res.json({ 
+ 					jobs: jobs 
+ 				}); 
+ 			} 
+ 
+ 
+ 		}); 
+ 
+ 
+ 	}, 
