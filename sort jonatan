@@ -1,0 +1,133 @@
+#include<stdio.h>
+#include<string.h>
+#define TAMANHO 10
+struct contato{
+	char nome[20];
+	int numero;
+};
+int ler_op(void);
+void salvar();
+void sair(void);
+int lista();
+int apagar();
+int pesquisa();
+
+FILE*contatos;
+struct contato age[TAMANHO];
+getchar();getchar();
+int i;
+int qtd;
+int main()
+{
+
+	int op=0;
+	while(op!=3)
+	{
+	    op=ler_op();
+		switch(op)
+		{
+		case 1:
+		    salvar();
+		    break;
+		case 2:
+			lista();
+			break;
+		case 3:
+		    sair();
+			break;
+        case 4:
+            apagar();
+            break;
+        case 5:
+           pesquisa();
+            break;
+		default:
+			break;
+		}
+	}
+	return 0;
+}
+int ler_op()
+{
+	int op;
+	system("cls");
+	printf("Bem vindo ao alfa de lista telefonica\n");
+	printf("ecolha uma das opcoes do menu\n");
+	printf("1-salvar contato\n");
+	printf("2-lista de contatos\n");
+	printf("3-sair\n");
+	printf("4-apagar\noption:");
+	scanf("%d",&op);
+	getchar();
+	return (op);
+}
+void salvar()
+{
+    puts("coloque o nome e o numero do contato para salvar");
+    printf(">>>nome:\n");
+    gets(age[qtd].nome);
+    printf(">>>numero\n");
+    scanf("%d",&age[qtd].numero);
+    qtd++;
+    if(qtd==TAMANHO)
+        printf("agenda cheia");
+        getchar();
+}
+int lista()
+{
+    int i;
+    if(qtd>0)
+    {
+        for(i=0;i<TAMANHO;i++)
+        {
+            puts("lista de contatos:\n");
+            printf("contato numerio %d\n",i+1);
+            printf("nome...:%s\n",age[i].nome);
+            printf("numero.:%d\n",age[i].numero);
+        }
+    }else
+        printf("lista vazia");
+    printf("\nAperte qualquer tecla...");
+    getchar();
+}
+void sair()
+{
+    puts("fim do programa");
+}
+int apagar()
+{
+    char escolha;
+    char palavra_pes[20];
+    printf("digite o nome que gostaria de apagar:\n");
+    escolha=pesquisa();
+    if(escolha=1)
+    {
+        getchar();
+    }
+    puts("gostaria de apagar nome pesquisado?\n");
+    printf("s=sim\nn=nao");
+    scanf("%c",&escolha);
+    if(escolha=='s')
+        age[i].nome[0]='\0';
+}
+int pesquisa()
+{
+    int i;
+    char palavra_pes[20];
+    printf("Digite o nome: ");
+    gets(palavra_pes);
+    for(i=0;i<TAMANHO;i++)
+    {
+        if(strcmp(palavra_pes,age[i].nome)==0)
+        {
+            printf("nome encontrado");
+            getchar();
+            return i;
+        }
+        printf("nome nao encontrado");
+        return
+        getchar();
+    }
+    getchar();
+    return -1;
+}
