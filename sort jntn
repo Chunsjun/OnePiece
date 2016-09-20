@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<stdlib.h>
+main (){
+
+int earth[15]={3,44,38,5,47,15,36,26,38,2,46,4,19,50,48};
+int i,o,swap,n;
+
+for(i=0,o=1;i<o;i++,o++){
+
+    if(earth[i]<earth[o])
+    {
+
+
+     swap=earth[o];
+        earth[o]=earth[i];
+        earth[i]=swap;
+        break;
+
+    }
+
+
+
+
+
+}
+
+for(n=0;n<=15;n++){
+printf(" %d ",earth[n]);
+}
+
+
+}
