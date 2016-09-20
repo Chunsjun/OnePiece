@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<stdio.h> // isso e um codigo de lista telefonica
 #include<string.h>
 #define TAMANHO 10
 struct contato{
