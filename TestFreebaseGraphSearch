@@ -1,0 +1,66 @@
+public class TestFreebaseGraph { 
+ 
+ 
+ 	public static void main(String[] args) { 
+ 		TitanGraph g=TitanFactory.open("/Users/lili/soft/titan-server-0.4.4/conf/titan-hbase-es.properties"); 
+ 		 
+ 		Vertex v1=g.addVertex(null); 
+		String name="Jack Brown"; 
+		v1.setProperty("name", name); 
+		v1.setProperty("l_name", name.toLowerCase()); 
+ 		v1.setProperty("f_name", name); 
+ 		String uri1=UUID.randomUUID().toString(); 
+ 		v1.setProperty("uri", uri1); 
+ 		v1.setProperty("v_type", 0); 
+ 		 
+ 		Vertex v2=g.addVertex(null); 
+ 		name="Li Li"; 
+ 		v2.setProperty("name", name); 
+ 		v2.setProperty("l_name", name.toLowerCase()); 
+ 		v2.setProperty("f_name", name); 
+ 		String uri2=UUID.randomUUID().toString(); 
+ 		v2.setProperty("uri", uri2); 
+ 		v2.setProperty("v_type", 0); 
+ 		 
+ 		Vertex v3=g.addVertex(null); 
+ 		v3.setProperty("i_value", 32); 
+ 		v3.setProperty("v_type", 1); 
+ 		 
+ 		String knows="http://knowledge-graph/knows"; 
+ 		ElementHelper.setProperties(v1.addEdge(knows, v2),"spo",uri1+"@@"+knows+"@@"+uri2,"sp",uri1+"@@"+knows,"so",uri1+"@@"+uri2,"po",knows+"@@"+uri2); 
+ 		 
+ 		String age="http://knowledge-graph/age"; 
+ 		String value="32"; 
+ 		ElementHelper.setProperties(v2.addEdge(age, v3),"spo",uri2+"@@"+age+"@@"+value,"sp",uri2+"@@"+age,"so",uri2+"@@"+value,"po",age+"@@"+value); 
+ 		 
+ 		g.commit(); 
+ 		 
+ 		//exact search 
+ 		Vertex v=g.getVertices("name", "Jack Brown").iterator().next(); 
+ 		for(String k:v.getPropertyKeys()){ 
+ 			System.out.println(k+"\t"+v.getProperty(k)); 
+ 		} 
+ 		//lowercase 
+ 		v=g.getVertices("l_name", "jack brown").iterator().next(); 
+ 		for(String k:v.getPropertyKeys()){ 
+ 			System.out.println(k+"\t"+v.getProperty(k)); 
+ 		} 
+ 		//full text 
+ 		v=g.query().has("f_name", Text.CONTAINS, "jack").vertices().iterator().next(); 
+ 		for(String k:v.getPropertyKeys()){ 
+ 			System.out.println(k+"\t"+v.getProperty(k)); 
+ 		} 
+ 		 
+ 		Pipe pipe = Gremlin.compile("_().out('"+knows+"').out('"+age+"')"); 
+ 		pipe.setStarts(g.query().has("f_name",Text.CONTAINS,"jack").vertices().iterator()); 
+ 		for(Object o:pipe){ 
+ 			Vertex vertex=(Vertex)o; 
+ 			for(String k:vertex.getPropertyKeys()){ 
+ 				System.out.println(k+"\t"+vertex.getProperty(k)); 
+ 			} 
+ 		} 
+ 		g.shutdown(); 
+ 	} 
+ 
+ 
+ } 
