@@ -1,0 +1,64 @@
+/* QUICK SORT */
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void quick(vector<int> a, int n, int beg, int end)
+{
+        int left, right, loc = beg;
+        while(left != right){
+        left = beg, right = end;
+        while(a[loc]<a[right] && loc!=right)
+          right--;
+        if(a[loc]>a[right]){
+          int temp = a[loc];
+          a[loc] = a[right];
+          a[right] = a[loc];
+        }
+        loc = right;
+        while(a[loc] > a[left] && loc!=left)
+          left++;
+        if(a[loc] < a[left]){
+          int temp = a[loc];
+          a[loc] = a[left];
+          a[left] = a[loc];
+        }
+        loc = left;
+        }
+        cout << loc;
+}
+main()
+{
+        vector<int> val(20), lower(20), upper(20);
+        int n, top = 0, beg, end;
+        cout <<"enter number of elements ";
+        cin >> n;
+        cout<<"enter values"<<endl;
+        for(int i =1; i<=n; i++){
+          cout << i <<": ";
+          cin >> val[i];
+        }
+        if(n>1){
+        top++;
+        lower[1] = 1;
+        upper[1] = n;
+        }
+        while(top!=0){
+        beg = lower[top]; end = upper[top];
+        top--;
+        int loc = quick(val, n, beg, end);
+        //cout << loc;
+        if(beg < loc-1){
+          top++; lower[top] = beg;
+          upper[top] = loc-1;
+        }
+        if(loc+1 < end){
+          top++; lower[top] = loc+1;
+          upper[top] = end;
+        }
+        }
+//      for(int j=1; j<=n; j++)
+//      cout<<" "<<val[j];
+}
+                                 
