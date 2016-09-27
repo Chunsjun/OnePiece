@@ -1,0 +1,37 @@
+ #include<stdio.h> 
+ #include<stdlib.h> 
+ #include<string.h> 
+ 
+ 
+ int main(){ 
+ 
+ 
+ 	int arr1[10]; 
+ 	int *arr2; 
+ 	char *str; 
+ 	 
+ 	//allocate the memory 
+ 	arr2 = (int*)malloc(10*sizeof(int)); 
+ 	str = (char*)malloc(sizeof(char)); 
+ 
+ 
+ 	for(int i = 0; i < 10; i++){ 
+ 	  arr1[i] = i+i;  
+ 		arr2[i] = i*i; 
+ 		printf("%d ", arr2[i]);	 
+ 	} 
+ 	printf("\n"); 
+ 	 
+ 	scanf("%s", str); 
+ 	printf("%s \n", str); 
+ 
+ 
+ 	int length = strlen(str); 
+ 	printf("Length of string is %d \n", length); 
+ 
+ 
+   //free the memory 
+ 	free(arr2); 
+ 	free(str); 
+ 	return 0; 
+ } 
