@@ -7,12 +7,12 @@ int main (void)
 	int grade[student];
 	for (i=0;i<student;i++)
 	{
-		printf("nota dos alunos:"); 
+		printf("nota dos alunos:"); // 학생 성적을 입력하시오
 		scanf("%d",grade[i]);
 	}
 	for(i=0;i<student;i++)
 	total+=grade[i];
 	media=total/student;
-	printf("a media e:%d",media);
+	printf("a media e:%d",media);// 학생 평근
 	return 0;
 }
