@@ -10,7 +10,7 @@ var array = [2,4,6,8,10,12,14,16,18];
   var found = false; 
 	 
  	if(key<array[pivot]){ 
- 		pivot = (()/2); 
+ 		pivot = (()/2);  
  		return false; 
  	} 
  	 
