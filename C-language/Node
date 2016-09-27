@@ -1,0 +1,79 @@
+#include <stdio.h> 
+
+ #include <stdlib.h> 
+
+ typedef struct NODE 
+{ 
+     int data; 
+
+      struct NODE *next; 
+ } NODE; 
+ void add_link(NODE **head, int n) 
+ {  
+      // 새로운 노드 생성. 
+      NODE *node = (NODE*)malloc(sizeof(NODE)); 
+      node->data = n; 
+      node->next = NULL; 
+      if(*head==NULL) 
+      { 
+             // 헤더가 없다면, 새로운 노드를 헤더로. 
+             *head = node; 
+             return; 
+      } 
+      else  
+      { 
+             NODE *p = *head; 
+             NODE *q = NULL; 
+             while(p != NULL) 
+             { 
+                    // 삽입할 위치를 찾았다면, 
+                    if(node->data <= p->data) 
+                    { 
+                           if(p == *head)  
+                           { 
+                                  // 삽입할 위치가 헤더이면,  
+                                  // 링크 연결 후 새로운 노드를 헤더로. 
+                                  node->next = *head; 
+                                  *head = node; 
+                           } 
+                           else  
+                           { 
+                                  // 삽입할 위치에 링크 연결. 
+                                  q->next = node; 
+                                  node->next = p; 
+                           } 
+                           return; 
+                    } 
+                    q = p;          // 링크 연결을 위해 이전 링크 저장. 
+                    p = p->next;    // 링크 순회. 
+             } 
+             // 중간 삽입할 위치가 없다면, 링크 마지막에 연결. 
+             q->next = node; 
+      } 
+ } 
+ void print_link(NODE *head) 
+ { 
+      NODE* p = head; 
+      while(p != NULL) 
+      { 
+             printf("%d -> ", p->data); 
+             p = p->next; 
+      } 
+      printf("NULL\n"); 
+ } 
+ void main() 
+ { 
+      NODE* head = NULL; 
+      print_link(head); 
+      add_link(&head, 5); 
+      print_link(head); 
+      add_link(&head, 2); 
+      print_link(head); 
+      add_link(&head, 1); 
+      print_link(head); 
+      add_link(&head, 6); 
+      print_link(head); 
+      add_link(&head, 3); 
+      print_link(head); 
+ } 
+
