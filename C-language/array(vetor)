@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main (void)
+{
+	const int student = 10; 
+	int i, media;
+	int total=0;
+	int grade[student];
+	for (i=0;i<student;i++)
+	{
+		printf("nota dos alunos:"); 
+		scanf("%d",grade[i]);
+	}
+	for(i=0;i<student;i++)
+	total+=grade[i];
+	media=total/student;
+	printf("a media e:%d",media);
+	return 0;
+}
