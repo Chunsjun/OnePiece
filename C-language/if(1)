@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include "stdlib.h"
+
+
+int main(void)
+{
+	int x, y;
+	int left = 0, right = 100, top = 0, bottom = 200;
+	int nRes = 0;
+	int nArea;
+	printf("Input x, y: ");
+	scanf("%d %d", &x, &y);
+
+	if ((left <= x && x <= right)
+		&& (top <= y && y <= bottom))
+	{
+		nRes = 1;
+		nArea = (right - left) * (bottom - top);
+	}
+	if (nRes)
+	{
+		printf("The Point(%d, %d) is in Rect(%d, %d, %d, %d)\n", x, y, left, top, right, bottom);
+		printf("nArea = %d\n", nArea);
+	}
+	else
+	{
+		printf("The Point(%d, %d) is outside Rect(%d, %d, %d, %d)\n", x, y, left, top, right, bottom);
+	}
+}
