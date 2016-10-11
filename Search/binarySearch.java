@@ -24,7 +24,7 @@ public class binarySearchMain {
 		int array1[] = {1, 2, 10, 25, 36, 44, 65, 101, 111, 123, 188, 2589, 5555, 10001};
 		System.out.println(binarySearch(array1, 10));
 	}
-
+ 
 }
 
 
