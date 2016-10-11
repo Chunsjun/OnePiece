@@ -1,1 +1,17 @@
-#include "stdafx.h"#include "stdlib.h"#define N 3#define M 3int main(void){ int A[N][M] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }; int tA[M][N]; int i, j; for (i = 0; i < N; i++)  for (j = 0; j < M; j++)   tA[j][i] = A[i][j]; printf("\n** Matrix A **\n"); for (i = 0; i < N; i++) {  for (j = 0; j < M; j++)   printf("%2d", A[i][j]);  printf("\n"); } printf("\n** Matrix ta(A) **\n"); for (i = 0; i < N; i++) {  for (j = 0; j < M; j++)   printf("%2d", tA[i][j]);  printf("\n"); }}
+#include "stdafx.h"
+#include "stdlib.h"
+#define N 3#
+define M 3int 
+main(void)
+{ 
+int A[N][M] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }; 
+int tA[M][N]; int i, j; 
+for (i = 0; i < N; i++)  
+for (j = 0; j < M; j++)   
+tA[j][i] = A[i][j]; 
+printf("\n** Matrix A **\n"); 
+for (i = 0; i < N; i++)
+{  for (j = 0; j < M; j++) 
+printf("%2d", A[i][j]);
+printf("\n"); } 
+printf("\n** Matrix ta(A) **\n"); for (i = 0; i < N; i++) {  for (j = 0; j < M; j++)   printf("%2d", tA[i][j]);  printf("\n"); }}
