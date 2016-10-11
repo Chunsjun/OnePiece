@@ -4,7 +4,7 @@
       int a[SIZE]={1},b[3]={0},c[SIZE]={0}; 
       int factorial=100; 
       int i,j,k; 
-    
+     
       for(i=1;i<=factorial;i++){ //팩토리얼 
          b[0]=i; 
          for(j=0;j<2;j++){ //배열 b의 자리올림 
