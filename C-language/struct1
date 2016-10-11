@@ -1,0 +1,68 @@
+#include<stdio.h>
+#include<string.h>
+#define size 3
+struct student{
+	int english;
+	int korean;
+	int math;
+	char name[30];
+	int sum;
+	int avarege;
+};
+struct student s[size];
+
+int main()
+{
+	int i;
+	for(i=0;i<size;i++)
+	{
+	printf("학생 자료를 입력하시오:\n");
+	printf("학생 이름:\n>>");
+	scanf("%s",&s[i].name);
+	printf("학생 영어 성적:\n>>");
+	scanf("%d",&s[i].english);
+	printf("학생 한국 성적:\n>>");
+	scanf("%d",&s[i].korean);
+	printf("학생 수학 성적:\n>>");
+	scanf("%d",&s[i].math);
+	s[i].sum=s[i].english+s[i].korean+s[i].math;
+	s[i].avarege=s[i].sum/3;
+	printf("%s 학생은\n 평근:%d\t성적합:%d\n",s[i].name,s[i].avarege,s[i].sum);
+	}
+	FILE*semestre1=NULL;
+	FILE*semestre2=NULL;
+	FILE*semestre3=NULL;
+	FILE*semestre4=NULL;
+
+	if((semestre1=fopen("semestre1.txt","wb"))==NULL)
+	{
+		fprintf(stderr,"erro\n");
+		//exit(1);
+	}
+	fwrite(s,sizeof( struct student),3,semestre1);
+	fclose(semestre1);
+	if((semestre1=fopen("semestre1.txt","rb"))==NULL)
+	{
+		fprintf(stderr,"erro\n");
+		//exit(1);
+	}
+	for(i=0,i<size;i++)
+		fread(&s,sizeof(struct student),1,semestre1);
+	for(i=0;i<size;i++)
+	{
+	printf("학생 자료를 입력하시오:\n");
+	printf("학생 이름:\n>>");
+	scanf("%s",&s[i].name);
+	printf("학생 영어 성적:\n>>");
+	scanf("%d",&s[i].english);
+	printf("학생 한국 성적:\n>>");
+	scanf("%d",&s[i].korean);
+	printf("학생 수학 성적:\n>>");
+	scanf("%d",&s[i].math);
+	s[i].sum=s[i].english+s[i].korean+s[i].math;
+	s[i].avarege=s[i].sum/3;
+	printf("%s 학생은\n 평근:%d\t성적합:%d\n",s[i].name,s[i].avarege,s[i].sum);
+	}
+	fclose(semestre1);
+	return 0;
+}
