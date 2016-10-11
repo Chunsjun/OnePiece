@@ -57,4 +57,4 @@ void main()
 	{
 		cout<<"Your number is the "<<pos<<"th in the array!"<<endl;
 	} 
-}
+} 
