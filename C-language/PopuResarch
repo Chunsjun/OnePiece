@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "stdlib.h"
 
-int main()
+int main() 
 {
 	int villa[4][2];
 	int popu, i, j;
