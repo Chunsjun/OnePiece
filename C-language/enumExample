@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+enum week {sun, mon, tue, wed, thu, fri, sat};
+
+int main()
+{
+enum weel weekday;
+
+weekday = mon;
+
+switch(weekday)
+{
+case sun:
+printf("sunday.\n");
+break;
+case mon:
+printf("monday.\n");
+break;
+case tue:
+printf("thuesday.\n");
+break;
+case wed:
+printf("wednesday.\n");
+break;
+case thu:
+printf("thuresday.\n");
+break;
+case fri:
+printf("friday\n");
+break;
+case sat:
+printf("saturday\n");
+break;
+}
+return 0;
+}
