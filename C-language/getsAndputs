@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+char name[20];
+char msg[40];
+
+printf("please put your name : ");
+gets(name);
+
+sprintf(msg, "%s씨, 안녕하세요?", name);
+puts(msg);
+
+return 0;
+}
