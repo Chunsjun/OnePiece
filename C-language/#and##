@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+#define PRINT1(x) printf("x = %d\n", x)
+#define PRINT2(x) printf(#x" = %d\n", x)
+
+#define MAKE_FUNC(name) void fn##name(void) \
+{\
+printf("fn"#name" 호출\n");  \
+}
+
+MAKE_FUNC(test1, 1)
+MAKE_FUNC(test2, 2)
+
+int main()
+{
+int num=10;
+PRINT1(num);
+PRINT2(num);
+
+fntest1();
+fntest2();
+
+return 0;
+}
