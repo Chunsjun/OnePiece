@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+#define DEBUG
+
+int GetFactorial(int n);
+
+int main()
+{
+int result;
+
+result = GetFactorial(5);
+
+printf("result = %d\n", result);
+
+return 0;
+}
+
+int GetFactorial(int n)
+{
+#ifdef DEBUG
+printf("GetFactorial 함수 호출 : ");
+printf("n=%d\n", n);
+#endif
+
+if(n<=1)
+return 1;
+return n * GetFactorial(n-1);
+}
