@@ -1,0 +1,41 @@
+package smu.example.net;
+
+import java.io.*;
+import java.net.*;
+
+public vlass Server {
+
+public static void main(String[] args) {
+BufferedReader in = null;
+BufferedReader stin = null;
+BufferedWriter out = null;
+ServerSocket listener = null;
+Socket socket = null;
+try {
+listener = new ServerSocket(9997);
+socket = listener.accept();
+System.out.println("연결됨");
+in = new BufferedReader(ner InputStreamReader(socket.getInputStream()));
+stin = new BuffeedReader(new OutputStreamWriter(socket.getOutputStream()));
+String inputMessage;
+while(true) {
+inputMessage = in.readLine();
+if(inputMessage.equalsIgnoreCase("bye"))
+break;
+System.out.println(inputMessage);
+String outputMessage = stin.readLine();
+out.write("서버>" + outputMessage+"\n");
+out.flush();
+}
+} catch(IOException e) {
+System.out.println(e.getMessage());
+}finally {
+try {
+socket.close();
+listener.close();
+}catch (IOException e) {
+System.out.println("error");
+}
+}
+}
+}
