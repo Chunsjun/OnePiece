@@ -1,0 +1,43 @@
+<cfscript>
+</cfscript>
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="Phillip Senn" name="author">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="sortable.css">
+</head>
+<body>
+<table class="table table-striped table-bordered table-condensed">
+	<thead>
+		<tr>
+			<th>Alpha</th>
+			<th class="num">Numeric</th>
+			<th class="date">myDate</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>A</td>
+			<td class="num">5</td>
+			<td data-date="20100110" class="date">10/1/2010</td>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td class="num">4</td>
+			<td data-date="20010101"  class="date">1/1/2001</td>
+		</tr>
+		<tr>
+			<td>B</td>
+			<td class="num">6</td>
+			<td data-date="20140401" class="date">4/1/2014</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="sortable.js"></script>
+</html>
