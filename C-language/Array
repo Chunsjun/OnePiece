@@ -6,7 +6,7 @@ int main()
 	int arr[5];
 	int max, min, sum, i;
 
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < 5; i++) 
 	{
 		printf("입력: ");
 		scanf("%d", &arr[i]);
