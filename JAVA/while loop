@@ -1,0 +1,42 @@
+While Loops
+
+
+ 
+
+Another type of loop you can use in Java is called the while loop. While loops are a lot easier to understand than for loops. Here's what they look like:
+
+while ( condition ) {
+
+}
+
+So you start with the word "while" in lowercase. The condition you want to test for goes between round brackets. A pair of curly brackets comes next, and the code you want to execute goes between the curly brackets. As an example, here's a while loop that prints out some text (Try the code out for yourself):
+
+int loopVal = 0;
+
+while ( loopVal < 5) {
+System.out.println("Printing Some Text");
+loopVal++;
+}
+
+The condition to test is between the round brackets. We want to keep looping while the variable called loopVal is less than 5. Inside of the curly brackets our code first prints out a line of text. Then we need to increment the loopVal variable. If we don't we'll have an infinite loop, as there is no way for loopVal to get beyond its initial value of 0.
+
+Although we've used a counter (loopVal) to get to the end condition, while loops are best used when you don't really need a counting value, but rather just a checking value. For example, you can keep looping while a key on the keyboard is not pressed. This is common in games programming. The letter "X" can pressed to exit the while loop (called the game loop), and hence the game itself. Another example is looping round a text file while the end of the file has not been reached.
+
+ 
+
+Do ... While
+
+Related to the while loop is the do … while loop. It looks like this:
+
+int loopVal = 0;
+
+do {
+System.out.println("Printing Some Text");
+loopVal++;
+}
+while ( loopVal < 5 );
+
+Again, Java will loop round and round until the end condition is met. This time, the "while" part is at the bottom. But the condition is the same - keep looping while the value inside of the variable called loopVal is less than 5. The difference between the two is the code between the curly brackets of do … while will get executed at least once. With the while loop, the condition could already be met. Java will then just bail out of your loop, and not even execute your curly bracket code. To test this out, try the while loop first. Change the value of your loopVal variable to 5, and then run the code. You should find that the text doesn't get printed. Now try the do loop with a value of 5 for loopVal. The text will print once and then Java will bail out of the loop.
+
+
+OK, we'll leave looping there. It is a subject you need to get grips with. But don't worry if you're not completely perfect with them - you'll learn as we go along. In the next section, we'll take a look at something called an array.
