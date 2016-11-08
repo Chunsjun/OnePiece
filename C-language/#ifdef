@@ -2,7 +2,7 @@
 
 #define DEBUG
 
-int GetFactorial(int n);
+int GetFactorial(int n); 
 
 int main()
 {
