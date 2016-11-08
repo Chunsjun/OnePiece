@@ -10,7 +10,7 @@ int main()
 	{
 		for (j = 0; j < 2; j++)
 		{
-			printf("%d층 %d호 인구수: ", i + 1, j + 1);
+			printf("%d층 %d호 인구수: ", i + 1, j + 1);  
 			scanf("%d", &villa[i][j]);
 		}
 	}
