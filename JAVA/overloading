@@ -1,0 +1,72 @@
+Method Overloading
+
+You can have methods in your code that have the same name. In our code, we have a method called examScore. The output for this method would read something like "30 out of 50". But suppose we have an exam where the maximum score isn't 50 but 30, or even 100. Because we've hard-coded the "out of 50" part, there's no way to override the examScore method. By setting up another examScore method, however, we can indeed override our maximum score. In Object Oriented programming, having methods with the same name is known as Method Overloading. (It's also called Polymorphism, if you want to use the more technical term.)
+
+Let's see how it's done.
+
+Add the following method to your StudentResults class:
+
+String examScore(int aScore, String maximumScore) {
+
+Exam_Score = aScore + maximumScore;
+return Exam_Score;
+
+}
+
+The main difference to note here is the number of arguments. Previously, the examScore method just had one argument between the round brackets:
+
+String examScore( int aScore )
+
+We had an integer argument called aScore. In method overloading, you change the number or type of arguments between round brackets. So you can't have exactly the same first line but different code. So you can't do this:
+
+String examScore(int aScore) {
+
+Exam_Score = aScore + " out of 100";
+return Exam_Score;
+
+}
+
+The only change here is the text "out of 100". Although this change makes it different to the previous examScore method, Java will give you an error. If gives you an error because you have exactly the same first line, the signature line, as before.
+
+You can't just make changes to the variable name between round brackets, either. So this would get you an error:
+
+String examScore( int anotherScore )
+
+You'll get an error because the variable is still an int as before. You can change the type of variable it is, though. This is OK:
+
+String examScore( String anotherScore )
+
+Now, the signature is different - the variable between round brackets is a String rather than an int.
+
+In our new examScore method, we have two arguments, one is an int and one is a String. This is enough for it to be different as a signature line. So if you want to use method overloading, just make sure that you aren't duplicating another method of the same name.
+
+Here's our code that sets up two methods of the same name: 
+An overloaded Java method
+
+Notice the comments we've added, here, the ones with @param, and @return. These are known as Javadoc comments. They will appear in a pop up box to help others when they are using your code (or even help you, if you forget what a method is supposed to do, and what kind of arguments/parameters you used).
+
+Because we have more than one examScore, the method is said to be overloaded.
+
+You can see that when we put it to use:
+
+Method list in Netbeans
+
+The popup box listing class methods is showing two for examScore, the first one, and the new one we set up. We can use them something like this:
+
+Java code using an overloaded method
+
+And here's the output:
+
+Output window showing results of Java code
+
+You may also have a notice the Javadoc popup boxes appearing, as well:
+
+Javadoc popup box in Netbeans
+
+The box has all the comments we added to the top of the method. Here's the other one:
+
+Second javadoc popup box
+
+There's an awful lot more to Javadocs, and they are well worth exploring further.
+
+In the next part, we'll look at Constructor Overloading.
