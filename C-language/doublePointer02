@@ -1,1 +1,8 @@
-#include int glob=6;int x=1000;void foo(void **bar) //포인터의 포인터 {printf("bar : %#p \n",bar);printf("foo's address : %#p \n",foo);*bar = &glob;printf("after foo, bar : %#p \n",bar);printf("===============================\n");}void bar(void *foo) //그냥 포인터 {printf("foo : %#p \n",foo);printf("bar's address : %#p \n",bar);foo = &glob;printf("after bar, foo : %#p \n",foo);}void k(int *a){*a = glob;}void main(){void *a = NULL;void *b = NULL;int d;k(&d);printf("%d\n",d);foo(&a);bar(b); printf("=================================\n");printf("real glob : %#p\n",&glob);printf("foo>>> a : %#p %d \n",a , a ); printf("bar>>> b : %#p %d 주소가 일치하네 \n ",b, b);}
+#include
+int glob=6;
+int x=1000;
+void foo(void **bar) //포인터의 포인터 
+{
+printf("bar : %#p \n",bar);
+printf("foo's address : %#p \n",foo);
+*bar = &glob;printf("after foo, bar : %#p \n",bar);printf("===============================\n");}void bar(void *foo) //그냥 포인터 {printf("foo : %#p \n",foo);printf("bar's address : %#p \n",bar);foo = &glob;printf("after bar, foo : %#p \n",foo);}void k(int *a){*a = glob;}void main(){void *a = NULL;void *b = NULL;int d;k(&d);printf("%d\n",d);foo(&a);bar(b); printf("=================================\n");printf("real glob : %#p\n",&glob);printf("foo>>> a : %#p %d \n",a , a ); printf("bar>>> b : %#p %d 주소가 일치하네 \n ",b, b);}
