@@ -17,7 +17,7 @@ import java.net.Socket;
 import java.util.Properties;
 
 /*
- * IP, Port Á¤º¸ SystemProperties¸¦ ÀÌ¿ëÇØ¼­ °¡Á®¿Ã°Í
+ * IP, Port ì •ë³´ SystemPropertiesë¥¼ ì´ìš©í•´ì„œ ê°€ì ¸ì˜¬ê²ƒ
  * 
  * */
 
@@ -41,7 +41,7 @@ public class Client extends Frame implements ActionListener {
 		createGUI();
 	}
 
-	// GUI »ı¼ºÇÏ°í Event µî·Ï,Ã³¸®
+	// GUI ìƒì„±í•˜ê³  Event ë“±ë¡,ì²˜ë¦¬
 	public void createGUI() {
 		p.add(sendB);
 		add(ta, "West");
@@ -52,7 +52,7 @@ public class Client extends Frame implements ActionListener {
 		setBounds(200, 200, 400, 400);
 		setVisible(true);
 
-		// Event µî·Ï
+		// Event ë“±ë¡
 		this.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
@@ -61,7 +61,7 @@ public class Client extends Frame implements ActionListener {
 			}
 		});
 
-		// ¹öÆ°¿¡ ÇÚµé·¯ µî·Ï
+		// ë²„íŠ¼ì— í•¸ë“¤ëŸ¬ ë“±ë¡
 		sendB.addActionListener(this);
 		tf.addActionListener(this);
 
@@ -83,19 +83,19 @@ public class Client extends Frame implements ActionListener {
 		this.name = name;
 		
 		try {
-			// 1. Socket »ı¼º
+			// 1. Socket ìƒì„±
 			socket = new Socket(ip, port);
 			
-			// 2. I/O stream »ı¼º
+			// 2. I/O stream ìƒì„±
 			oos = new ObjectOutputStream(socket.getOutputStream());
 			ois = new ObjectInputStream(socket.getInputStream());
 			
-			// Thread ¸¸µé±â...
+			// Thread ë§Œë“¤ê¸°...
 			new ChatClientThread().start();
 
 			
 		} catch (Exception e) {
-			ta.append("¼­¹ö°¡ ½ÃÀÛÁßÀÎÁö,IP¿Íport°¡ ¸Â´ÂÁö È®ÀÎ ¹Ù¶ø´Ï´Ù.");
+			ta.append("ì„œë²„ê°€ ì‹œì‘ì¤‘ì¸ì§€,IPì™€portê°€ ë§ëŠ”ì§€ í™•ì¸ ë°”ëë‹ˆë‹¤.");
 		}
 	}
 
