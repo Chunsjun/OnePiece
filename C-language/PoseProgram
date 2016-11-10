@@ -6,7 +6,7 @@ typedef struct MENU
 	int no; 
 	char name[30];
 	int price;
-	int count;
+	int count; 
 } 
 MENU;
 
