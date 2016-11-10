@@ -6,7 +6,7 @@ struct student{
 	int korean;
 	int math;
 	char name[30];
-	int sum;
+	int sum; 
 	int avarege;
 };
 struct student s[size];
