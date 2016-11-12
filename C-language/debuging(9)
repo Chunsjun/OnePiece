@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main()
+{
+double weight;
+scanf("%lf", &weight);
+
+if(weight<50.80)
+{
+printf("number1");
+}
+else if(weight<61.23)
+{
+printf("number2");
+}
+else if(weight<72.57)
+{
+printf("number3");
+}
+else if(weight<88.45)
+{
+printf("number4");
+}
+else
+{
+printf("heavey");
+}
+return 0;
+}
