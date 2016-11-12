@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+int bm, weight, height;
+scanf("%d %d", &height, &weight);
+bm = weight + 100-height;
+
+if(bm>0)
+{
+printf("your overweight. count is %d\n", bm);
+}
+return 0;
+}
