@@ -1,0 +1,39 @@
+import java.util.Arrays; 
+ import java.util.Collections; 
+ 
+ 
+ /** 
+  * Created by PuzzleLeaf on 2016-08-08. 
+  */ 
+ public class D_Arrays { 
+     public static void main(String[] args) { 
+         String[] ganada = {"니","가","가","라","하","와","이"}; 
+ 
+ 
+ 
+ 
+         System.out.println(Arrays.toString(ganada)); 
+ 
+ 
+         Arrays.sort(ganada); 
+         System.out.println(Arrays.toString(ganada)); 
+ 
+ 
+         int idx = Arrays.binarySearch(ganada,"하"); 
+         System.out.println(idx); 
+         //오름차순 정렬이 되어야 사용가능하다 
+         //api 문서 확인 
+ 
+ 
+         Arrays.sort(ganada, Collections.reverseOrder()); 
+         System.out.println(Arrays.toString(ganada)); 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     } 
+ } 
