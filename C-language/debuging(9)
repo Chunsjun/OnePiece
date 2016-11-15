@@ -10,7 +10,7 @@ printf("number1");
 }
 else if(weight<61.23)
 {
-printf("number2");
+printf("number2");         
 }
 else if(weight<72.57)
 {
