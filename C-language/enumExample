@@ -12,8 +12,8 @@ switch(weekday)
 {
 case sun:
 printf("sunday.\n");
-break;
-case mon:
+break; 
+case mon: 
 printf("monday.\n");
 break;
 case tue:
@@ -33,4 +33,4 @@ printf("saturday\n");
 break;
 }
 return 0;
-}
+} 
