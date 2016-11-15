@@ -15,5 +15,5 @@ ch=fgetc(fp);
 printf("%c \n", ch);
 }
 fclose(fp);
-return 0;
+return 0;  
 }
