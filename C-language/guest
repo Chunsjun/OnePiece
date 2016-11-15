@@ -1,6 +1,6 @@
 #ifndef _GUEST_OS_H_
 #define _GUEST_OS_H_
-
+            
 #define INCLUDE_ALLOW_USERLEVEL
 #include "includeCheck.h"
 
