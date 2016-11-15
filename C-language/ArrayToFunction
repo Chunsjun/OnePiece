@@ -29,7 +29,7 @@ int i;
 
 for(i=0; i<size; i++)
 printf("%d ", arr[i]);
-printf("\n");
+printf("\n"); 
 }
 
 int GetSumOfArray(int *arr, int size)
