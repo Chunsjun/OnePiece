@@ -9,5 +9,5 @@ if(bm>0)
 {
 printf("your overweight. count is %d\n", bm);
 }
-return 0;
+return 0;        
 }
