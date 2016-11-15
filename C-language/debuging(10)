@@ -15,6 +15,6 @@ printf("B");
 else
 {
 printf("C");
-}
+} 
 return 0;
 }
