@@ -10,6 +10,6 @@ printf("%d", a-b);
 else
 {
 printf("%d", b-a);
-}
+}             
 return 0;
 }
