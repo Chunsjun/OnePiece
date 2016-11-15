@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    int arr[10];
+    int i;
+     
+    for(i=0; i<10; i++){
+        scanf(" %c",&arr[i]);
+        }
+         
+    printf("\n");
+     
+    for(i=9; i>-1; i--){
+       printf(" %c",arr[i]);
+       } 
+     
+     
+     
+     
+    system("pause");
+    return 0;
+}
