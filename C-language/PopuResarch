@@ -23,4 +23,4 @@ int main()
 		printf("%d층 인구수: %d \n", i + 1, popu);
 	}
 	return 0;
-}
+}  
