@@ -24,7 +24,7 @@ function(a,b) & function(a,b) - function(a,b) * function(a,b) +
  function(a,b) + ( function(a,b) - function(a,b) * function(a,b) %
  function(a,b) ^ function(a,b)) + function(a,b) & function(a,b) -
  function(a,b) / function(a,b) * function(a,b) + function(a,b) )+
-function(a,b) + function(a,b) * function(a,b) + function(a,b) / 
+function(a,b) + function(a,b) * function(a,b) + function(a,b) /    
 function(a,b) * function(a,b) * function(a,b) ^ function(a,b);
 	i = printf( "a = %d b = %d i = %d\n", a, b, i );
 	return 0;
