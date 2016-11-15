@@ -7,7 +7,7 @@ scanf("%c %d", &a, &num);
 
 if(num>=18)
 {
-switch(a)
+switch(a)  
 {
 case 'M':
 printf("MAN");
@@ -23,7 +23,7 @@ swtich(a)
 {
 case 'M':
 printf("BOY");
-break;
+break;  
 case 'F':
 printf("GIRL");
 break;
