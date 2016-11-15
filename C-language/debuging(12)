@@ -8,7 +8,7 @@ switch(a)
 case 'A': printf("Excellent\n"); break;
 case 'B': printf("Welldon\n"); break;
 case 'C': printf("soso\n"); break;
-case 'D': printf("not good\n"); break;
+case 'D': printf("not good\n"); break;       
 case 'F': printf("fail\n"); break;
 default: printf("error\n"); break;
 }
