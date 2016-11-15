@@ -6,45 +6,52 @@ int main( void )
 	int i = scanf( "%d%d%d", &a, &b, &c );
 	if ( a + b > c ) {
 		a = a & b;
-		while ( a % b ) {
-			++a;
-			if ( a )
-				--a;
-			else
-				++a;
-			if ( b + a ) {
-				a = b;
-				while ( a | b ) {
-					d = a & b;
-					if ( a <= b ) {
-						if ( a == b )
-							while ( --a ) {
-								b = d % a;
-								a /= 2;
-							}
-						else
-							++b;
-					}
-					else {
-						d = c ^ b;
-						if ( a )
-							a = a % b;
-					}
+		while ( a % b )
+		{
+		   ++a;
+		   if ( a )
+		   --a;
+		   else
+		   ++a;
+		   if ( b + a ) 
+		   {
+		      a = b;
+		      while ( a | b ) 
+		      {
+			d = a & b;
+			if ( a <= b ) 
+			{
+				if ( a == b )
+				while ( --a ) 
+				{
+					b = d % a;
+					a /= 2;
 				}
+				else
+				++b;
 			}
+			else 
+			{
+				d = c ^ b;
+				if ( a )
+				a = a % b;
+			}
+		      }
+		  }
 			else {
 				c = a - b;
 				if ( c )
 					++c;
-			}
-		}
-	}
-	while ( a >= b ) {
-		a = ~b;
-		if ( ~a )
-			d = b / a * c;
-		else
-			++a;
-	}
+	       }
+         }
+}
+while ( a >= b ) 
+{
+	a = ~b;
+	if ( ~a )
+        	d = b / a * c;
+	else
+	++a;
+}
 	return 0;
 }
