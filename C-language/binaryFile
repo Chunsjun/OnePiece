@@ -11,7 +11,7 @@ fp = fopen("test.dat", "wb");
 if(fp == NULL)
 {
 printf("파일 열기 실패\n");
-return -1;
+return -1;  
 }
 
 fwrite(arr1, sizeof(int), 10, fp);
@@ -22,7 +22,7 @@ if(fp==NULL)
 {
 printf("파일 열기 실패\n");
 return -1;
-}
+}  
 
 fread(arr2, sizeof(int), 10, fp);
 fclose(fp);
