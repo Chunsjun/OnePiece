@@ -1,0 +1,29 @@
+Delete a Record
+
+Databases and Java Forms: 1 2 3 4 5 6 7 8
+
+ 
+
+
+ Deleting a row can be straightforward: Just use deleteRow method of the ResultSet:
+
+rs.deleteRow( );
+
+However, the Driver we are using, the ClientDriver, leaves a blank row in place of the data that was deleted. If you try to move to that row using your Next or Previous buttons, the ID Text Field will have a 0 in it, and all the others will be blank.
+
+To solve this problem we'll first delete a row then, again, close the Statement object and the ResultSet objects. We can then reload all the data in the Text Fields. That way, we won't have any blank rows.
+
+Here's the code to add for your Delete Record button:
+
+Java code that deletes a record
+
+Run your program and test it out. You now be able to delete records from your database.
+
+ 
+
+Exercise
+Add methods to get rid of duplicate code. Call the methods from appropriate places. For example, we have the same code that sets buttons to false and true in multiple locations. Adding a single method to handle this would clean up the code.
+
+ 
+
+And that's it for databases, and for this introduction to Java. It is a huge language that takes years to master. But we hope that this course has given you a desire to learn more. If you got this far then your programming skills should be at an intermediate level. As a next step on your journey try developing one or two small applications of your own. And, of course, keep reading, and keep studying. Good luck!
