@@ -8,7 +8,7 @@ if(age>20)
 {
 printf("adult.");
 }
-else
+else          
 {
 printf("%d later adult.", 20-age);
 }
