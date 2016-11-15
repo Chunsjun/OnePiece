@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    int num1,num2;
+    int max,min,sum=0;
+    int i;
+    FILE * fp=fopen("input.txt","rt");
+    if(fp==NULL)
+    {  
+       puts("파일오픈 실패!");
+       return -1;
+    }
+    fscanf(fp,"%d %d",&num1,&num2);
+    printf("%d %d\n",num1,num2);
+    if(num1>num2)
+    {  
+       max=num1;
+       min=num2;
+    }
+    else
+    {
+       max=num2;
+       min=num1;
+    }
+     
+    for(i=min;i<=max;i++) sum=sum+i;
+     
+    printf("%d\n",sum);
+    FILE * fp1=fopen("output.txt","wt");
+    if(fp==NULL)
+    {
+       puts("파일오픈 실패!");
+       return -1;
+    } 
+    fprintf(fp1,"%d",sum);
+     
+    system("pause");
+    return 0;
+}
