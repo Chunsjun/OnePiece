@@ -14,4 +14,11 @@ for (i = 0; i < N; i++)
 {  for (j = 0; j < M; j++) 
 printf("%2d", A[i][j]);
 printf("\n"); } 
-printf("\n** Matrix ta(A) **\n"); for (i = 0; i < N; i++) {  for (j = 0; j < M; j++)   printf("%2d", tA[i][j]);  printf("\n"); }}
+printf("\n** Matrix ta(A) **\n");
+for (i = 0; i < N; i++) 
+{  
+   for (j = 0; j < M; j++)
+   printf("%2d", tA[i][j]);
+   printf("\n"); 
+   }
+}
