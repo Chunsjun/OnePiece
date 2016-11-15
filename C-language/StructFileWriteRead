@@ -8,7 +8,7 @@ int age;
 }Friend;
 
 int main()
-{
+{            
 FILE *fp;
 Friend myfren1;
 Friend myfren2;
