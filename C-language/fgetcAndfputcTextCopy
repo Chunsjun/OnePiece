@@ -3,7 +3,7 @@
 int main(int argc, char *argv[])
 {
 FILE *fp1, *fp2;
-char ch;
+char ch;           
 
 if(argc<3)
 {
@@ -29,7 +29,7 @@ while((ch = fgetch(fp1)) != EOF)
 fputc(ch, fp2);
 
 fclose(fp1);
-fclose(fp2);
+fclose(fp2);       
 
 return 0;
 }
