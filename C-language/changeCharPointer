@@ -3,7 +3,7 @@
 
 int main()
 {
-char *p = "abcde";
+char *p = "abcde"; 
 
 printf("p = %s\n", p);
 printf("p = %p\n", p);
