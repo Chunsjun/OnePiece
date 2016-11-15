@@ -4,6 +4,6 @@ void open()
   {
   FILE *file;
   *file=openf("file.dat", "a+");
-  fprintf(*file,&file)
+  fprintf(*file,&file);
   printf("%d",&file);
 }
