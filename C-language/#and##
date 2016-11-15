@@ -8,7 +8,7 @@
 printf("fn"#name" 호출\n");  \
 }
 
-MAKE_FUNC(test1, 1)
+MAKE_FUNC(test1, 1) 
 MAKE_FUNC(test2, 2)
 
 int main()
