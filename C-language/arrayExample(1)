@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+ 
+int main(void)
+{
+    double a[7]={0, 85.6, 79.5, 83.1, 80.0, 78.2, 75.0}, plus; 
+    int b, c;
+     
+    scanf("%d %d", &b, &c);
+     
+    if (b >=1 && b <=6) {
+          a[b];
+          }
+    if (c >=1 && c <=6) {
+          a[c];
+          }
+     
+     
+    plus = a[b] + a[c];
+     
+    printf("%.1lf", plus);
+              
+    system("pause");
+    return 0;
+}
