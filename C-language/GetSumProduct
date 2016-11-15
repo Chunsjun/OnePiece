@@ -18,5 +18,5 @@ return 0;
 void GetSumProduct(int x, int y, int *sum, int *product)
 {
 *sum = x + y;
-*product = x * y; 
+*product = x * y;  
 }
