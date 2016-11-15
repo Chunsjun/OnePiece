@@ -6,7 +6,7 @@ typedef set<BasicBlock *> BBSet;
 
 struct Array {
         string name;
-        string regs;
+        string regs;    
         int size;
 };
 
