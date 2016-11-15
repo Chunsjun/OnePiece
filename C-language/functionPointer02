@@ -2,7 +2,7 @@
 
 int GetFactorial(int n);
 double Add(double x, double y);
-
+                 
 int main()
 {
 int (*pFunc)(int n) = &GetFactorial;
