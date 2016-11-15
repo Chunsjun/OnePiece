@@ -1,0 +1,41 @@
+Java and Databases
+
+Databases: 1 2 3 4 5 6
+
+ 
+
+
+ In this section, you'll learn about Java databases. You'll create a simple database with one table, and learn how to connect to it using Java code.
+
+ 
+
+About Java and Databases
+
+Java uses something called JDBC (Java Database Connectivity) to connect to databases. There's a JDBC API, which is the programming part, and a JDBC Driver Manager, which your programs use to connect to the database.
+
+JDBC allows you to connect to a wide-range of databases (Oracle, MySQL, etc), but we're going to use the in-built database you get with the Java/NetBeans software. The database is called Java DB, a version of Apache Derby. It runs on a virtual server, which you can stop and start from within NetBeans.
+
+To check that have everything you need, have a look at the Services tab in NetBeans. If you can't see the Services tab, click Window from the NetBeans menu. From the Window menu, select Services. You should see something like this:
+
+The Services tab in NetBeans
+
+Expand the Databases item to see a Java DB item, a Drivers section, and a sample jdbc:derby sample item:
+
+The Java DB services
+
+The idea is that you start the Java DB virtual server, and then create and manipulate databases on the server.
+
+For the project in this section, we're going to set up a new database. You'll then learn how to connect to this database using Java code. The database we'll create will be a simple one-table affair, rather than multiple tables connected together. You can indeed create multiple tables with Java DB, but we don't want to complicate things unnecessarily.
+
+ 
+
+Starting the Virtual Server
+
+The first thing to do is to start the server. So right click on Java DB. You'll see a menu appear. Select Start Server:
+
+Starting the Java DB Server
+Have a look at the Output window and you'll see a few messages appear: (If you have a firewall running, you'll need to let the Java DB server through.)
+
+Java output window after starting the server
+
+Once the server is up and running you can create databases. You'll see how to do that in the 
