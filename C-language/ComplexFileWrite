@@ -19,3 +19,4 @@ fprintf(fp, "%s %c %d", name, sex, age);
 fclose(fp);
 return 0;
 }
+ 
