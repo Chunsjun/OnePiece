@@ -27,5 +27,5 @@ int main()
 	printf("총 합: %d\n", sum);
 	return 0;
 }
-
+ 
 	
