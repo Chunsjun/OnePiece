@@ -30,3 +30,4 @@ int main()
 	ShowArayElem(arr, sizeof(arr) / sizeof(int));
 	return 0;
 }
+ 
