@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "stdlib.h"
+#include "stdlib.h"             
 
 int main()
 {
@@ -37,5 +37,5 @@ int main()
 		for (j = 0; j < 2; j++)
 			mean += record[2][i][j];
 	printf("C 학급 전체 평균: %g \n", (double)mean / 6);
-	return 0;
+	return 0;            
 }
