@@ -18,7 +18,7 @@ for(i=0; i<4; i++)
 putchar(fgetc(fp));
 fpos=ftell(fp);
 fseek(fp, -1, SEEK_END);
-putchar(fgetc(fp));
+putchar(fgetc(fp));  
 fseek(fp, fpos, SEEK_SET);
 }
 fclose(fp);
