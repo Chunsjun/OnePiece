@@ -12,5 +12,5 @@ fputc('A', fp);
 fputc('B', fp);
 fputc('C', fp);
 fclose(fp);
-return 0;
+return 0; 
 }
