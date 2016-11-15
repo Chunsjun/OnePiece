@@ -74,7 +74,7 @@ int total_price()
 	return price;
 }
 
-void show_menu()
+void show_menu()  
 {
 	int i, k;
 	printf("\n\n★★★★★★★★★★메뉴판★★★★★★★★★★\n");
@@ -180,7 +180,7 @@ void print_bill()
 		printf("다음에는 쿠폰을 지참하여주세요\n");
 		break;
 	}
-	else
+	else   
 	{
 		while (coupon < 11)
 		{
