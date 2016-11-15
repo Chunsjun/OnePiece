@@ -7,7 +7,7 @@
      int data; 
 
       struct NODE *next; 
- } NODE; 
+ } NODE;   
  void add_link(NODE **head, int n) 
  {  
       // 새로운 노드 생성. 
