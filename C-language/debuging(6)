@@ -8,7 +8,7 @@ struct tm tt;
 time(&now);
 tt = *localtime(&now);
 a = tt.tm_year;
-a += tt.tm_mon;
+a += tt.tm_mon;            
 a += tt.tm_mday;
 printf("%d %d %d\n", 0, 114, 128);
 return 0;
