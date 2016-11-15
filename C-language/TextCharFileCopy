@@ -10,7 +10,7 @@ if(src==NULL || des==NULL) {
 puts("파일 오픈 실패!");
 return -1;
 }
-
+    
 while((ch=fgetc(src))!=EOF)
 fputc(ch, des);
 
