@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct person
+{   
+    int len;
+    double wei;
+};
+int main(void)
+{
+    int len;
+    double wei;
+    
+    struct person m,d;
+    printf("아버지의 키와 몸무게?");
+    scanf("%d %lf",&d.len,&d.wei); 
+    printf("어머니의 키와 몸무게?");
+    scanf("%d %lf",&m.len,&m.wei);
+    
+    len=(d.len+m.len)/2+5;
+    wei=(d.wei+m.wei)/2-4.5;
+    printf("학생의 키 : %dcmn\n",len);
+    printf("학생의 몸무게 : %.1fkg\n",wei); 
+    system("pause");
+    return 0;
+}
+ 
