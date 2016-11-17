@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    char a='가'; 
+    double num2=1.1;
+    
+    printf("%p %p\n",&a,&num2);
+    system("pause");
+    return 0;
+}
