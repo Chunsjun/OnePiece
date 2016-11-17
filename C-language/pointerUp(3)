@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    int num1,num2;
+    int *ptr1,*ptr2;
+    
+    ptr1=&num1;
+    ptr2=&num2;
+    
+    printf("정수 두 개를 입력하시오\n");
+    scanf("%d %d",ptr1,ptr2);
+    
+    printf("%d + %d = %d\n",*ptr1,*ptr2,*ptr1 + *ptr2); 
+    printf("%d - %d = %d\n",*ptr1,*ptr2,*ptr1 - *ptr2);
+    printf("%d * %d = %d\n",*ptr1,*ptr2,*ptr1 * *ptr2);
+    printf("%d / %d = %d\n",*ptr1,*ptr2,*ptr1 / *ptr2);
+    system("pause");
+    return 0;
+}
