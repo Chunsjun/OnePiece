@@ -1,0 +1,55 @@
+#include
+<stdio.h>
+
+
+
+int main() 
+
+
+{ 
+
+
+        struct Info 
+
+
+        { 
+
+
+        char *name; 
+
+
+        int number; 
+
+
+        }; 
+
+
+        struct Info A = {"연개소문", 10}; 
+
+
+        struct Info B = {"을지문덕", 20}; 
+
+
+        struct Info Temp; 
+
+
+        Temp = A; 
+
+
+        A = B; 
+
+
+        B = Temp; 
+
+
+        printf("A:이름= %s, 번호= %d, \n", A.name, A.number); 
+
+
+        printf("B:이름= %s, 번호= %d, \n", B.name, B.number); 
+
+
+        return 0; 
+
+
+}
+
