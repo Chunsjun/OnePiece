@@ -1,0 +1,23 @@
+#include <stdio.h> 
+  
+int 
+main() 
+{ 
+    struct Info 
+    { 
+        char *name;        // 4byte 
+        int number;        // 4byte 
+    }; 
+
+    struct Info A;  
+
+    A.name = "연개소문"; 
+    A.number = 10; 
+    printf("이름=%10s 번호=%3d\n", A.name, A.number); 
+    printf("구조체의크기= %d 바이트\n", sizeof(A)); 
+  
+    return 0; 
+
+
+}
+
