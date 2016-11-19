@@ -1,0 +1,60 @@
+#include
+<stdio.h> 
+
+
+struct str 
+
+
+{ 
+
+
+    char     first; 
+
+
+    char     second; 
+
+
+    char     third; 
+
+
+}; 
+
+
+ 
+ 
+
+union uni 
+
+
+{ 
+
+
+    char     first; 
+
+
+    char     second; 
+
+
+    char     third; 
+
+
+}; 
+
+
+int main() 
+
+
+{ 
+
+
+    printf("struct ---> %d byte \n", sizeof(struct str)); 
+
+
+    printf("union ---> %d byte \n", sizeof(union uni)); 
+
+
+    return 0; 
+
+
+}
+
