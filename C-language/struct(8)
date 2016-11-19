@@ -1,0 +1,121 @@
+#include<stdio.h> 
+
+
+#include<string.h>
+//strcpy 
+
+
+#include"Park.h"
+//구조체park가저장되어있는헤더파일 
+
+
+ 
+ 
+
+int main() 
+
+
+{ 
+
+
+    //구조체변수의초기화 
+
+
+    struct Data data = { "89101010", "Park moon seok", 95, 80, 70 }; 
+
+
+    data.tot = data.kor + data.eng + data.mat; 
+
+
+    data.ave = data.tot / 3.0f; 
+
+
+    if (data.ave >= 90) data.point = 'A'; 
+
+
+    else
+if (data.ave >= 80) data.point = 'B'; 
+
+
+    else
+if (data.ave >= 70) data.point = 'C'; 
+
+
+    else
+if (data.ave >= 60) data.point = 'D'; 
+
+
+    else data.point = 'F'; 
+
+
+ 
+ 
+
+printf(" 학번\t 이름 \t 국어\t영어\t수학\t총점\t평균\t학점\n"); 
+
+
+printf("--------------------------------------------------------------------------- \n"); 
+
+
+    disp(data); 
+
+
+    return 0; 
+
+
+     
+ 
+
+}
+
+
+struct Data 
+
+
+{ 
+
+
+    char hakbun[12]; //학번 
+
+
+    char name[16]; //학생이름 
+
+
+    int kor; //국어점수 
+
+
+    int eng; //영어점수 
+
+
+    int mat; //수학점수 
+
+
+    int tot; //총점 
+
+
+    float ave; //평균 
+
+
+    char point; //학점 
+
+
+    int grade; //등수 
+
+
+}; 
+
+
+void disp(struct Data temp) 
+
+
+{ 
+
+
+printf(" %-10s %15s\t %d\t %d\t %d\t %d\t %.2f\t %c\n", 
+
+
+temp.hakbun, temp.name, temp.kor, temp.eng, temp.mat, temp.tot, temp.ave, temp.point); 
+
+
+}
+
