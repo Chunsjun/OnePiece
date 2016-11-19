@@ -1,0 +1,76 @@
+#include
+<stdio.h>
+
+
+
+struct Sungjuk 
+
+
+{ 
+
+
+int eng; 
+
+
+int kor; 
+
+
+}; 
+
+
+ 
+ 
+
+struct Info 
+
+
+{ 
+
+
+int number; 
+
+
+struct Sungjuk JUMSU; 
+
+
+}; 
+
+
+ 
+ 
+
+int main() 
+
+
+{ 
+
+
+    struct Info data; 
+
+
+    data.number = 1; 
+
+
+    data.JUMSU.eng = 90; 
+
+
+    data.JUMSU.kor = 100; 
+
+
+ 
+ 
+
+    printf("번호= %d\n",data.number); 
+
+
+    printf("영어= %d\n",data.JUMSU.eng); 
+
+
+    printf("수학= %d\n",data.JUMSU.kor); 
+
+
+    return 0; 
+
+
+}
+
