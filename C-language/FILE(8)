@@ -1,0 +1,19 @@
+#include 
+
+#include 
+
+
+void main()
+
+{
+
+     FILE *fp ;
+
+     fp = fopen( "test.txt", "w" ) ;
+
+
+     fputs( "Hello" , fp ) ;                              // test.txt 에 Hello 가 저장된다. 
+
+     fclose( fp ) ;
+
+}
