@@ -1,0 +1,21 @@
+#include 
+
+void main()
+
+{
+
+     FILE *fp ;
+
+     fp = fopen( "text.txt", "w" ) ;        // w 생성한다. test.txt   기존에 파일이 있으면 데이터 삭제 새로 사용.
+
+     for( int i = 0 ; i < 128 ; i++ ){
+
+          fputc( '\n', fp ) ;                            
+
+          fputc( i, fp ) ;
+
+     }
+
+     fclose( fp ) ;
+
+}
