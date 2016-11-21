@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAXLINELEN    74
+
+int main()
+{
+    char buffer[MAXLINELEN + 1];
+    int line = 1;
+    FILE *stream;          /* 1) stream(FILE *) 변수의 정의 */
+
+    stream = fopen("readme.txt", "r");     /* 2) 파일 open */
+    if (stream == NULL) {
+        puts("File not found!n");
+        exit(1);
+    }
+
+    while (!feof(stream)) {
+        /* 3) read / write */
+        if (fgets(buffer, MAXLINELEN + 1, stream) == NULL) break;
+        printf("%3d :  %s", line++, buffer);
+    }
+
+    /* 4) File close */
+    fclose(stream);
+    return 0;
+}
