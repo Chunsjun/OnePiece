@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 int max(int i,int arr[])
 {
     int k;
@@ -41,5 +42,7 @@ int main(void)
     printf("최대값 : %d\n",max(i,arr));
     printf("최소값 : %d\n",min(i,arr));
     system("pause");
+    
     return 0;
+    
 }
