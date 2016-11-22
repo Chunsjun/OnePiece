@@ -2,6 +2,7 @@
 #include "stdlib.h"
 #define N 3#
 define M 3int 
+
 main(void)
 { 
 int A[N][M] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };  
