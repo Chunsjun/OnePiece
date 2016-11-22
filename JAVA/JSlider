@@ -1,0 +1,32 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+public class SliderTest {
+ 
+JPanel panel = new JPanel();
+JTextField jtf = new JTextField(20);
+JSlider sd = new JSlider(JSlider.HORIZONTAL, 0, 100, 60);
+public void go() {
+panel.setLayout(new GridLayout(2, 1));
+panel.add(jtf);
+sd.setValue(0);
+sd.setMajorTickSpacing(20);
+sd.setMinorTickSpacing(5);
+sd.setPaintTicks(true);
+sd.setPaintLabels(true);
+sd.addChangeListener(new ChangeListener() {// 익명클래스
+public void stateChanged(ChangeEvent e) {
+jtf.setText("Position is "+ sd.getValue());
+}
+});
+panel.add(sd);
+JFrame frame = new JFrame();
+frame.getContentPane().add(panel);// 프레임에 패널을 추가
+frame.setSize(200,200);
+frame.setVisible(true);
+}
+public static void main(String args[]){
+new SliderTest().go();
+}
+}
