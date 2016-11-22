@@ -1,7 +1,5 @@
 #include <stdio.h>
 
- 
-
 int main(void){
      int state;
      char a;
@@ -47,4 +45,5 @@ int main(void){
      }
 
      return 0;
+     
 }
