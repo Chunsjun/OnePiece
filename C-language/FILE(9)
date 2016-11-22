@@ -1,4 +1,4 @@
-#include <stdio.h>
+  #include <stdio.h>
  
 int main( )
 {
@@ -17,11 +17,12 @@ int main( )
             printf( "%s", pStr );
         }
         fclose( pFile );
-    }
+    }  
     else
     {
-        //에러 처리
+        //에러 처리  
     }
  
-    return 0;
+    return 0;  
+    
 }
