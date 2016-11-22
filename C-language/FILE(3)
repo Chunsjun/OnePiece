@@ -2,9 +2,6 @@
 
 #include <string.h> // strlen 함수가 정의된 헤더 파일
 
-
-
-
 main(){
 
         FILE *fp ;
@@ -15,18 +12,9 @@ main(){
 
         int buf_size = 1024;
 
-
-
-
         fp = fopen("text.txt", "r");
 
-
-
-
         inp = malloc(buf_size+5);
-
-
-
 
         while(fgets(inp,buf_size,fp)){
 
