@@ -2,13 +2,7 @@
 
 #include <string.h>
 
-
-
-
 #define MAX 1024
-
-
-
 
 /* 함수 선언
 
@@ -17,9 +11,6 @@
 */
 
 int retToken(char* ori[], char* ptr);
-
-
-
 
 main(){
 
@@ -35,18 +26,9 @@ main(){
 
   char* ori[MAX]; // 문자열이 들어갈 배열 
 
-
-
-
         fp = fopen("temp1.txt", "r");
 
-
-
-
         inp = malloc(buf_size);
-
-
-
 
         while(fgets(inp,buf_size,fp)){
 
@@ -55,9 +37,6 @@ main(){
                 index = retToken(ori, inp); 
 
         }
-
-
-
 
         for(data = 0 ; data < index ; data++){
 
@@ -69,22 +48,13 @@ main(){
 
 }
 
-
-
-
 int retToken(char* ori[] , char *inp){
 
         int i = 0;
 
-
-
-
 // strtok()을 이용하여 문자열을 ';' 토큰을 기준으로 자름
 
         char* ptr = strtok(inp, ";");
-
-
-
 
         while(ptr != NULL){
 
