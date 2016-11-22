@@ -21,6 +21,8 @@ fseek(fp, -1, SEEK_END);
 putchar(fgetc(fp));  
 fseek(fp, fpos, SEEK_SET);
 }
+
 fclose(fp);
 return 0;
+
 }
