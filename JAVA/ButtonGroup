@@ -1,0 +1,48 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.border.*;
+public class ButtonGroups extends JPanel{
+ 
+public ButtonGroups(){
+ButtonGroup bg1 = new ButtonGroup();
+ButtonGroup bg2 = new ButtonGroup();
+JPanel jp1 = new JPanel();
+JPanel jp2 = new JPanel();
+jp1.setBorder(new TitledBorder("JButton Group"));
+JButton jb1= new JButton("JButton1");
+JButton jb2= new JButton("JButton2");
+JButton jb3= new JButton("JButton3");
+JButton jb4= new JButton("JButton4");
+jp1.add(jb1);
+bg1.add(jb1);
+jp1.add(jb2);
+bg1.add(jb2);
+jp1.add(jb3);
+bg1.add(jb3);
+jp1.add(jb4);
+bg1.add(jb4);
+add(jp1);
+jp2.setBorder(new TitledBorder("JToggleButton Group"));
+JToggleButton JT1 =new JToggleButton ("JToggleButton1");
+JToggleButton JT2 =new JToggleButton ("JToggleButton2");
+JToggleButton JT3 =new JToggleButton ("JToggleButton3");
+JToggleButton JT4 =new JToggleButton ("JToggleButton4");
+jp2.add(JT1);
+bg2.add(JT1);
+jp2.add(JT2);
+bg2.add(JT2);
+jp2.add(JT3);
+bg2.add(JT3);
+jp2.add(JT4);
+bg2.add(JT4);
+add(jp2);
+}
+public static void main(String args[]){
+JFrame f = new JFrame();
+ButtonGroups bgt = new ButtonGroups();
+f.getContentPane().add(bgt);
+f.setSize(400,400);
+f.setVisible(true);
+}
+}
