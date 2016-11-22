@@ -13,6 +13,5 @@ if (fd == -1)
         printf ("FD Error.... \n");
         else
                 printf ("FD Success...!!! FD is : %d \n" , fd);
- 
 }
 
