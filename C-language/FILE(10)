@@ -44,7 +44,7 @@ int main() {
     printf("=========Write Fin=========\n\n");
  
     printf("=========(%dth) Start=========\n", search_selct);
-    ReadKthStudent_open("result.bin", search_selct, &student_sel);
+   ReadKthStudent_open("result.bin", search_selct, &student_sel);
     printf("Check student(%dth)in main : %d %d %f %s\n", search_selct, student_sel.age, student_sel.ID, student_sel.score, &student_sel.name);
     printf("=========Read(%dth) Fin=========\n\n", search_selct);
      
@@ -116,7 +116,7 @@ void SortStudents(int n, Student *student_arr) {
 void ReadKthStudent_fopen(char *filename, int k, Student *student) {
     FILE *fp;
     fp = fopen(filename, "rb");
-    fseek(fp, sizeof(Student)*(k - 1), SEEK_SET);
+]    fseek(fp, sizeof(Student)*(k - 1), SEEK_SET);
     fread(student, sizeof(Student), 1, fp);
     printf("Check student(%dth)in function : %d %d %f %s\n",k, student->age, student->ID, student->score, &student->name);
  
