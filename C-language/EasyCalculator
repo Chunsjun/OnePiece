@@ -9,6 +9,7 @@ int main(void)
 	printf("정수 2개와 연산자(+, -, *, /, %%)를 입력하세요.\n");
 	printf("operand1 operator operand2: ");
 	scanf("%d %c %d", &operand1, &op, &operand2);
+	
 	switch (op)
 	{
 	case '+':
@@ -31,4 +32,5 @@ int main(void)
 	}
 	if (op == '+' || op == '-' || op == '*' || op == '/' || op == '%')
 		printf("%d %c %d = %d\n", operand1, op, operand2, result);
+		
 	}
