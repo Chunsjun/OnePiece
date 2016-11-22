@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 int main(void)
 {
     int num1, num2, num3;
@@ -20,4 +21,5 @@ int main(void)
     printf("%d\n",*ptr3); 
     system("pause");
     return 0;
+    
 }
