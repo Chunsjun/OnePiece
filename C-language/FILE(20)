@@ -8,6 +8,7 @@ void main()
               puts("파일 오픈 실패");
               return;
        }
+       
        char str[30];
        int ch1, ch2;
 
