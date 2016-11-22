@@ -5,6 +5,7 @@ typedef vector<BasicBlock *> BBVector;
 typedef set<BasicBlock *> BBSet;
 
 struct Array {
+
         string name;
         string regs;    
         int size;   
