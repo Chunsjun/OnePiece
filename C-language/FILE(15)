@@ -10,7 +10,7 @@
 int main (int argc, char ** argv[]) {
  
 int fd;
-int readn = 0;
+int readn = 0; 
 int writen = 0;
 char buf[MAX];
 char * buf2 = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n";
@@ -34,7 +34,7 @@ printf ("LSEEK Location : %d\n", ret);
 //MOVE File Desciptor 11 steps foward //
 ret = lseek (fd, 11, SEEK_CUR);
 if (ret == -1)
-        printf ("LSEEK ERROR\n");
+      printf ("LSEEK ERROR\n");
  
 readn = read(fd, buf, MAX-1);
 printf ("SEEK_CUR + 11 is .... \n");
@@ -47,7 +47,6 @@ ret = lseek (fd, 0, SEEK_SET);
 readn = read(fd, buf, MAX-1);
 printf ("LSEEK Location : %d\n", ret);
 printf ("%s\n", buf);
- 
  
 // Close File Description //
 close (fd);
