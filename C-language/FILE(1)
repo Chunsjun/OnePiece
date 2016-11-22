@@ -9,14 +9,12 @@ struct member{
 	char sex[3];
 
 	char city[10];
-
 };
 
 
 
 
 int main()
-
 {
 
 	struct member m;
@@ -24,20 +22,12 @@ int main()
 	FILE *f;
 
 	f=fopen("a.txt","r");
-
 	
-
 	fscanf(f,"%s %d %s %s",&m.name,&m.age, &m.sex, &m.city);
 
 	fclose(f);
 
-
-
-
 	printf("%s %d %s %s",m.name,m.age, m.sex, m.city);
-
-
-
 
 	return 0;
 
