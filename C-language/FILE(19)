@@ -20,8 +20,8 @@ int main()
         if (fgets(buffer, MAXLINELEN + 1, stream) == NULL) break;
         printf("%3d :  %s", line++, buffer);
     }
-
     /* 4) File close */
     fclose(stream);
     return 0;
+    
 }
