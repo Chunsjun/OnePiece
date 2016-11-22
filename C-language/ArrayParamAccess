@@ -9,7 +9,6 @@ void ShowArayElem(int* param, int len)
 	printf("\n");
 }
 
-
 void AddArayElem(int* param, int len, int add)
 {
 	int i;
@@ -29,5 +28,5 @@ int main()
 	AddArayElem(arr, sizeof(arr) / sizeof(int), 3);
 	ShowArayElem(arr, sizeof(arr) / sizeof(int));
 	return 0;
+	
 }
- 
