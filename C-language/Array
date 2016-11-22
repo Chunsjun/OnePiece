@@ -26,6 +26,5 @@ int main()
 	printf("최솟값: %d\n", min);
 	printf("총 합: %d\n", sum);
 	return 0;
-}
- 
 	
+}
