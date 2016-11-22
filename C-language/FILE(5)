@@ -5,15 +5,15 @@ int main ()
     FILE *fp; 
     fp = fopen("a.txt", "w"); 
     
-    if(fp == NULL) 
+    if(fp == NULL)    
     { 
         printf("Write Error!!\n"); 
-        return 0; 
+        return 0;   
     } 
 
     fputs("Hello World!!! \n", fp); 
 
-    fclose(fp); 
+    fclose(fp);   
     return 0; 
     
 } 
