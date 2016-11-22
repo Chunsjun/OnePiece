@@ -59,7 +59,7 @@
              printf("%d -> ", p->data); 
              p = p->next; 
       } 
-      printf("NULL\n"); 
+      printf("NULL\n");  
  } 
  void main() 
  { 
@@ -73,7 +73,7 @@
       print_link(head); 
       add_link(&head, 6); 
       print_link(head); 
-      add_link(&head, 3); 
+      add_link(&head, 3);  
       print_link(head); 
  } 
 
