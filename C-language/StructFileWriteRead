@@ -2,10 +2,12 @@
 
 typedef struct fren
 {
+
 char name[10];
 char sex;
 int age;
-}Friend;
+}
+Friend;
 
 int main()
 {            
