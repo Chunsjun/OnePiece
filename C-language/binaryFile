@@ -9,6 +9,7 @@ int i;
 FILE *fp;
 fp = fopen("test.dat", "wb");
 if(fp == NULL)
+
 {
 printf("파일 열기 실패\n");
 return -1;  
@@ -32,4 +33,5 @@ printf("%d", arr2[i]);
 printf("\n");
 
 return 0;
+
 }
