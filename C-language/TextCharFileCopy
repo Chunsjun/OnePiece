@@ -2,6 +2,7 @@
 
 int main()
 {
+
 FILE *src=fopen("src.txt", "rt");
 FILE *des=fopen("dst.txt", "wt");
 int ch;
@@ -23,4 +24,5 @@ fclose(src);
 fclose(des);
 
 return 0;
+
 }
