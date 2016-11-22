@@ -2,6 +2,7 @@
 
 int main()
 {
+
 char name[10];
 char sex;
 int age;
@@ -16,7 +17,9 @@ scanf("%s %c %d", name, &sex, &age);
 getchar();
 fprintf(fp, "%s %c %d", name, sex, age);
 }
+
 fclose(fp);
 return 0;
+
 }
  
