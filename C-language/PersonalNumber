@@ -11,6 +11,7 @@ int main(void)
   scanf("%s", sId);
   for (i = 0; sId[i] != '\0'; i++)  nLength++;
   printf("nLength = %d\n", nLength);
+  
   if (nLength != N) 
   {  
      printf("Your Id %s is invalid.\n", sId);  
