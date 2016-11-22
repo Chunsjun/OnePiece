@@ -11,9 +11,6 @@ struct member{
 	char city[10];
 };
 
-
-
-
 int main()
 {
 
