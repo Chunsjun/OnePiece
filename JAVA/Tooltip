@@ -1,0 +1,18 @@
+import java.awt.*;
+import javax.swing.*;
+public class Test {
+ 
+public void go() {
+JButton button = new JButton("button");
+JPanel panel = new JPanel();
+button.setToolTipText("Tool Tip Test");
+panel.add(button);
+JFrame frame = new JFrame("ToolTip Test");
+frame.getContentPane().add(panel);
+frame.setSize(150,100);
+frame.setVisible(true);
+}
+public static void main(String args[]) {
+new Test().go();
+}
+}
