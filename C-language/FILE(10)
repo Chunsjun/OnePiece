@@ -81,6 +81,7 @@ int ReadStudents(char* filename, Student **student_arr) {
  
     *student_arr = (Student *)malloc(sizeof(Student)*student_num);
     temp_arr = *student_arr;
+    
  
     fseek(fp, 0, SEEK_SET);
  
