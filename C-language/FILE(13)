@@ -1,10 +1,10 @@
- #include <stdio.h>
+#include <stdio.h>  
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdlib.h>
- 
+   
 #define MAX 1024
  
 int main (int argc, char ** argv[]) {
@@ -32,5 +32,5 @@ printf ("Readn is ..... %d\n", readn);
 printf ("%s\n",buf);
 close (fd);
  
-}
+} 
 
