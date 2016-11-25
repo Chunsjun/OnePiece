@@ -1,0 +1,91 @@
+package kr.ac.sunmoon;
+
+import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.Vector;
+
+import javax.swing.JPanel;
+
+public class MyJPanel extends JPanel {
+	private Vector<MyPoint> vecStartPoint;
+	private Vector<MyPoint> vecEndPoint;
+	
+	private MyPoint startPoint;
+	private MyPoint endPoint;
+	
+	public MyJPanel()
+	{
+		vecStartPoint = new Vector<MyPoint>();
+		vecEndPoint = new Vector<MyPoint>();
+		addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				int x = e.getX();
+				int y = e.getY();
+				
+				endPoint = new MyPoint();
+				endPoint.setX(x);
+				endPoint.setY(y);
+				
+				vecStartPoint.add(startPoint);
+				vecEndPoint.add(endPoint);
+				
+				
+				
+				repaint();
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				int x = e.getX();
+				int y = e.getY();
+				
+				startPoint = new MyPoint();
+				startPoint.setX(x);
+				startPoint.setY(y);
+				
+				
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	}
+	
+	public void paintComponent(Graphics g)
+	{
+		super.paintComponent(g);
+		for(int i=0; i<vecStartPoint.size(); i++)
+		{
+			int x1 = vecStartPoint.get(i).getX();
+			int y1 = vecStartPoint.get(i).getY();
+			int x2 = vecEndPoint.get(i).getX();
+			int y2 = vecEndPoint.get(i).getY();
+			g.drawLine(x1, y1, x2, y2);
+			
+			
+		}
+		
+	}
+}
