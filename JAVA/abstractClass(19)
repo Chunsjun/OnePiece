@@ -1,0 +1,43 @@
+/**
+  * 회원 관리 예제
+  */
+ static MemberVO[] members; //MemberVO타입의 참조변수 
+ public static void main(String[] args) {
+  // TODO Auto-generated method stub
+  MemberService memberService = new MemberService(); //참조변수 
+  Scanner sc = new Scanner(System.in); 
+  members = new MemberVO[0]; //객체선언
+  boolean isStop = false;
+  do {
+   System.out.println("다음 메뉴 중 하나를 입력하세요.");
+   System.out.println("1.회원 가입");
+   System.out.println("2.회원 목록 보기");
+   System.out.println("3.회원 삭제");
+   System.out.println("4.회원 정보 수정");
+   System.out.println("5.종료");
+   
+   String command = sc.next();
+   switch(command){
+   case "1":
+    AddAction writeAction = new AddAction();  //AddAction객체생성
+    memberService.process(writeAction,  sc); //memberService.process메소드 호출
+    break;
+   case "2":
+    ListAction listAction = new ListAction();
+    memberService.process(listAction,  sc);
+    break;
+   case "3":
+    DeleteAction deleteAction = new DeleteAction();
+    memberService.process(deleteAction, sc);
+    break;
+   case "4":
+    UpdateAction updateAction = new UpdateAction();
+    memberService.process(updateAction, sc);
+    break;
+   case "5":
+    isStop = true;
+   }
+  }
+  while(!isStop);
+ }
+}
