@@ -1,0 +1,81 @@
+abstract class 클래스이름 { 
+
+   abstract 메소드선언;        // 메소드의 몸체는 없음 
+
+}
+
+ 
+
+예) 
+
+abstract class AbstractClass { 
+
+   abstract void abstractMethod(); 
+
+}
+
+
+
+class AbstractTest {  
+   public static void main(String args[]) {
+
+         BullDog b = new BullDog();
+         b.whoami();
+         b.who();
+         b.sound();
+
+         Horse h = new Horse();
+         h.whoami();
+         h.who();
+         h.sound();
+   }
+
+}
+ 
+
+  
+abstract class Animal {   
+
+   public abstract void sound();//몸체없음
+   public abstract void who();//몸체 없음   
+
+   public void whoami()
+   { 
+            System.out.println("I am animal");
+   }
+}
+ 
+
+  abstract class Dog extends Animal 
+{ 
+   public void sound()
+   { 
+            System.out.println("Mung Mung");
+   }
+} 
+
+  
+class BullDog extends Dog 
+{
+   public void who()
+   {
+            System.out.println("I am animal , BullDog");
+   }
+}
+ 
+
+  
+class Horse extends Animal
+{
+
+    public void who()
+    {
+        System.out.println("I am Horse");
+    }
+
+    public void sound()
+    {
+        System.out.println("Hi hi!!1 hing");
+    }
+}
+ 
