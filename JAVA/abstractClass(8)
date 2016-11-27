@@ -1,0 +1,43 @@
+abstract class Shape 
+ {
+    abstract void draw( );   //메소드 앞에 abstract가 있으면 추상메소드다.
+    void hit(int x) 
+    {
+       x=3;
+    }
+ }
+
+ interface Shape 
+ {
+    void draw( );   //인터페이스에서는 abstract 생략가능하다.
+    abstract void move(int y); 
+ }
+
+
+class Triangle extends Shape   //abstract클래스는 상속처럼 extends를 쓴다.
+ {
+    void draw( )   //이렇게 일반 메소드 형태로 구현해줘야 한다.
+    {
+       System.out.println("삼각형을 그린다");
+    }
+ ...   //hit( )는 필요시 재정의하고 아니면 상속이니 있는걸로 간주하면 된다.
+ }
+
+class Triangle implements Shape   //interface는 implements로 상속을 받는다.
+ {
+    public void draw( )   //이렇게 일반 메소드 형태로 전부 구현해줘야 한다.
+
+   {
+
+      System.out.println("삼각형을 그린다");
+
+   }
+
+   public void move(int y)   //접근 지정자를 완화시켜 public으로 구현해준다.
+
+   {
+
+      System.out.println("삼각형을 이동시킨다");      
+
+   }
+}
