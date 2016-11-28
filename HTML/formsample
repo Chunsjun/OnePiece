@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>앙케이트 페이지</title>
+</head>
+<body>
+<form action="cgi-bin/formsample.cgi"method="post">
+<h1>앙케이트</h1>
+<p>성별</p>
+<input type="radio" name="sex" value="남자">남자
+<input type="radio" name="sex" value="여자">여자
+<p>연력</p>
+<input type="text" name="age">
+<p>그림책을 알게 된 계기는?</p>
+<select name="kyeki">
+<option value="서점에서 봤다">서점에서 봤다</option>
+<option value="지인의 소개">지인의 소개</option>
+<option value="인터넷에서 알게 됐다">인터넷에서 알게 됐다</option>
+</select>
+<p>의견 및 감상이 있으면 써 주세요.</p>
+<textarea name="kamsang" cols="50" rows="10">의견을 기다립니다.</textarea>
+<p><input type="submit" value="보내기"></p>
+</form>
+</body>
+</html>
