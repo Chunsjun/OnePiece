@@ -1,0 +1,44 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Quest07 {
+
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new FileReader("sample.txt"));
+		ArrayList list = new ArrayList();
+		Scanner input = new Scanner(System.in);
+		String s;
+		int i;
+		
+		while((s=br.readLine())!=null){
+			list.add(s);
+		}
+		System.out.println(list);
+		//랜덤 숫자 정하고 문자열 넣기
+		
+		i=(int)(Math.random()*list.size());
+		System.out.println("랜덤수는 :"+i+ "리스트 사이즈는 : "+list.size());
+		s = list.get(i);
+		
+		//문자열을 문자 배열화
+		char[] ch = s.toCharArray();
+		char[] ch2= s.toCharArray();
+		
+		//하나는 안보이게
+		for(int a=0;a20){
+				System.out.println("횟수 초과 . 정답은 : "+ch.toString());
+				break;
+			}
+			if(Arrays.equals(ch, ch2)){
+				System.out.println("정답입니다.");break;
+			}
+		}
+		
+		if(br!=null) br.close();
+	}
+}
+
