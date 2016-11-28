@@ -1,0 +1,59 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import javax.swing.*;
+
+class MyFrame extends JFrame implements ActionListener {
+	JButton button;
+	JTextField tf;
+	JEditorPane jep;
+	
+	public MyFrame(){
+		//스크롤 패널에 들어갈 내용들
+		jep = new JEditorPane();
+		jep.setEditable(false);   
+			     
+		try {
+			jep.setPage("http://www.google.com/");
+		}catch (IOException e) {
+			jep.setContentType("text/html");
+			jep.setText("Could not load http://www.google.com/ ");
+		} 
+		tf = new JTextField(50);
+		button = new JButton("이동");
+		button.addActionListener(this);
+			       
+		//패널 생성
+		JScrollPane scrollPane = new JScrollPane(jep);   
+		JPanel panel = new JPanel();
+		panel.add(tf);
+		panel.add(button);
+		
+		//프레임 생성
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		add(panel, BorderLayout.NORTH);
+		add(scrollPane);
+		setSize(1024, 768);
+		setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==button){
+			try {
+				jep.setPage(tf.getText());
+			} catch (IOException e1) {
+				jep.setContentType("text/html");
+				jep.setText("Could not load http://www.google.com/ ");
+			}
+		}	
+	}
+}
+
+public class Quest01 {
+	public static void main(String[] args) {
+		new MyFrame();
+	}
+
+}
+
