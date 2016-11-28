@@ -1,0 +1,40 @@
+import java.util.*;
+import java.util.Calendar.*;
+import java.text.SimpleDateFormat; 
+ 
+ 
+public class DayComparisonTest
+{
+public static void main(String args[])
+{
+Calendar cal = Calendar.getInstance();
+SimpleDateFormat dateForm = new SimpleDateFormat("yyyy-MM-dd");
+ 
+ 
+Calendar aDate = Calendar.getInstance(); // 비교하고자 하는 임의의 날짜
+aDate.set(2001, 0, 1);
+ 
+ 
+Calendar bDate = Calendar.getInstance(); // 이것이 시스템의 날짜
+ 
+ 
+// 여기에 시,분,초를 0으로 세팅해야 before, after를 제대로 비교함
+aDate.set( Calendar.HOUR_OF_DAY, 0 );
+aDate.set( Calendar.MINUTE, 0 );
+aDate.set( Calendar.SECOND, 0 );
+aDate.set( Calendar.MILLISECOND, 0 );
+ 
+ 
+bDate.set( Calendar.HOUR_OF_DAY, 0 );
+bDate.set( Calendar.MINUTE, 0 );
+bDate.set( Calendar.SECOND, 0 );
+bDate.set( Calendar.MILLISECOND, 0 );
+ 
+if (aDate.after(bDate)) // aDate가 bDate보다 클 경우 출력
+System.out.println("시스템 날짜보다 뒤일 경우 aDate = " + dateForm.format(aDate.getTime())); 
+else if (aDate.before(bDate)) // aDate가 bDate보다 작을 경우 출력
+System.out.println("시스템 날짜보다 앞일 경우 aDate = " + dateForm.format(aDate.getTime()));
+else // aDate = bDate인 경우
+System.out.println("같은 날이구만");
+}
+}  <p> </p>
