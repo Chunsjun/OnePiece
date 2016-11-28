@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>문보현의 홈페이지</title>
+</head>
+<body>
+<form action="/cgi-bin/formsample4.cgi" method="post">
+<p>이름을 입력하세요.</p>
+<p><input type="text" name="username"></p>
+<p><input type="submit"></p>
+</form>
+</body>
+</html>
