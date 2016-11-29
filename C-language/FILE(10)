@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <fcntl.h>
+#include <fcntl.h>          
  
 #define MAXNAME 40
  
