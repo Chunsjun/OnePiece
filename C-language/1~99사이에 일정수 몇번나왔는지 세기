@@ -1,6 +1,6 @@
 #include <stdio.h>  
 #include <stdlib.h>
-int main(void)
+int main(void)    
 {
     int a[100];
     int b[10];
