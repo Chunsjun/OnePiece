@@ -1,0 +1,28 @@
+private void elapsedTIME(){
+
+    eSEC = LocalTime.now().getSecond();
+
+    if(eSEC > sSEC){
+        showSEC = eSEC - sSEC;
+    }
+    if(eSEC <= sSEC){
+        showSEC = eSEC + (60-sSEC);     
+    }
+
+    if(showSEC == 60 && elapsedTimeTest == true){
+        elapsedTimeTest = false;
+    }
+    if(showSEC == 60 && elapsedTimeTest == false ){
+        eMIN = LocalTime.now().getMinute();
+        if(eMIN > sMIN){
+            showMIN = eMIN - sMIN;
+        }
+        if(eMIN == 0 && eMIN != sMIN){
+            showMIN = 60 - sMIN;
+        }
+        if(eMIN < sMIN && eMIN != 0){
+            showMIN = (60-sMIN) + eMIN;
+        }
+    }
+    msg.setText("Elapsed Time "+showMIN+" Minutes "+(showSEC)+" Seconds"); 
+}
