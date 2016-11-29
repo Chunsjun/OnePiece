@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+                 
 void main()
 {
        FILE * fp1 = fopen("input.txt", "rt"); // input.txt 파일을 읽기용으로 선언
