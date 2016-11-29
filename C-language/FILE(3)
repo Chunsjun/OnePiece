@@ -1,6 +1,6 @@
 #include <stdio.h> // fgets 함수가 정의된 헤더 파일
 
-#include <string.h> // strlen 함수가 정의된 헤더 파일
+#include <string.h> // strlen 함수가 정의된 헤더 파일            
 
 main(){
 
@@ -30,7 +30,7 @@ main(){
 
                 }
 
-        }
+        }            
 
         fclose(fp);
 
