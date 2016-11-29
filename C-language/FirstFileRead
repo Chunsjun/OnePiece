@@ -2,7 +2,7 @@
 
 int main()
 {
-
+              
 int ch, i;
 FILE *fp = fopen("data.txt", "rt");
 if(fp==NULL) {
