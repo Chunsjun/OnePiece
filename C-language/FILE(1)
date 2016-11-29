@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-struct member{
+struct member{         
 
 	char name[10];
 
