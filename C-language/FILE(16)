@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(int argc, char *args[]) {
+int main(int argc, char *args[]) {               
     char * filename = NULL;
     FILE * fp = NULL;
     char buffer[1024] = {0,};
