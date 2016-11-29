@@ -9,7 +9,7 @@ int age;
 }
 Friend;
 
-int main()
+int main()                
 {            
 FILE *fp;
 Friend myfren1;
