@@ -1,26 +1,26 @@
 import javafx.application.Application; 
-2 import javafx.scene.Scene; 
-3 import javafx.scene.layout.StackPane; 
-4 import javafx.stage.Stage; 
-5 
+ import javafx.scene.Scene; 
+ import javafx.scene.layout.StackPane; 
+ import javafx.stage.Stage; 
  
-6 public class StopwatchTest extends Application { 
-7 
  
-8 	public static void main(String[] args) { 
-9 		launch(args); 
-10 	} 
-11 
+ public class StopwatchTest extends Application { 
  
-12 	@Override 
-13 	public void start(Stage primaryStage) throws Exception { 
-14 		primaryStage.setTitle("Stopwatch"); 
-15 
  
-16 		Stopwatch stopwatch = new Stopwatch(); 
-17 		StackPane root = new StackPane(); 
-18 		root.getChildren().add(stopwatch); 
-19 		primaryStage.setScene(new Scene(root)); 
-20 		primaryStage.show(); 
-21 	} 
-22 } 
+ 	public static void main(String[] args) { 
+ 		launch(args); 
+ 	} 
+ 
+ 
+ 	@Override 
+ 	public void start(Stage primaryStage) throws Exception { 
+ 		primaryStage.setTitle("Stopwatch"); 
+ 
+ 
+ 		Stopwatch stopwatch = new Stopwatch(); 
+ 		StackPane root = new StackPane(); 
+ 		root.getChildren().add(stopwatch); 
+ 		primaryStage.setScene(new Scene(root)); 
+ 		primaryStage.show(); 
+ 	} 
+ } 
