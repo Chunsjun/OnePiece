@@ -7,7 +7,7 @@ static size_t s_strnspn_r(const char * str1, const char * str2, size_t size) {
     size_t i, j;
     for (i = 0; i < len; i++) {
         char ch = str1[len - i - 1];
-        for (j = 0; str2[j]; j++) {
+        for (j = 0; str2[j]; j++) {             
             if (str2[j] == ch) {
                 break;
             }
