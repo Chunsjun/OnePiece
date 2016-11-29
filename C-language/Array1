@@ -1,5 +1,5 @@
  #include <stdio.h> 
- #define SIZE 200 
+ #define SIZE 200          
  
   void main(){ 
       int a[SIZE]={1},b[3]={0},c[SIZE]={0}; 
