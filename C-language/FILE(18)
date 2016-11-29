@@ -2,7 +2,7 @@
 
 int main(void){
      int state;
-     char a;
+     char a;                  
 
  
 
