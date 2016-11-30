@@ -1,0 +1,41 @@
+o Enclosing Delimiters
+Any set of multiple objects, comma-separated, written without identifying symbols, i.e., brackets for lists, parentheses for tuples, etc., default to tuples, as indicated in these short examples −
+
+#!/usr/bin/python
+
+print 'abc', -4.24e93, 18+6.6j, 'xyz'
+x, y = 1, 2;
+print "Value of x , y : ", x,y
+When the above code is executed, it produces the following result −
+
+abc -4.24e+93 (18+6.6j) xyz
+Value of x , y : 1 2
+Built-in Tuple Functions
+Python includes the following tuple functions −
+
+SN	Function with Description
+1	
+cmp(tuple1, tuple2)
+
+
+Compares elements of both tuples.
+2	
+len(tuple)
+
+
+Gives the total length of the tuple.
+3	
+max(tuple)
+
+
+Returns item from the tuple with max value.
+4	
+min(tuple)
+
+
+Returns item from the tuple with min value.
+5	
+tuple(seq)
+
+
+Converts a list into tuple.
