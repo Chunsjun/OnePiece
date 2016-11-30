@@ -1,0 +1,21 @@
+Best
+
+# create a concatenated string from 0 to 19 (e.g. "012..1819")
+nums = [str(n) for n in range(20)]
+print "".join(nums)
+One final thing to mention about strings is that using join() is not always best. In the instances where you are creating a new string from a pre-determined number of strings, using the addition operator is actually faster, but in cases like above or in cases where you are adding to an existing string, using join() should be your preferred method.
+
+foo = 'foo'
+bar = 'bar'
+
+foobar = foo + bar  # This is good
+foo += 'ooo'  # This is bad, instead you should do:
+foo = ''.join([foo, 'ooo'])
+Note
+You can also use the % formatting operator to concatenate a pre-determined number of strings besides str.join() and +. However, PEP 3101, discourages the usage of the % operator in favor of the str.format() method.
+foo = 'foo'
+bar = 'bar'
+
+foobar = '%s%s' % (foo, bar) # It is OK
+foobar = '{0}{1}'.format(foo, bar) # It is better
+foobar = '{foo}{bar}'.format(foo=foo, bar=bar) # It is best
