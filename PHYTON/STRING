@@ -1,0 +1,54 @@
+Strings are amongst the most popular types in Python. We can create them simply by enclosing characters in quotes. Python treats single quotes the same as double quotes. Creating strings is as simple as assigning a value to a variable. For example −
+
+var1 = 'Hello World!'
+var2 = "Python Programming"
+Accessing Values in Strings
+Python does not support a character type; these are treated as strings of length one, thus also considered a substring.
+
+To access substrings, use the square brackets for slicing along with the index or indices to obtain your substring. For example −
+
+#!/usr/bin/python
+
+var1 = 'Hello World!'
+var2 = "Python Programming"
+
+print "var1[0]: ", var1[0]
+print "var2[1:5]: ", var2[1:5]
+When the above code is executed, it produces the following result −
+
+var1[0]:  H
+var2[1:5]:  ytho
+Updating Strings
+You can "update" an existing string by (re)assigning a variable to another string. The new value can be related to its previous value or to a completely different string altogether. For example −
+
+#!/usr/bin/python
+
+var1 = 'Hello World!'
+
+print "Updated String :- ", var1[:6] + 'Python'
+When the above code is executed, it produces the following result −
+
+Updated String :-  Hello Python
+Escape Characters
+Following table is a list of escape or non-printable characters that can be represented with backslash notation.
+
+An escape character gets interpreted; in a single quoted as well as double quoted strings.
+
+Backslash
+notation	Hexadecimal
+character	Description
+\a	0x07	Bell or alert
+\b	0x08	Backspace
+\cx	 	Control-x
+\C-x	 	Control-x
+\e	0x1b	Escape
+\f	0x0c	Formfeed
+\M-\C-x	 	Meta-Control-x
+\n	0x0a	Newline
+\nnn	 	Octal notation, where n is in the range 0.7
+\r	0x0d	Carriage return
+\s	0x20	Space
+\t	0x09	Tab
+\v	0x0b	Vertical tab
+\x	 	Character x
+\xnn	 	Hexadecimal notation, where n is in the range 0.9, a.f, or A.F
