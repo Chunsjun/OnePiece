@@ -1,0 +1,136 @@
+Examples
+Here are some examples of numbers
+
+int	long	float	complex
+10	51924361L	0.0	3.14j
+100	-0x19323L	15.20	45.j
+-786	0122L	-21.9	9.322e-36j
+080	0xDEFABCECBDAECBFBAEL	32.3+e18	.876j
+-0490	535633629843L	-90.	-.6545+0J
+-0x260	-052318172735L	-32.54e100	3e+26J
+0x69	-4721885298529L	70.2-E12	4.53e-7j
+Python allows you to use a lowercase L with long, but it is recommended that you use only an uppercase L to avoid confusion with the number 1. Python displays long integers with an uppercase L.
+
+A complex number consists of an ordered pair of real floating point numbers denoted by a + bj, where a is the real part and b is the imaginary part of the complex number.
+
+Number Type Conversion
+Python converts numbers internally in an expression containing mixed types to a common type for evaluation. But sometimes, you need to coerce a number explicitly from one type to another to satisfy the requirements of an operator or function parameter.
+
+Type int(x) to convert x to a plain integer.
+
+Type long(x) to convert x to a long integer.
+
+Type float(x) to convert x to a floating-point number.
+
+Type complex(x) to convert x to a complex number with real part x and imaginary part zero.
+
+Type complex(x, y) to convert x and y to a complex number with real part x and imaginary part y. x and y are numeric expressions
+
+Mathematical Functions
+Python includes following functions that perform mathematical calculations.
+
+Function	Returns ( description )
+abs(x)
+
+The absolute value of x: the (positive) distance between x and zero.
+ceil(x)
+
+The ceiling of x: the smallest integer not less than x
+cmp(x, y)
+
+-1 if x < y, 0 if x == y, or 1 if x > y
+exp(x)
+
+The exponential of x: ex
+fabs(x)
+
+The absolute value of x.
+floor(x)
+
+The floor of x: the largest integer not greater than x
+log(x)
+
+The natural logarithm of x, for x> 0
+log10(x)
+
+The base-10 logarithm of x for x> 0 .
+max(x1, x2,...)
+
+The largest of its arguments: the value closest to positive infinity
+min(x1, x2,...)
+
+The smallest of its arguments: the value closest to negative infinity
+modf(x)
+
+The fractional and integer parts of x in a two-item tuple. Both parts have the same sign as x. The integer part is returned as a float.
+pow(x, y)
+
+The value of x**y.
+round(x [,n])
+
+x rounded to n digits from the decimal point. Python rounds away from zero as a tie-breaker: round(0.5) is 1.0 and round(-0.5) is -1.0.
+sqrt(x)
+
+The square root of x for x > 0
+Random Number Functions
+Random numbers are used for games, simulations, testing, security, and privacy applications. Python includes following functions that are commonly used.
+
+Function	Description
+choice(seq)
+
+A random item from a list, tuple, or string.
+randrange ([start,] stop [,step])
+
+A randomly selected element from range(start, stop, step)
+random()
+
+A random float r, such that 0 is less than or equal to r and r is less than 1
+seed([x])
+
+Sets the integer starting value used in generating random numbers. Call this function before calling any other random module function. Returns None.
+shuffle(lst)
+
+Randomizes the items of a list in place. Returns None.
+uniform(x, y)
+
+A random float r, such that x is less than or equal to r and r is less than y
+Trigonometric Functions
+Python includes following functions that perform trigonometric calculations.
+
+Function	Description
+acos(x)
+
+Return the arc cosine of x, in radians.
+asin(x)
+
+Return the arc sine of x, in radians.
+atan(x)
+
+Return the arc tangent of x, in radians.
+atan2(y, x)
+
+Return atan(y / x), in radians.
+cos(x)
+
+Return the cosine of x radians.
+hypot(x, y)
+
+Return the Euclidean norm, sqrt(x*x + y*y).
+sin(x)
+
+Return the sine of x radians.
+tan(x)
+
+Return the tangent of x radians.
+degrees(x)
+
+Converts angle x from radians to degrees.
+radians(x)
+
+Converts angle x from degrees to radians.
+Mathematical Constants
+The module also defines two mathematical constants −
+
+Constants	Description
+pi	The mathematical constant pi.
+e	The mathematical constant e.
