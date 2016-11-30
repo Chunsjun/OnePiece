@@ -1,0 +1,42 @@
+Python Bitwise Operators
+Bitwise operator works on bits and performs bit by bit operation. Assume if a = 60; and b = 13; Now in binary format they will be as follows −
+
+a = 0011 1100
+
+b = 0000 1101
+
+-----------------
+
+a&b = 0000 1100
+
+a|b = 0011 1101
+
+a^b = 0011 0001
+
+~a  = 1100 0011
+
+There are following Bitwise operators supported by Python language
+
+[ Show Example ]
+
+Operator	Description	Example
+& Binary AND	Operator copies a bit to the result if it exists in both operands	(a & b) (means 0000 1100)
+| Binary OR	It copies a bit if it exists in either operand.	(a | b) = 61 (means 0011 1101)
+^ Binary XOR	It copies the bit if it is set in one operand but not both.	(a ^ b) = 49 (means 0011 0001)
+~ Binary Ones Complement	It is unary and has the effect of 'flipping' bits.	(~a ) = -61 (means 1100 0011 in 2's complement form due to a signed binary number.
+<< Binary Left Shift	The left operands value is moved left by the number of bits specified by the right operand.	a << = 240 (means 1111 0000)
+>> Binary Right Shift	The left operands value is moved right by the number of bits specified by the right operand.	a >> = 15 (means 0000 1111)
+Python Logical Operators
+There are following logical operators supported by Python language. Assume variable a holds 10 and variable b holds 20 then
+
+[ Show Example ]
+
+Used to reverse the logical state of its operand.
+Python Membership Operators
+Python’s membership operators test for membership in a sequence, such as strings, lists, or tuples. There are two membership operators as explained below
+
+[ Show Example ]
+
+Operator	Description	Example
+in	Evaluates to true if it finds a variable in the specified sequence and false otherwise.	x in y, here in results in a 1 if x is a member of sequence y.
+not in	Evaluates to true if it does not finds a variable in the specified sequence and false otherwise.	x not in y, here not in results in a 1 if x is not a member of sequence y.
