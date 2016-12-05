@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>나의 홈페이지</title>
+</head>
+<body>
+줄 바꿈 금지<br><br>
+<nobr>줄 바꿈 금지 태그는 긴 문장이나 텍스트를 작성하여
+웹 브라우저에서 보면 창 크기에 따라 자동으로 
+줄 바꿈 해 주지 않고 한 줄로 계속 나타내준다</nobr>
+
+</body>
+</html>
