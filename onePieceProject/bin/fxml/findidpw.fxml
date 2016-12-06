@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="346.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Find">
+	
+   <children>
+      <Button fx:id="findPw" layoutX="184.0" layoutY="268.0" mnemonicParsing="false" onAction="#findPw" text="Find PW" />
+      <Button fx:id="findId" layoutX="186.0" layoutY="91.0" mnemonicParsing="false" onAction="#findId" text="Find ID" />
+      <TextField fx:id="findPwId" layoutX="86.0" layoutY="178.0" />
+      <TextField fx:id="findPwEmail" layoutX="89.0" layoutY="227.0" />
+      <TextField fx:id="findIdEmail" layoutX="86.0" layoutY="49.0" />
+      <Label layoutX="46.0" layoutY="183.0" text="ID" />
+      <Label layoutX="32.0" layoutY="232.0" text="EMAIL" />
+      <Label layoutX="33.0" layoutY="54.0" text="EMAIL" />
+      <Label fx:id="idF" layoutX="20.0" layoutY="96.0" text="" />
+      <Label fx:id="pwF" layoutX="13.0" layoutY="273.0" text="" />
+   </children>
+</Pane>
