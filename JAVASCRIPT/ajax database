@@ -1,0 +1,71 @@
+AJAX Database Example
+❮ PreviousNext ❯
+AJAX can be used for interactive communication with a database.
+
+AJAX Database Example
+The following example will demonstrate how a web page can fetch information from a database with AJAX:
+
+Example
+
+
+Customer info will be listed here...
+Try it Yourself »
+
+Example Explained - The showCustomer() Function
+When a user selects a customer in the dropdown list above, a function called "showCustomer()" is executed. The function is triggered by the "onchange" event:
+
+showCustomer
+function showCustomer(str) {
+  var xhttp; 
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "getcustomer.asp?q="+str, true);
+  xhttp.send();
+}
+The showCustomer() function does the following:
+
+Check if a customer is selected
+Create an XMLHttpRequest object
+Create the function to be executed when the server response is ready
+Send the request off to a file on the server
+Notice that a parameter (q) is added to the URL (with the content of the dropdown list)
+The AJAX Server Page
+The page on the server called by the JavaScript above is an ASP file called "getcustomer.asp".
+
+The server file could easily be rewritten in PHP, or some other server languages.
+
+Look at a corresponding example in PHP.
+
+The source code in "getcustomer.asp" runs a query against a database, and returns the result in an HTML table:
+
+<%
+response.expires=-1
+sql="SELECT * FROM CUSTOMERS WHERE CUSTOMERID="
+sql=sql & "'" & request.querystring("q") & "'"
+
+set conn=Server.CreateObject("ADODB.Connection")
+conn.Provider="Microsoft.Jet.OLEDB.4.0"
+conn.Open(Server.Mappath("/datafolder/northwind.mdb"))
+set rs=Server.CreateObject("ADODB.recordset")
+rs.Open sql,conn
+
+response.write("<table>")
+do until rs.EOF
+  for each x in rs.Fields
+    response.write("<tr><td><b>" & x.name & "</b></td>")
+    response.write("<td>" & x.value & "</td></tr>")
+  next
+  rs.MoveNext
+loop
+response.write("</table>")
+%>
+
+❮ PreviousNext ❯
