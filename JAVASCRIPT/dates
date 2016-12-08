@@ -1,0 +1,133 @@
+JavaScript Dates
+❮ PreviousNext ❯
+The Date object lets you work with dates (years, months, days, hours, minutes, seconds, and milliseconds)
+
+JavaScript Date Formats
+A JavaScript date can be written as a string:
+
+Thu Dec 08 2016 12:46:00 GMT+0900 (대한민국 표준시)
+
+or as a number:
+
+1481168760074
+
+Dates written as numbers, specifies the number of milliseconds since January 1, 1970, 00:00:00.
+
+Displaying Dates
+In this tutorial we use a script to display dates inside a <p> element with id="demo":
+
+Example
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = Date();
+</script>
+Try it Yourself »
+The script above says: assign the value of Date() to the content (innerHTML) of the element with id="demo". 
+
+You will learn how to display a date, in a more readable format, at the bottom of this page.
+
+Creating Date Objects
+The Date object lets us work with dates.
+
+A date consists of a year, a month, a day, an hour, a minute, a second, and milliseconds.
+
+Date objects are created with the new Date() constructor.
+
+There are 4 ways of initiating a date:
+
+new Date()
+new Date(milliseconds)
+new Date(dateString)
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
+Using new Date(), creates a new date object with the current date and time:
+
+Example
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
+Try it Yourself »
+Using new Date(date string), creates a new date object from the specified date and time:
+
+Example
+<script>
+var d = new Date("October 13, 2014 11:13:00");
+document.getElementById("demo").innerHTML = d;
+</script>
+Try it Yourself »
+Valid date strings (date formats) are described in the next chapter.
+
+Using new Date(number), creates a new date object as zero time plus the number.
+
+Zero time is 01 January 1970 00:00:00 UTC. The number is specified in milliseconds:
+
+Example
+<script>
+var d = new Date(86400000);
+document.getElementById("demo").innerHTML = d;
+</script>
+Try it Yourself »
+JavaScript dates are calculated in milliseconds from 01 January, 1970 00:00:00 Universal Time (UTC). One day contains 86,400,000 millisecond.
+
+Using new Date(7 numbers), creates a new date object with the specified date and time:
+
+The 7 numbers specify the year, month, day, hour, minute, second, and millisecond, in that order:
+
+Example
+<script>
+var d = new Date(99,5,24,11,33,30,0);
+document.getElementById("demo").innerHTML = d;
+</script>
+Try it Yourself »
+Variants of the example above let us omit any of the last 4 parameters:
+
+Example
+<script>
+var d = new Date(99,5,24);
+document.getElementById("demo").innerHTML = d;
+</script>
+Try it Yourself »
+JavaScript counts months from 0 to 11. January is 0. December is 11.
+
+Date Methods
+When a Date object is created, a number of methods allow you to operate on it.
+
+Date methods allow you to get and set the year, month, day, hour, minute, second, and millisecond of objects, using either local time or UTC (universal, or GMT) time.
+
+Date methods are covered in a later chapter.
+
+Displaying Dates
+When you display a date object in HTML, it is automatically converted to a string, with the toString() method.
+
+Example
+<p id="demo"></p>
+
+<script>
+d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
+Is the same as:
+
+<p id="demo"></p>
+
+<script>
+d = new Date();
+document.getElementById("demo").innerHTML = d.toString();
+</script>
+Try it Yourself »
+The toUTCString() method converts a date to a UTC string (a date display standard).
+
+Example
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toUTCString();
+</script>
+Try it Yourself »
+The toDateString() method converts a date to a more readable format:
+
+Example
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toDateString();
+</script>

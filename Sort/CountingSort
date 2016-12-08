@@ -3,7 +3,7 @@ Enter file contents herevoid counting_sort(int a[], int n) {
      if (!arr_check(a, n)) { 
          throw invalid_argument("array can not contain elements less or equal 0!"); 
      } 
-      
+       
      int k = max(a, n); //value of maximum array element 
      int *b = new int[n]; // 
      int *c = new int[k + 1]; 

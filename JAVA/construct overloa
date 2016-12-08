@@ -1,0 +1,70 @@
+Constructor Overloading
+
+Just like you can overload a method, you can also overload the constructor for your class. Our StudentResults class has a constructor that sets values for four private field variables:
+
+private String Full_Name;
+private String Exam_Name;
+private String Exam_Score;
+private String Exam_Grade;
+
+StudentResults() {
+
+Full_Name = "No Name Given";
+Exam_Name = "Unknown";
+Exam_Score = "No Score";
+Exam_Grade = "Unknown";
+
+}
+
+But suppose we decided to set three of them to blank strings, and have the Full Name set to something else, a female/male value, for example. We could do it like this, of course:
+
+StudentResults() {
+
+Full_Name = "Female Student";
+Exam_Name = "";
+Exam_Score = "";
+Exam_Grade = "";
+
+}
+
+But that constructor has exactly the same first line, the signature, as before. Instead, we can set up two constructors (you can set up more than two, if you like):
+
+StudentResults() {
+
+Full_Name = "No Name Given";
+Exam_Name = "Unknown";
+Exam_Score = "No Score";
+Exam_Grade = "Unknown";
+
+}
+
+StudentResults(String gender) {
+
+Full_Name = gender;
+Exam_Name = "";
+Exam_Score = "";
+Exam_Grade = "";
+
+}
+
+Now, the second one has a String variable between the round brackets of its signature line. It is, therefore, said to be an overloaded constructor.
+
+To see how overloaded constructors work, add a new fullName method to your StudentResults class. Add this:
+
+String fullName() {
+
+return Full_Name;
+
+}
+
+Because the round brackets of fullName are empty, it means nothing will get passed over to the field variable called Full_Name. When the value is returned, it will contain whatever string was set up in the constructor.
+
+You would use the two constructs like this:
+
+Using a overloaded class constructor
+
+In the Constructor One lines, the new StudentResults object has been set up with nothing between its round brackets. In the Constructor Two lines, the new StudentResults object has been set up with the string "female" between its round brackets. In both cases, we're using the fullName method to see what is inside of the Full_Name field variable from the StudentResults. Here's the output:
+
+Output window showing results of overloaded class constructor
+
+The first output is "No Name Given". This is the result of the original constructor we set up. In the second output, our newly overloaded constructor is outputting "female".

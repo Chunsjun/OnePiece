@@ -1,0 +1,85 @@
+Conventions
+Here are some conventions you should follow to make your code easier to read.
+
+Check if variable equals a constant
+You don’t need to explicitly compare a value to True, or None, or 0 - you can just add it to the if statement. See Truth Value Testing for a list of what is considered false.
+
+Bad:
+
+if attr == True:
+    print 'True!'
+
+if attr == None:
+    print 'attr is None!'
+Good:
+
+# Just check the value
+if attr:
+    print 'attr is truthy!'
+
+# or check for the opposite
+if not attr:
+    print 'attr is falsey!'
+
+# or, since None is considered false, explicitly check for it
+if attr is None:
+    print 'attr is None!'
+Access a Dictionary Element
+Don’t use the dict.has_key() method. Instead, use x in d syntax, or pass a default argument to dict.get().
+
+Bad:
+
+d = {'hello': 'world'}
+if d.has_key('hello'):
+    print d['hello']    # prints 'world'
+else:
+    print 'default_value'
+Good:
+
+d = {'hello': 'world'}
+
+print d.get('hello', 'default_value') # prints 'world'
+print d.get('thingy', 'default_value') # prints 'default_value'
+
+# Or:
+if 'hello' in d:
+    print d['hello']
+Short Ways to Manipulate Lists
+List comprehensions provide a powerful, concise way to work with lists. Also, the map() and filter() functions can perform operations on lists using a different, more concise syntax.
+
+Bad:
+
+# Filter elements greater than 4
+a = [3, 4, 5]
+b = []
+for i in a:
+    if i > 4:
+        b.append(i)
+Good:
+
+a = [3, 4, 5]
+b = [i for i in a if i > 4]
+# Or:
+b = filter(lambda x: x > 4, a)
+Bad:
+
+# Add three to all list members.
+a = [3, 4, 5]
+for i in range(len(a)):
+    a[i] += 3
+Good:
+
+a = [3, 4, 5]
+a = [i + 3 for i in a]
+# Or:
+a = map(lambda i: i + 3, a)
+Use enumerate() keep a count of your place in the list.
+
+a = [3, 4, 5]
+for i, item in enumerate(a):
+    print i, item
+# prints
+# 0 3
+# 1 4
+# 2 5
+The enumerate() function has better readability than handling a counter manually. Moreover, it is better optimized for iterators.

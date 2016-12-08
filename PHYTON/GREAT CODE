@@ -1,0 +1,16 @@
+Reading Great Code
+One of the core tenets behind the design of Python is creating readable code. The motivation behind this design is simple: The number one thing that Python programmers do is read code.
+
+One of the secrets of becoming a great Python programmer is to read, understand, and comprehend excellent code.
+
+
+Excellent code typically follows the guidelines outlined in Code Style, and does its best to express a clear and concise intent to the reader.
+
+Included below is a list of recommended Python projects for reading. Each one of these projects is a paragon of Python coding.
+
+Howdoi Howdoi is a code search tool, written in Python.
+Flask Flask is a microframework for Python based on Werkzeug and Jinja2. It’s intended for getting started very quickly and was developed with best intentions in mind.
+Diamond Diamond is a python daemon that collects metrics and publishes them to Graphite or other backends. It is capable of collecting cpu, memory, network, i/o, load and disk metrics. Additionally, it features an API for implementing custom collectors for gathering metrics from almost any source.
+Werkzeug Werkzeug started as simple collection of various utilities for WSGI applications and has become one of the most advanced WSGI utility modules. It includes a powerful debugger, full-featured request and response objects, HTTP utilities to handle entity tags, cache control headers, HTTP dates, cookie handling, file uploads, a powerful URL routing system and a bunch of community-contributed addon modules.
+Requests Requests is an Apache2 Licensed HTTP library, written in Python, for human beings.
+Tablib Tablib is a format-agnostic tabular dataset library, written in Python.

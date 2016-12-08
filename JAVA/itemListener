@@ -1,0 +1,56 @@
+import java.awt.*;
+import java.awt.event.*;
+
+class ItemEventFrame extends Frame implements ItemListener{
+    private List lst = new List(3,true);
+    private Choice ch = new Choice();
+    {
+        lst.add("Windows 98");
+        lst.add("Windows 2000");
+        lst.add("Windows xp");
+        
+        ch.add("Solaris");    
+        ch.add("linux");    
+        ch.add("BSD");    
+        ch.add("Mach");    
+    }
+    
+    public ItemEventFrame(){
+        this.setLayout(new FlowLayout());
+        this.lst.addItemListener(this);
+        this.ch.addItemListener(
+                new ItemListener(){
+                    public void itemStateChanged(ItemEvent e){
+                        System.out.println(ch.getSelectedIndex() + ":");
+                        System.out.println(ch.getSelectedItem() + "");
+                        Class c = ch.getSelectedItem().getClass();
+                        System.out.println(c);
+                    }
+                }
+        );
+        this.add(lst);
+        this.add(ch);
+    }
+    public void itemStateChanged(ItemEvent e){
+        int[] itemNum = lst.getSelectedIndexes();
+        String[] itemStr = lst.getSelectedItems();
+        if(itemNum.length>0){
+            for (int i = 0; i < itemNum.length; i++) {
+                System.out.print(itemNum[i] + ":");
+                System.out.print(itemStr[i] + "/");
+            }
+        }
+        System.out.println();
+    }
+}// end of ItemEventFrame class
+
+public class ItemEventFrameMain {
+    public static void main(String[] args) {
+        ItemEventFrame f= new ItemEventFrame();
+        f.pack();
+        f.setTitle("ItemListener");
+        f.setVisible(true);
+        f.setLocation(100, 100);
+    }//end of main
+}// end of ItemEventFrameMain class
+

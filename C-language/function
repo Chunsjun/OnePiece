@@ -33,5 +33,5 @@ int main()
 	else
 		printf("선택 오류 \n");
 
-	return 0;
+	return 0;  
 }

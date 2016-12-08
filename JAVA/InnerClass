@@ -1,0 +1,59 @@
+ class A { 
+   public void methodOnA() { 
+     System.out.println("hi from A instance"); 
+   } 
+ 
+ 
+   private static void privateStaticMethodOnA() { 
+     System.out.println("hi from static on A"); 
+   } 
+ 
+ 
+   public class B { 
+     public void methodOnB() { 
+       System.out.println("hi from B instance"); 
+ 
+ 
+       // Notice that we have access to private things on A 
+       A.privateStaticMethodOnA(); 
+     } 
+   } 
+ 
+ 
+   public static class C { 
+     public void methodOnC() { 
+       System.out.println("hi from C instance"); 
+     } 
+   } 
+ } 
+ 
+ 
+ class ASubClass extends A {} 
+ 
+  public class InnerClasses { 
+   public static void main(String[] args) { 
+     // Make instance of A 
+     A a = new A(); 
+     a.methodOnA(); 
+ 
+ 
+     // Inside a there is another class 
+     // Lets and an instance of that 
+     // Notice that we need to have an instance of A 
+     // to make a new instance of B, since its **not** static 
+     A.B b = a.new B(); 
+     b.methodOnB(); 
+ 
+ 
+     // C on the other hand **is** static 
+     // So we don't need an instance of A 
+     // To make an instance of A to make a new C 
+     A.C c = new A.C(); 
+     c.methodOnC(); 
+ 
+ 
+     // And if we subclass A we still have access to the inner classes 
+     ASubClass.C anotherC = new ASubClass.C(); 
+     anotherC.methodOnC(); 
+   } 
+ } 

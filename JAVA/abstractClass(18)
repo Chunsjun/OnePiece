@@ -1,0 +1,47 @@
+public class UpdateAction implements Action {
+ @Override
+ public void execute(Scanner sc) {
+  // TODO Auto-generated method stub
+  System.out.println("수정할 정보");
+  System.out.println("수정할 이름을 입력하세요.");
+  System.out.print("이름 : ");
+  String name = sc.next();
+
+  MemberVO member = getUpdateMember(name);
+  //회원 이름을 인자 값으로 넘겨주어 이름을 가지고 있는 정보객체를 return;
+  if(member == null){
+   System.out.println("수정할 회원이 존재하지 않습니다.");
+   return;
+  }
+  else{
+   System.out.print("전화 번호 : ");
+   String tel = sc.next();
+   System.out.print("국가 : ");
+   String nation = sc.next();
+   System.out.print("나이 : ");
+   int age = sc.nextInt();
+   System.out.print("이메일 : ");
+   String email = sc.next();  
+   
+   //새로운 정보
+   member = new MemberVO(age, name, tel, email, nation);  
+   for(int i=0;i<MemberMain.members.length;i++){
+    if(MemberMain.members[i].getName().equals(name)){
+     MemberMain.members[i] = member;
+    }
+   }
+  }
+ }
+
+ private MemberVO getUpdateMember(String name) {
+  // TODO Auto-generated method stub
+  MemberVO[] members = MemberMain.members;
+  MemberVO member = null;
+  for(int i=0;i<members.length;i++){
+   if(members[i].getName().equals(name)){
+    member = members[i];
+   }
+  }
+  return member;
+ }
+}

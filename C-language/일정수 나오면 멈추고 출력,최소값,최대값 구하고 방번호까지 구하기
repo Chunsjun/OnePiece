@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    int  arr[100];
+    int i;
+    int big=1;
+    int small=999;
+    int num=0,num1=0;
+     
+     
+    for(i=0; i<100; i++){
+        scanf("%d",&arr[i]); 
+        if(arr[i]==999) break;       
+        if(big<arr[i]){ 
+        big=arr[i],num=i;
+        }
+        if(small>arr[i]){
+        small=arr[i],num1=i;
+         
+        }
+        }
+     
+    printf("최대값 : %d\n최대 값 방번호: %d\n최소값 : %d\n최소 값 방번호: %d\n",big,num,small,num1); 
+         
+    system("pause");
+    return 0;
+}

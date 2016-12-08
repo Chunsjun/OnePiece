@@ -1,0 +1,53 @@
+abstract class Figure {
+
+	abstract void area(int a, int b);
+
+}
+
+
+
+
+class Tetragon extends Figure {
+
+	void area(int a, int b) {
+
+		System.out.println("사각형의 넓이 : " + (a * b));
+
+	}
+
+}
+
+
+
+
+class Triangle extends Figure {
+
+	void area(int a, int b) {
+
+		System.out.println("삼각형의 넓이 : " + (a * b / 2));
+
+	}
+
+}
+
+
+
+
+class Simple {
+
+	public static void main(String args[]) {
+
+		Tetragon tetragon = new Tetragon();
+
+		tetragon.area(4, 5);
+
+
+
+
+		Triangle triangle = new Triangle();
+
+		triangle.area(12, 5);
+
+	}
+
+}

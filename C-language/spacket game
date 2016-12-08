@@ -1,0 +1,19 @@
+#include "proc/game.h"
+
+sp_game* create_game()
+{
+    sp_game* game = malloc(sizeof(sp_game));
+    
+    game->zmq = zctx_new();
+
+    return game;
+}
+
+void destroy_game(sp_game** game)
+{
+    if (*game) {
+        zctx_destroy(&(*game)->zmq);
+        free(*game);
+        *game = NULL;
+    }
+}

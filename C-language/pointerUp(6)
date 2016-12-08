@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+double updown(double ptr)
+{   
+    ptr=100*ptr+0.5;
+    return floor(ptr)/10;
+}
+int main(void)
+{
+    int i,j;
+    double sum=0,ave;
+    
+    printf("배열의 크기를 입력하시오\n");
+    scanf("%d",&i);
+    
+    double arr[i]; 
+    
+    printf("배열의 원소를 입력하시오\n");
+    for(j=0;j<i;j++) scanf("%lf",&arr[j]); 
+    
+    for(j=0;j<i;j++)
+    { 
+        printf("%.2f ",arr[j]);
+        sum=sum+arr[j];
+    }
+    printf("\n");
+    ave=sum/i;
+    
+    printf("합계 : %.2f\n",sum);
+    printf("평균 : %.2f\n",ave); 
+    system("pause");
+    return 0;
+}

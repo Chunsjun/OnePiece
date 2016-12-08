@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    int a[100];
+    int b[100];
+    int i;
+    int t=0;
+    int p;
+      
+    for(i=0; i<100; i++) b[i]=0;           
+      
+    for(i=0; i<100; i++){
+        p=0;
+        scanf(" %d",&p);
+        if(p==0) break;
+        t=p/10;
+        b[t]++;
+        }
+         
+    printf("\n");
+    for(i=0; i<100; i++){
+        if(b[i]>0)
+        printf("%d : %d개\n",i,b[i]);
+        } 
+    system("pause");
+    return 0;
+}

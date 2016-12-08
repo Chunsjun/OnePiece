@@ -1,0 +1,92 @@
+
+#include <stdio.h> 
+ 
+ 
+ /* Typical Arithmetic Operations */ 
+ int add(int a, int b) 
+{ 
+    return a + b; 
+} 
+int sub(int a, int b) 
+{ 
+     return a - b; 
+ } 
+ int mult(int a, int b) 
+ { 
+     return a * b; 
+ } 
+ int divide(int a, int b) 
+ { 
+     return a / b; 
+ } 
+ // **************************************** 
+ // Typical function pointer 
+ 
+ 
+ // It has not been typedef'ed 
+ // subtract is the variable name 
+ // you pass it two ints 
+ // it returns an int. 
+ 
+ 
+ // To assign it, I just give it the name 
+ 
+     
+ int (*subtract)(int, int) = sub; 
+ 
+ 
+ // ******************************************** 
+  // functionpointer typedef 
+   
+  // it defines a function which takes in (int, int) as parameters 
+  // and returns an int. 
+  // arith is the name of the type you created. 
+   
+ typedef int (*arith)(int, int) ; 
+ 
+ 
+ // Declaring something with the typedef: 
+ arith adder = add; 
+ 
+ 
+ /* Passing in a function pointer to a method. 
+  * This also returns variables through reference. 
+  */ 
+ void doOperationWithNumbers(int a, int b, int *answer, int (*operation)(int, int)) 
+ { 
+     *answer = operation(a, b); 
+ } 
+ /* Or we can use our typedef instead of declaring the whole 
+  * function pointer again 
+  */ 
+ void otherWayToDoOperation(int a, int b, int *answer, arith operation) 
+ { 
+     *answer = operation(a, b); 
+ } 
+ 
+
+ int main( int argc, const char* argv[] ) 
+ { 
+     int x = 5, y = 4; 
+     int ans; 
+     arith operations[4]; // create space for the operations 
+     operations[0] = add; // Assign the function by name. 
+     operations[1] = sub; 
+     operations[2] = mult; 
+     operations[3] = divide; 
+      
+     // executing a function pointer: 
+     subtract(x, y); 
+     adder(x, y); 
+      
+      
+     for (int i = 0; i < 4; i++) 
+     { 
+         // Notice the last parameter is an execution 
+         // of the function pointer. 
+          
+         printf("Operation %d: %d\n", i, operations[i](x, y)); 
+     } 
+      
+      
+ } 

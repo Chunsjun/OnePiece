@@ -1,0 +1,174 @@
+The file Object Attributes
+Once a file is opened and you have one file object, you can get various information related to that file.
+
+Here is a list of all attributes related to file object:
+
+Attribute	Description
+file.closed	Returns true if file is closed, false otherwise.
+file.mode	Returns access mode with which file was opened.
+file.name	Returns name of the file.
+file.softspace	Returns false if space explicitly required with print, true otherwise.
+Example
+#!/usr/bin/python
+
+# Open a file
+fo = open("foo.txt", "wb")
+print "Name of the file: ", fo.name
+print "Closed or not : ", fo.closed
+print "Opening mode : ", fo.mode
+print "Softspace flag : ", fo.softspace
+This produces the following result −
+
+Name of the file:  foo.txt
+Closed or not :  False
+Opening mode :  wb
+Softspace flag :  0
+The close() Method
+The close() method of a file object flushes any unwritten information and closes the file object, after which no more writing can be done.
+
+Python automatically closes a file when the reference object of a file is reassigned to another file. It is a good practice to use the close() method to close a file.
+
+Syntax
+fileObject.close();
+Example
+#!/usr/bin/python
+
+# Open a file
+fo = open("foo.txt", "wb")
+print "Name of the file: ", fo.name
+
+# Close opend file
+fo.close()
+This produces the following result −
+
+Name of the file:  foo.txt
+Reading and Writing Files
+The file object provides a set of access methods to make our lives easier. We would see how to use read() and write() methods to read and write files.
+
+The write() Method
+The write() method writes any string to an open file. It is important to note that Python strings can have binary data and not just text.
+
+The write() method does not add a newline character ('\n') to the end of the string −
+
+Syntax
+fileObject.write(string);
+Here, passed parameter is the content to be written into the opened file.
+
+Example
+#!/usr/bin/python
+
+# Open a file
+fo = open("foo.txt", "wb")
+fo.write( "Python is a great language.\nYeah its great!!\n");
+
+# Close opend file
+fo.close()
+The above method would create foo.txt file and would write given content in that file and finally it would close that file. If you would open this file, it would have following content.
+
+Python is a great language.
+Yeah its great!!
+The read() Method
+The read() method reads a string from an open file. It is important to note that Python strings can have binary data. apart from text data.
+
+Syntax
+fileObject.read([count]);
+Here, passed parameter is the number of bytes to be read from the opened file. This method starts reading from the beginning of the file and if count is missing, then it tries to read as much as possible, maybe until the end of file.
+
+Example
+Let's take a file foo.txt, which we created above.
+
+#!/usr/bin/python
+
+# Open a file
+fo = open("foo.txt", "r+")
+str = fo.read(10);
+print "Read String is : ", str
+# Close opend file
+fo.close()
+This produces the following result −
+
+Read String is :  Python is
+File Positions
+The tell() method tells you the current position within the file; in other words, the next read or write will occur at that many bytes from the beginning of the file.
+
+The seek(offset[, from]) method changes the current file position. The offset argument indicates the number of bytes to be moved. The from argument specifies the reference position from where the bytes are to be moved.
+
+If from is set to 0, it means use the beginning of the file as the reference position and 1 means use the current position as the reference position and if it is set to 2 then the end of the file would be taken as the reference position.
+
+Example
+Let us take a file foo.txt, which we created above.
+
+#!/usr/bin/python
+
+# Open a file
+fo = open("foo.txt", "r+")
+str = fo.read(10);
+print "Read String is : ", str
+
+# Check current position
+position = fo.tell();
+print "Current file position : ", position
+
+# Reposition pointer at the beginning once again
+position = fo.seek(0, 0);
+str = fo.read(10);
+print "Again read String is : ", str
+# Close opend file
+fo.close()
+This produces the following result −
+
+Read String is :  Python is
+Current file position :  10
+Again read String is :  Python is
+Renaming and Deleting Files
+Python os module provides methods that help you perform file-processing operations, such as renaming and deleting files.
+
+To use this module you need to import it first and then you can call any related functions.
+
+The rename() Method
+The rename() method takes two arguments, the current filename and the new filename.
+
+Syntax
+os.rename(current_file_name, new_file_name)
+Example
+Following is the example to rename an existing file test1.txt:
+
+#!/usr/bin/python
+import os
+
+# Rename a file from test1.txt to test2.txt
+os.rename( "test1.txt", "test2.txt" )
+The remove() Method
+You can use the remove() method to delete files by supplying the name of the file to be deleted as the argument.
+
+Syntax
+os.remove(file_name)
+Example
+Following is the example to delete an existing file test2.txt −
+
+#!/usr/bin/python
+import os
+
+# Delete file test2.txt
+os.remove("text2.txt")
+Directories in Python
+All files are contained within various directories, and Python has no problem handling these too. The os module has several methods that help you create, remove, and change directories.
+
+The mkdir() Method
+You can use the mkdir() method of the os module to create directories in the current directory. You need to supply an argument to this method which contains the name of the directory to be created.
+
+Syntax
+os.mkdir("newdir")
+Example
+Following is the example to create a directory test in the current directory −
+
+#!/usr/bin/python
+import os
+
+# Create a directory "test"
+os.mkdir("test")
+The chdir() Method
+You can use the chdir() method to change the current directory. The chdir() method takes an argument, which is the name of the directory that you want to make the current directory.
+
+Syntax
+os.chdir("newdir")

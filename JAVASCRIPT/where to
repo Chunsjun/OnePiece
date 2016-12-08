@@ -1,0 +1,11 @@
+JavaScript Where To
+❮ PreviousNext ❯
+JavaScript can be placed in the <body> and in the <head> section of any HTML page.
+
+The <script> Tag
+In HTML, JavaScript code must be inserted between <script> and </script> tags.
+
+Example
+<script>
+document.getElementById("demo").innerHTML = "My First JavaScript";
+</script>

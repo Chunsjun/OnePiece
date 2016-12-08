@@ -1,0 +1,68 @@
+String Variables
+
+
+ 
+
+As well as storing number values, variables can hold text. You can store just one character, or lots of characters. To store just one character, the char variable is used. Usually, though, you'll want to store more than one character. To do so, you need the string variable type.
+
+Start a new project for this by clicking File > New Project from the menu bar at the top of NetBeans. When the New Project dialogue box appears, make sure Java and Java Application are selected:
+
+The New Project dialogue box
+
+Click Next and type StringVars as the Project Name. Make sure there is a tick in the box for Create Main Class. Then delete Main after stringvars, and type StringVariables instead, as in the following image:
+
+Renaming the project and the class
+
+So the Project Name is StringVars, and the Class name is StringVariables. Click the Finish button and your coding window will look like this (we've deleted all the default comments). Notice how the package name is all lowercase (stringvars) but the Project name was StringVars.
+
+Blank java coding window
+
+To set up a string variable, you type the word String followed by a name for your variable. Note that there's an uppercase "S" for String. Again, a semicolon ends the line:
+
+String first_name;
+
+Assign a value to your new string variable by typing an equals sign. After the equals sign the text you want to store goes between two sets of double quotes:
+
+first_name = "William";
+
+If you prefer, you can have all that on one line:
+
+String first_name = "William";
+
+Set up a second string variable to hold a surname/family name:
+
+String family_name = "Shakespeare";
+
+To print both names, add the following println( ):
+
+System.out.println( first_name + " " + family_name );
+
+In between the round brackets of println, we have this:
+
+first_name + " " + family_name
+
+We're saying print out whatever is in the variable called first_name. We then have a plus symbol, followed by a space. The space is enclosed in double quotes. This is so that Java will recognise that we want to print out a space character. After the space, we have another plus symbol, followed by the family_name variable.
+
+Although this looks a bit messy, we're only printing out a first name, a space, then the family name. Your code window should look like this:
+
+Some simple Java Strings
+
+Run your program and you should see this in the Output window:
+
+Output of the String code
+
+If you are storing just a single character, then the variable you need is char (lowercase "c"). To store the character, you use single quotes instead of double quotes. Here's our program again, but this time with the char variable:
+
+Some Javav code showing the Char variable type
+
+If you try to surround a char variable with double quotes, NetBeans will underline the offending code in red, giving you "incompatible type" errors. You can, however, have a String variable with just a single character. But you need double quotes. So this is OK:
+
+String first_name = "W";
+
+But this is not:
+
+String first_name = 'W';
+
+The second version has single quotes, while the first has double quotes.
+
+There are lot more to strings, and you'll meet them again later. For now, let's move on and get some input from a user.

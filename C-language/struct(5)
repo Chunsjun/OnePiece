@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct person
+{   
+    char name[10];
+    int a;
+    int b;
+    int c;
+    int sum;
+};
+void bubble(struct person *a,int len)
+{
+    struct person temp;
+    int i,j;
+    for(i=0;i<len-1;i++)
+    {   
+        for(j=0;j<len-i-1;j++)
+        {
+           if(a[j].sum<a[j+1].sum)
+           {   temp=a[j+1];
+               a[j+1]=a[j];
+               a[j]=temp;
+           }//if
+        }//forj
+    }//fori
+}
+int main(void)
+{
+    int i;
+    int j;
+     
+    printf("10이하의 정수 n을 입력한 후 n명의 이름(한글 4글자이하)과 세 과목의 점수를 입력하시오.");
+    scanf("%d",&i);
+    
+    struct person a[i];
+        
+    for(j=0;j<3;j++)
+    {   
+        scanf("%s ",a[j].name);
+        scanf("%d %d %d",&a[j].a,&a[j].b,&a[j].c);
+    }
+    //입력하기 
+    for(j=0;j<3;j++)
+    {   
+        a[j].sum=a[j].a+a[j].b+a[j].c;
+    }
+    //총점구하기 
+    bubble(a,i);
+    //버블정렬 
+    for(j=0;j<3;j++) printf("%s %d %d %d %d\n",a[j].name,a[j].a,a[j].b,a[j].c,a[j].sum);
+    //출력하기 
+    system("pause");
+    return 0;
+}

@@ -1,0 +1,33 @@
+Let’s get into some specifics.
+
+The Actual Module
+Location	./sample/ or ./sample.py
+Purpose	The code of interest
+Your module package is the core focus of the repository. It should not be tucked away:
+
+./sample/
+If your module consists of only a single file, you can place it directly in the root of your repository:
+
+./sample.py
+Your library does not belong in an ambiguous src or python subdirectory.
+
+License
+Location	./LICENSE
+Purpose	Lawyering up.
+This is arguably the most important part of your repository, aside from the source code itself. The full license text and copyright claims should exist in this file.
+
+If you aren’t sure which license you should use for your project, check out choosealicense.com.
+
+Of course, you are also free to publish code without a license, but this would prevent many people from potentially using your code.
+
+Setup.py
+Location	./setup.py
+Purpose	Package and distribution management.
+If your module package is at the root of your repository, this should obviously be at the root as well.
+
+Requirements File
+Location	./requirements.txt
+Purpose	Development dependencies.
+A pip requirements file should be placed at the root of the repository. It should specify the dependencies required to contribute to the project: testing, building, and generating documentation.
+
+If your project has no development dependencies, or you prefer development environment setup via setup.py, this file may be unnecessary.

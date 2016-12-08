@@ -1,0 +1,32 @@
+The Java Class Constructor
+
+ 
+
+
+ 
+
+Because we've made the field variables private, we need another way to assign values to them. One way to do this is with something called a constructor. This is a method you can use to set initial values for field variables. When the object is created, Java calls the constructor first. Any code you have in your constructor will then get executed. You don't need to make any special calls to a constructor method - they happen automatically when you create a new object.
+
+Constructor methods take the same name as the class. Add the following constructor to your StudentResults class:
+
+A Java class constructor has been added to the code
+
+So the name of the constructor is StudentResults. This is exactly the same name as the class itself. Unlike normal methods, class constructors don't need a return type like int or double, nor any return value. You can, however, pass values over to your constructors. If we want to pass values over to our field variables, we can do this:
+
+The class constructor setting values for field variables
+
+Here, we've added two String variables to the round brackets of the constructor. Inside the curly brackets we've assigned these values to the Full_Name and Exam_Grade fields. When you create a new object, you'd then need two strings between the round brackets of the class name:
+
+StudentResults aStudent = new StudentResults( "Bill Gates", "A" );
+
+When the object is created, the values "Bill Gates" and "A" will be handed over to the constructor.
+
+However, it's a good idea to just set some default values for your field variables. These values will then be assigned when the object is created. Add the following to your constructor:
+
+Setting default values in the constructor
+
+All four of our field variables will now have default values whenever a new StudentResults object is created. Notice that we now don't have anything between the round brackets of the class constructor.
+
+In the next part, we'll take a look at accessing class variables.
+
+ 

@@ -1,0 +1,271 @@
+#include<stdio.h> 
+
+
+#include<stdlib.h> 
+
+
+struct Park 
+
+
+{ 
+
+
+    char hakbun[12]; //학번 
+
+
+    char name[16]; //학생이름 
+
+
+    int kor; //국어점수 
+
+
+    int eng; //영어점수 
+
+
+    int mat; //수학점수 
+
+
+    int tot; 
+
+
+    int rank; 
+
+
+}; 
+
+
+int cnt = 0; 
+
+
+void Input(struct Park *ptr) 
+
+
+{ 
+
+
+    int menu; 
+
+
+    int i = 0; 
+
+
+    while(1) 
+
+
+    { 
+
+
+        printf("1. 계속입력2. 종료\n"); 
+
+
+     scanf("%d", &menu); 
+
+
+        if(menu == 2) 
+
+
+        { 
+
+
+            break; 
+
+
+        } 
+
+
+     else
+if (menu ==1) 
+
+
+        { 
+
+
+            printf("데이터를입력하세요\n"); 
+
+
+            fflush(stdin); printf("학번입력=> "); 
+
+
+            gets((ptr+i)->hakbun); 
+
+
+            fflush(stdin); printf("이름입력 => "); 
+
+
+            gets((ptr+i)->name); 
+
+
+            printf("국어점수입력 => "); 
+
+
+            scanf("%d", &(ptr+i)->kor); 
+
+
+            printf("영어점수입력 => "); 
+
+
+            scanf("%d", &(ptr+i)->eng); 
+
+
+            printf("수학점수입력 => "); 
+
+
+            scanf("%d", &(ptr+i)->mat); 
+
+
+            i++; 
+
+
+            cnt ++; 
+
+
+        } 
+
+
+        else
+
+
+
+        { 
+
+
+            printf("잘못된메뉴선택\n"); 
+
+
+            continue; 
+
+
+        } 
+
+
+    } 
+
+
+} 
+
+
+void Sum(struct Park *ptr, int n) 
+
+
+{ 
+
+
+    int i; 
+
+
+    for(i=0; i<n; i++) 
+
+
+    { 
+
+
+        (ptr+i)->tot = (ptr+i)->kor + (ptr+i)->kor + (ptr+i)->eng; 
+
+
+    } 
+
+
+} 
+
+
+void Rank(struct Park *ptr, int n) 
+
+
+{ 
+
+
+    int i,j; 
+
+
+    for(i=0; i<n; i++) 
+
+
+    { 
+
+
+        (ptr+i)->rank = 1; 
+
+
+        for(j=0; j<n; j++) 
+
+
+        { 
+
+
+            if((ptr+i)->tot < (ptr+j)->tot) 
+
+
+            { 
+
+
+                (ptr+i)->rank++; 
+
+
+            } 
+
+
+        } 
+
+
+    } 
+
+
+} 
+
+
+int main() 
+
+
+{ 
+
+
+    //구조체배열선언 
+
+
+    int i; 
+
+
+    struct Park data[100]; 
+
+
+    struct Park *ptr = data; 
+
+
+    Input(ptr); 
+
+
+    Sum(ptr, cnt); 
+
+
+    Rank(ptr, cnt); 
+
+
+    system("cls"); 
+
+
+    printf("학번 이름 국어 영어 수학 총점 순위\n"); 
+
+
+    printf("------------------------------------------------ \n"); 
+
+
+    for(i=0; i<cnt; i++) 
+
+
+    { 
+
+
+        printf("%4s %8s %4d %4d %4d %4d %4d\n", 
+
+
+     data[i].hakbun, data[i].name, data[i].kor, data[i].eng, data[i].mat, data[i].tot, data[i].rank ); 
+
+
+    } 
+
+
+    return 0; 
+
+
+} 
+

@@ -1,0 +1,32 @@
+A Python program can handle date and time in several ways. Converting between date formats is a common chore for computers. Python's time and calendar modules help track dates and times.
+
+What is Tick?
+Time intervals are floating-point numbers in units of seconds. Particular instants in time are expressed in seconds since 12:00am, January 1, 1970(epoch).
+
+There is a popular time module available in Python which provides functions for working with times, and for converting between representations. The function time.time() returns the current system time in ticks since 12:00am, January 1, 1970(epoch).
+
+Example
+#!/usr/bin/python
+import time;  # This is required to include time module.
+
+ticks = time.time()
+print "Number of ticks since 12:00am, January 1, 1970:", ticks
+This would produce a result something as follows −
+
+Number of ticks since 12:00am, January 1, 1970: 7186862.73399
+Date arithmetic is easy to do with ticks. However, dates before the epoch cannot be represented in this form. Dates in the far future also cannot be represented this way - the cutoff point is sometime in 2038 for UNIX and Windows.
+
+What is TimeTuple?
+Many of Python's time functions handle time as a tuple of 9 numbers, as shown below −
+
+Index	Field	Values
+0	4-digit year	2008
+1	Month	1 to 12
+2	Day	1 to 31
+3	Hour	0 to 23
+4	Minute	0 to 59
+5	Second	0 to 61 (60 or 61 are leap-seconds)
+6	Day of Week	0 to 6 (0 is Monday)
+7	Day of year	1 to 366 (Julian day)
+8	Daylight savings	-1, 0, 1, -1 means library determines DST
+The above tuple is equivalent to struct_time structure. This structure has following attributes −

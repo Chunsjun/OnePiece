@@ -1,0 +1,28 @@
+public class MemberVO {
+ private int age; //private 클래스 내에서 사용
+ private String name;
+ private String tel;
+ private String email;
+ private String nation;
+
+ public MemberVO(int age, String name, String tel, String email,
+   String nation) { //생성자
+  super();   //자식클래스의생성자를 호출하면 첫줄에 super가 자동생성되어
+  this.age = age;   //부모클래스의 생성자를 호출 ->자식클래스는 회원을 추가하게 된다.
+  this.name = name;
+  this.tel = tel;
+  this.email = email;
+  this.nation = nation;
+ }
+ //setter/getter
+ public int getAge() {return age; }
+ public void setAge(int age) {this.age = age; }
+ public String getName() {return name; }
+ public void setName(String name) {this.name = name; }
+ public String getTel() {return tel; }
+ public void setTel(String tel) {this.tel = tel; }
+ public String getEmail() {return email; }
+ public void setEmail(String email) {this.email = email; }
+ public String getNation() {return nation; }
+ public void setNation(String nation) {this.nation = nation; }
+}

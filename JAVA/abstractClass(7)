@@ -1,0 +1,149 @@
+package polymorphism;
+
+/**
+
+* 스타크래프트에 등장하는 유닛의 메소드 내용입니다.
+
+*/
+
+public interface StarcraftUnit {
+
+             public int getStrength();                    
+
+             public String getName();                   
+
+             public String getDescription();
+
+             public String getClan();                    
+
+}
+
+package polymorphism;
+
+/**
+
+* 스타크래프트에 등장하는 저그유닛입니다.
+
+*/
+
+public abstract class ZergUnit implements StarcraftUnit {
+
+             /**
+
+             * 종족이름
+
+             */
+
+    private String clan;        
+
+    /**
+
+    * 체력
+
+    */    
+
+             protected int strength;                       
+
+ 
+
+             /**
+
+             * 체력이 strength, 종족은 "저그"인 유닛
+
+             */
+
+    public ZergUnit(int strength) {
+
+        this.strength = strength;   // 생성자에서 가장먼저 호출
+
+        clan = "저그";
+
+    }
+
+    public String getClan() {
+
+        return clan;
+
+    }
+
+             public int getStrength() {
+
+                           return strength;
+
+             }
+
+             /**
+
+             * ZergUnit 추상클래스에서는 유닛의 이름을 알 수 없음
+
+             */
+
+             public abstract String getName();       
+
+             /**
+
+             * ZergUnit 추상클래스에서는 유닛의 개요을 알 수 없음
+
+             */
+
+    public abstract String getDescription();
+
+}
+
+public class Hydra extends ZergUnit {
+
+             private String name;
+
+             public Hydra() {
+
+                           super(80);
+
+                           this.name = "히드라";
+
+             }
+
+             public String getName() {
+
+                           return name;
+
+             }
+
+             public String getDescription() {
+
+                           return "이름은 히드라, 종족은 저그 종족입니다.럴커로 변태할 수 있어요.";
+
+             }
+
+}
+
+ZergUnit unit = new Hydra();
+
+             unit.getDescription();  
+
+
+package polymorphism;
+
+ 
+
+public class UnitDescription {
+
+ 
+
+             public void description(StarcraftUnit unit) {
+
+                           System.out.println(unit.getDescription());
+
+             }
+
+             
+
+             public static void main(String[] args) {
+
+                           UnitDescription desc = new UnitDescription();
+
+                           desc.description(new Hydra());
+
+             }
+
+}
+

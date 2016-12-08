@@ -1,0 +1,13 @@
+using Microsoft.Owin;
+using Owin;
+
+[assembly: OwinStartupAttribute(typeof(JogoDaVelhaWEB.Startup))]
+namespace JogoDaVelhaWEB
+{
+    public partial class Startup
+    {
+        public void Configuration(IAppBuilder app)
+        {
+            ConfigureAuth(app);
+        }
+    }

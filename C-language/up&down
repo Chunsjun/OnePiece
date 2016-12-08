@@ -1,0 +1,73 @@
+#include"stdafx.h"
+#include<stdlib.h>
+#include<Windows.h>
+#include<time.h>
+ int main() 
+
+ {
+	 char B;
+	 int S;
+	 int R,a;
+	 int count=0; 
+	 loop:
+		 printf("\t\t★★★★★★1부터 당신이 입력한 수까지 UP&Down 게임을 할겁니다★★★★★★\n\n\n\t\t\t\t★★★숫자를 입력하세요★★★:    "); 
+		 scanf("%d",&S); 
+	 srand((unsigned)time(NULL));
+	 R = rand()%S+1; 
+	 printf("\n\t\t 자.. 당신이 입력한 숫자가 임의의 숫자로 변경이 되었습니다.\n\t\t이제 이 숫자를 맞추어봅시다!\n"); 
+	 while(1) 
+	 {
+		 do
+		 {
+			 printf("\t\t아무 숫자나 입력해주세요~.~(1~%d) ※단,기회는 5번 : ",S); 
+			 scanf("%d",&a);
+		 }
+		 while(a<=0 || a>S);
+		 count++; 
+		 
+		 if(a<R)
+		 {
+			 printf("\t\tUp! 좀 더 위에있네요~\n");
+			 printf("\t\t시도횟수 %d번\n",count);
+		 }
+		 else if(a>R)
+		 {
+			 printf("\t\tDown! 너무 높게 부르셨나봐요~\n");
+			 printf("\t\t시도횟수 %d번 \n",count);
+		 }
+		 else
+		 {
+			 printf("\t\t성공! 맞추셨습니다!\n \t\t\t시도횟수 : %d번 \n\t\t\t 정답 : %d\n",count,R);
+			 Sleep(3000);
+			 break;
+		 }
+		 if(count==5)
+		 {
+			 printf("\n\t\t 5번의 기회가 끝나셨어요ㅠㅠㅠㅠ\n\t\t\t\t ★★정답★★ : %d\n",R);
+			 Sleep(3000);
+			 break;
+		 }
+
+	 }
+	 loop1:
+	 printf("\t\t다시 하시겠습니까?\n\t\t\t\t yes=1 or no=2");
+	 scanf("%d",&B);
+	 if(B==1)
+	 {
+		 printf("\t\t프로그램이 다시 시작됩니다.\n");
+		 count=0;
+		 goto loop;
+	 }
+	 else if(B==2)
+	 {
+		printf("\t\t5초후프로그램이 종료됩니다.\n\t\t게임해주셔서 감사합니다.");
+		Sleep(5000);
+	 }
+	 else
+	 {
+		 printf("\t\t제대로 입력하세요!! 1 혹은 2");
+		 goto loop1;
+	 }
+    return 0; 
+
+ }

@@ -1,0 +1,231 @@
+ public class Servidor {
+ 
+   public static void main(String[] args) throws IOException {
+     // inicia o servidor
+     new Servidor(12345).executa();
+   }
+   
+   private int porta;
+   private List<PrintStream> clientes;
+   
+   public Servidor (int porta) {
+     this.porta = porta;
+     this.clientes = new ArrayList<PrintStream>();
+   }
+   
+   public void executa () throws IOException {
+     ServerSocket servidor = new ServerSocket(this.porta);
+     System.out.println("Porta 12345 aberta!");
+     
+     while (true) {
+       // aceita um cliente
+       Socket cliente = servidor.accept();
+       System.out.println("Nova conexão com o cliente " +   
+         cliente.getInetAddress().getHostAddress()
+       );
+       
+       // adiciona saida do cliente à lista
+       PrintStream ps = new PrintStream(cliente.getOutputStream());
+       this.clientes.add(ps);
+       
+       // cria tratador de cliente numa nova thread
+       TrataCliente tc = 
+           new TrataCliente(cliente.getInputStream(), this);
+       new Thread(tc).start();
+     }
+ 
+   }
+ 
+   public void distribuiMensagem(String msg) {
+     // envia msg para todo mundo
+     for (PrintStream cliente : this.clientes) {
+       cliente.println(msg);
+     }
+   }
+ }
+
+
+
+
+
+
+-----------------------------
+
+
+
+
+
+
+import java.io.*;
+import java.net.*;
+public class smtpClient {
+    public static void main(String[] args) {
+// declaration section:
+// smtpClient: our client socket
+// os: output stream
+// is: input stream
+        Socket smtpSocket = null;  
+        DataOutputStream os = null;
+        DataInputStream is = null;
+// Initialization section:
+// Try to open a socket on port 25
+// Try to open input and output streams
+        try {
+            smtpSocket = new Socket("hostname", 25);
+            os = new DataOutputStream(smtpSocket.getOutputStream());
+            is = new DataInputStream(smtpSocket.getInputStream());
+        } catch (UnknownHostException e) {
+            System.err.println("Don't know about host: hostname");
+        } catch (IOException e) {
+            System.err.println("Couldn't get I/O for the connection to: hostname");
+        }
+// If everything has been initialized then we want to write some data
+// to the socket we have opened a connection to on port 25
+    if (smtpSocket != null && os != null && is != null) {
+            try {
+// The capital string before each colon has a special meaning to SMTP
+// you may want to read the SMTP specification, RFC1822/3
+        os.writeBytes("HELO\n");    
+                os.writeBytes("MAIL From: k3is@fundy.csd.unbsj.ca\n");
+                os.writeBytes("RCPT To: k3is@fundy.csd.unbsj.ca\n");
+                os.writeBytes("DATA\n");
+                os.writeBytes("From: k3is@fundy.csd.unbsj.ca\n");
+                os.writeBytes("Subject: testing\n");
+                os.writeBytes("Hi there\n"); // message body
+                os.writeBytes("\n.\n");
+        os.writeBytes("QUIT");
+// keep on reading from/to the socket till we receive the "Ok" from SMTP,
+// once we received that then we want to break.
+                String responseLine;
+                while ((responseLine = is.readLine()) != null) {
+                    System.out.println("Server: " + responseLine);
+                    if (responseLine.indexOf("Ok") != -1) {
+                      break;
+                    }
+                }
+// clean up:
+// close the output stream
+// close the input stream
+// close the socket
+        os.close();
+                is.close();
+                smtpSocket.close();   
+            } catch (UnknownHostException e) {
+                System.err.println("Trying to connect to unknown host: " + e);
+            } catch (IOException e) {
+                System.err.println("IOException:  " + e);
+            }
+        }
+    }           
+}
+
+
+public class TrataCliente implements Runnable {
+ 
+   private InputStream cliente;
+   private Servidor servidor;
+ 
+   public TrataCliente(InputStream cliente, Servidor servidor) {
+     this.cliente = cliente;
+     this.servidor = servidor;
+   }
+ 
+   public void run() {
+     // quando chegar uma msg, distribui pra todos
+     Scanner s = new Scanner(this.cliente);
+     while (s.hasNextLine()) {
+       servidor.distribuiMensagem(s.nextLine());
+     }
+     s.close();
+   }
+ }
+
+
+
+-------------
+
+
+
+ public class Recebedor implements Runnable {
+ 
+   private InputStream servidor;
+ 
+   public Recebedor(InputStream servidor) {
+     this.servidor = servidor;
+   }
+ 
+   public void run() {
+     // recebe msgs do servidor e imprime na tela
+     Scanner s = new Scanner(this.servidor);
+     while (s.hasNextLine()) {
+       System.out.println(s.nextLine());
+     }
+   }
+ }
+
+-------------------
+
+
+public class Cliente {
+   public static void main(String[] args) 
+         throws UnknownHostException, IOException {
+     // dispara cliente
+     new Cliente("127.0.0.1", 12345).executa();
+   }
+   
+   private String host;
+   private int porta;
+   
+   public Cliente (String host, int porta) {
+     this.host = host;
+     this.porta = porta;
+   }
+   
+   public void executa() throws UnknownHostException, IOException {
+     Socket cliente = new Socket(this.host, this.porta);
+     System.out.println("O cliente se conectou ao servidor!");
+ 
+     // thread para receber mensagens do servidor
+     Recebedor r = new Recebedor(cliente.getInputStream());
+     new Thread(r).start();
+     
+     // lê msgs do teclado e manda pro servidor
+     Scanner teclado = new Scanner(System.in);
+     PrintStream saida = new PrintStream(cliente.getOutputStream());
+     while (teclado.hasNextLine()) {
+       saida.println(teclado.nextLine());
+     }
+     
+     saida.close();
+     teclado.close();
+     cliente.close();    
+   }
+ }
+
+
+-------------------
+
+
+
+public class Cliente {
+   public static void main(String[] args) 
+           throws UnknownHostException, IOException {
+     Socket cliente = new Socket("127.0.0.1", 12345);
+     System.out.println("O cliente se conectou ao servidor!");
+     
+     Scanner teclado = new Scanner(System.in);
+     PrintStream saida = new PrintStream(cliente.getOutputStream());
+     
+     while (teclado.hasNextLine()) {
+       saida.println(teclado.nextLine());
+     }
+     
+     saida.close();
+     teclado.close();
+     cliente.close();
+   }
+ }
+
+
+-------------------------
+

@@ -1,0 +1,28 @@
+JavaScript Output
+❮ PreviousNext ❯
+JavaScript does NOT have any built-in print or display functions.
+
+JavaScript Display Possibilities
+JavaScript can "display" data in different ways:
+
+Writing into an alert box, using window.alert().
+Writing into the HTML output using document.write().
+Writing into an HTML element, using innerHTML.
+Writing into the browser console, using console.log().
+Using window.alert()
+You can use an alert box to display data:
+
+Example
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+
+<script>
+window.alert(5 + 6);
+</script>
+
+</body>
+</html>

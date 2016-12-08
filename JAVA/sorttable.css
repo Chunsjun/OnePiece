@@ -1,0 +1,15 @@
+@import url('//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/css/bootstrap.min.css');
+@import url('//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/css/bootstrap-theme.min.css');
+body {
+	padding-top:85px;
+	font-family: "Times New Roman", serif;
+	font-size:20px;
+	margin-bottom:300px;
+}
+
+th.num, td.num, th.date, td.date {
+	text-align:right;
+}
+th {
+	cursor:pointer;
+}

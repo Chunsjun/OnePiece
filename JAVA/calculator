@@ -1,0 +1,123 @@
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.TextField;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Main {
+	public static void main(String[] args) {
+
+		
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setLayout(new GridBagLayout());
+		GridBagConstraints gbc;
+		Insets insets = new Insets(1, 1, 1, 1); //버튼 간 공백
+
+		JTextField textField = new JTextField();
+		textField.setBounds(0, 0, 40, 40);
+		gbc = new GridBagConstraints(0, 0, 5, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(textField,gbc);
+
+		JButton btnSeven = new JButton("7");
+		gbc = new GridBagConstraints(0, 1, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnSeven, gbc);
+
+		JButton btnEight = new JButton("8");
+		gbc = new GridBagConstraints(1, 1, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnEight, gbc);
+
+		JButton btnNine = new JButton("9");
+		gbc = new GridBagConstraints(2, 1, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnNine, gbc);
+
+		JButton btnPlus = new JButton("+");
+		gbc = new GridBagConstraints(3, 1, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnPlus, gbc);
+
+		JButton btnFour = new JButton("4");
+		gbc = new GridBagConstraints(0, 2, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnFour, gbc);
+
+		JButton btnFive = new JButton("5");
+		gbc = new GridBagConstraints(1, 2, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnFive, gbc);
+
+		JButton btnSix = new JButton("6");
+		gbc = new GridBagConstraints(2, 2, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnSix, gbc);
+
+		JButton btnMinus = new JButton("-");
+		gbc = new GridBagConstraints(3, 2, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnMinus, gbc);
+
+		JButton btnEqual = new JButton("=");
+		gbc = new GridBagConstraints(4, 1, 1, 2, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnEqual, gbc);
+
+		JButton btnOne = new JButton("1");
+		gbc = new GridBagConstraints(0, 3, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnOne, gbc);// (x, 높이, 길이는 2칸을 먹을꺼야, 4번째 숫자는 아래로 몇칸을 먹을꺼야)
+
+		JButton btnTwo = new JButton("2");
+		gbc = new GridBagConstraints(1, 3, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnTwo, gbc);
+
+		JButton btnThree = new JButton("3");
+		gbc = new GridBagConstraints(2, 3, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnThree, gbc);
+
+		JButton btnMul = new JButton("*");
+		gbc = new GridBagConstraints(3, 3, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnMul, gbc);
+
+		JButton btnEnter = new JButton("C");
+		gbc = new GridBagConstraints(4, 3, 1, 2, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnEnter, gbc);
+
+		JButton btnZero = new JButton("0");
+		gbc = new GridBagConstraints(0, 4, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnZero, gbc);
+
+		JButton btnDot = new JButton(".");
+		gbc = new GridBagConstraints(2, 4, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnDot, gbc);
+
+		JButton btnDiv = new JButton("/");
+		gbc = new GridBagConstraints(3, 4, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, insets,
+				0, 0);
+		panel.add(btnDiv, gbc);
+
+		JFrame frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("The first program");
+		frame.setBounds(0, 0, 600, 400);
+		frame.setVisible(true);
+		frame.setSize(500,  300);
+		frame.setContentPane(panel);
+		
+	}
+
+}

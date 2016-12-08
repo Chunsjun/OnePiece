@@ -1,12 +1,14 @@
  #include <stdio.h> 
- #define SIZE 200 
+ #define SIZE 200          
+ 
   void main(){ 
       int a[SIZE]={1},b[3]={0},c[SIZE]={0}; 
       int factorial=100; 
       int i,j,k; 
-    
+     
       for(i=1;i<=factorial;i++){ //팩토리얼 
          b[0]=i; 
+         
          for(j=0;j<2;j++){ //배열 b의 자리올림 
              b[j+1]+=b[j]/10; //10 이상이면 10으로 나눈 몫을 다음 자리로 자리 올림 
              b[j]-=(b[j]/10)*10; //10 이상이면 십의자리를 빼줌 

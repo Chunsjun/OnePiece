@@ -1,0 +1,50 @@
+public class NameCard {
+  String name;
+  String phone;
+  String email;
+  
+  PrintNameCard printNameCard;
+  
+  public void setPrintNameCard(PrintNameCard p) {
+   this.printNameCard = p;
+  }
+  public void print() {
+    printNameCard.print( this );
+  }
+}
+
+
+public class PrintNameCard {
+  public void print( NameCard nc ) {
+   System.out.println("이름:"+nc.name);
+  }
+}
+
+public class PrintNameCard2 {
+  public void print( NameCard nc ) {
+   System.out.println("이름:"+nc.name);
+   System.out.println("전화번호:"+nc.phone);
+   System.out.println("이메일:"+nc.email);      
+  }
+}
+public class NameCard {
+  String name;
+  String phone;
+  String email;
+  
+  PrintNameCard printNameCard;
+  PrintNameCard2 printNameCard2;
+  
+  public void setPrintNameCard(PrintNameCard p) {
+   this.printNameCard = p;
+  }
+  public void print() {
+    printNameCard.print( this );
+  }
+  public void setPrintNameCard2(PrintNameCard2 p) {
+   this.printNameCard2 = p;
+  }
+  public void print2() {
+    printNameCard2.print( this );
+  }
+}

@@ -1,0 +1,18 @@
+JavaScript Syntax
+❮ PreviousNext ❯
+JavaScript syntax is the set of rules, how JavaScript programs are constructed.
+
+JavaScript Programs
+A computer program is a list of "instructions" to be "executed" by the computer.
+
+In a programming language, these program instructions are called statements.
+
+JavaScript is a programming language.
+
+JavaScript statements are separated by semicolons.
+
+Example
+var x = 5;
+var y = 6;
+var z = x + y;
+Try it Yourself »

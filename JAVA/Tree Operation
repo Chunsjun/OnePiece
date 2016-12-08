@@ -1,0 +1,216 @@
+/**
+Finding Size of the Tree
+*/
+protected int size(Node n)
+{
+	if(n == null)
+	{
+		return 0;
+	}
+	return(size(n.left) + 1 + size(n.right));
+}
+
+/**
+ * Find the larger tree of 2 trees
+*/
+protected void findLarger(Node n1, Node n2)
+{
+	int s1 = size(n1);
+	int s2 = size(n2);
+	
+	if(s1>s2)
+	{
+		System.out.println("Tree1 is larger");	
+	}
+	else if(s1>s2)
+	{
+		System.out.println("Tree2 is larger");	
+	}
+	else
+	{
+		System.out.println("Both are equal");
+	}
+}
+
+/**
+ * Build a BST
+*/
+Node root = null;
+protected static int buildTree(Node n, int data)
+{
+	if(root == null)
+	{
+		n = newNode(num);
+		root = n;
+	}
+	else
+	{
+		if(data > n.data)
+		{
+			buildTree(n.right, data);
+		}
+		else
+		{
+			buildTree(n.left, data);
+		}
+	}	
+}
+
+/** 
+ * LCA: Least Common Ancestor of a BST
+*/
+protected Node LCA(Node root, int v1, int v2)
+{
+	if(root == null)
+	{
+		return;
+	}
+	else if(v1>root.data && v2>root.data)
+	{
+		LCA(root.right, v1, v2);
+	}
+	else if(v1<root.data && v2<root.data)
+	{
+		LCA(root.left, v1, v2);
+	}
+	else
+		return root;
+}
+
+/**
+ * Iterative LCA
+*/
+protected Node LCA(Node root, int v1, int v2)
+{
+	if(root == null)
+	{
+		return;
+	}
+	
+	Node temp = root;
+	
+	while(temp != null)
+	{
+		int v = root.data;
+		if(v > v1 && v > v2)
+		{
+			temp = temp.left;
+		}
+		else if(v<v1 && v<v2)
+		{
+			temp = temp.right;
+		}
+		else 
+		{
+			return temp;
+		}
+	}
+	
+	return null;
+}
+
+/**
+ * Delete a Node
+*/
+protected void delNode(Node root)
+{
+	if(root == null)
+	{
+		return;
+	}
+	else
+	{
+		return(delNode(root.left) && delNode(root.right));
+	}
+	delete root;
+}
+
+/*
+*/
+protected int maxDepth(Node root, int ld, int rd)
+{
+	if(root == null)
+	{
+		return 0;
+	}
+	
+	ld += maxDepth(root.left);
+	rd += maxDepth(root.right);
+	
+	return(max(ld,rd) + 1);
+}
+
+/**
+ * Min Value
+*/
+protected Node minValue(Node root)
+{
+	if(root == null)
+	{
+		return 0;
+	}
+	
+	Node temp = root;
+	
+	while(temp.left != null)
+	{
+		temp = temp.left;
+	}
+	return temp;
+}
+
+/**
+ * Max Value Recursive
+*/
+protected Node minValue(Node root)
+{
+	if(root == null)
+	{
+		return null;
+	}
+	else if(n.left == null)
+	{
+		return n;
+	}
+	else
+	{
+		minValue(root.left);
+	}
+}
+
+/**
+ * Max Value
+*/
+protected Node maxValue(Node root)
+{
+	if(root == null)
+	{
+		return null;
+	}
+	else(root.right == null)
+	{
+		return root;
+	}
+	else
+	{
+		maxValue(root.right);
+	}
+}
+
+/**
+ * Iterative Max Value
+*/
+protected Node maxValue(Node root)
+{
+	if(root == null)
+	{
+		return null;
+	}
+	Node temp = root;
+	while(temp.right != null)
+	{
+		temp = temp.right;
+	}
+	
+	return temp;
+}

@@ -1,0 +1,56 @@
+Getting Started
+
+ 
+
+
+ One of the difficult things about getting started with Java is installing everything you need. Even before you write a single line of code, the headaches begin! Hopefully, the following sections will make life easier for you.We're going to write all our code using a free piece of software called NetBeans. This is one of the most popular IDEs (Interface Development Environment) in the world for writing Java programmes. You'll see what it looks like shortly. But before NetBeans will work, it needs you to install the necessary Java components and files. First up is something called the Java Virtual Machine.
+
+ 
+
+The Java Virtual Machine
+
+Java is platform independent. This means that it will run on just about any operating system. So whether your computer runs Windows, Linux, Mac OS, it's all the same to Java! The reason it can run on any operating system is because of the Java Virtual Machine. The Virtual Machine is a programme that processes all your code correctly. So you need to install this programme (Virtual Machine) before you can run any Java code.
+
+Java is owned by a company called Oracle, so you need to head over to Oracle's website to get the Java Virtual Machine, also known as the Java Runtime Environment (JRE). Try this page first:
+
+http://java.com/en/download/index.jsp
+
+You can check to see if you already have the JRE on your computer by clicking the link "Do I have Java?". You'll find this link under the big Download button at the top of the page. (Unless Oracle have changed things around, again!) When you click the link, your computer will be scanned for the JRE. You will then be told whether you have it or not. If not, you'll be given the opportunity to download and install it.
+
+Or you could just head over to this page:
+
+http://java.com/en/download/manual.jsp
+
+The "manual" in the above links means "manual download". The page gives you download links and instructions for a wide variety of operating systems.
+
+After downloading and installing, you may need to restart your computer. When you do, you will have the Java Virtual Machine.
+
+
+The Java Software Development Kit
+
+At this stage, you still can't write any programmes. The only thing you've done is to install software so that Java programmes can be run on your computer. To write code and test it out, you need something called a Software Development kit.
+
+Java's Software Development Kit can currently be downloaded from here:
+
+http://www.oracle.com/technetwork/java/index.html
+
+The one we're going to be using is called Java SE. (The SE stands for Standard Edition.). Click on that link in the Top Downloads on the right. You'll then find yourself on a page with a bewildering list of options to download. Because we're going to be using NetBeans, locate this:
+
+JDK 8 with NetBeans
+
+Click the Download link to be taken to yet another page. Locate the link for your operating system. A word of warning, though - this download will be big, at over 290 megabytes at the time of writing for a 64 bit Windows computer! Once you've downloaded the JDK and NetBeans, install it on your computer.
+
+We're going to be using NetBeans to write our code. Before launching the software, however, here's how things work in the world of Java.
+
+ 
+
+How things work in Java
+
+You write the actual code for your programmes in a text editor. (In NetBeans, there's a special area for you to write code.) The code is called source code, and is saved with the file extension .java. A programme called Javac is then used to turn the source code into Java Byte Code. This is known as compiling. After Javac has finished compiling the Java Byte Code, it creates a new file with the extension .class. (At least, it does if no errors are detected.) Once the class file has been created, it can be run on the Java Virtual Machine. So:
+
+Create source code with the extension .java
+Use Javac to create (compile) a file ending in .class
+Run the compiled class
+NetBeans handles all the creating and compiling for you. Behind the scenes, though, it takes your sources code and creates the java file. It will launch Javac and compile the class file. NetBeans can then run your programme inside its own software. This saves you the hassle of opening up a terminal window and typing long strings of commands.
+
+Now that you have a general idea of how Java works, launch your NetBeans software. Then click the link below to go to continue with the lesson.

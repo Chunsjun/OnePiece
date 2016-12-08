@@ -1,0 +1,202 @@
+package com.wooriclient;
+--*
+ 
+ * 
+ --
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import java.awt.Font;
+import javax.swing.border.BevelBorder;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
+public class woorijoin extends JFrame {
+   private JPanel contentPane;
+   private JTextField textField;
+   private JTextField txtId;
+   private JTextField txtId_1;
+   private JTextField txtPw;
+   private JTextField txtPW;
+   private JTextField txtRpw;
+   private JTextField txtRPW;
+   private JTextField txtNick;
+   private JTextField txtNick_1;
+   private JTextField txtName;
+   private JTextField txtName_1;
+   private JTextField txtHp;
+   private JTextField txtHP;
+   private JTextField txtEmail;
+   private JTextField txtEmail_1;
+   private JTextField txtSex;
+   private final ButtonGroup buttonGroup = new ButtonGroup();
+   --*
+    * Launch the application.
+    --
+   public static void main(String[] args) {
+      EventQueue.invokeLater(new Runnable() {
+         public void run() {
+            try {
+               woorijoin frame = new woorijoin();
+               frame.setVisible(true);
+            } catch (Exception e) {
+               e.printStackTrace();
+            }
+         }
+      });
+   }
+   --*
+    * Create the frame.
+    --
+   public woorijoin() {
+      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      setBounds(100, 100, 305, 573);
+      contentPane = new JPanel();
+      contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+      setContentPane(contentPane);
+      contentPane.setLayout(null);
+      
+      JPanel panel = new JPanel();
+      panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+      panel.setBounds(0, 0, 289, 535);
+      contentPane.add(panel);
+      panel.setLayout(null);
+      
+      textField = new JTextField();
+      textField.setEnabled(false);
+      textField.setEditable(false);
+      textField.setFont(new Font("굴림체", Font.BOLD, 18));
+      textField.setText("\uD68C \uC6D0 \uAC00 \uC785");
+      textField.setBounds(97, 21, 116, 31);
+      panel.add(textField);
+      textField.setColumns(10);
+      
+      txtId = new JTextField();
+      txtId.setEnabled(false);
+      txtId.setEditable(false);
+      txtId.setText("ID :");
+      txtId.setBounds(51, 69, 33, 21);
+      panel.add(txtId);
+      txtId.setColumns(10);
+      
+      txtId_1 = new JTextField();
+      txtId_1.setBounds(123, 69, 116, 21);
+      panel.add(txtId_1);
+      txtId_1.setColumns(10);
+      
+      JButton btnIDCheck = new JButton("IDCheck");
+      btnIDCheck.setBounds(123, 100, 116, 23);
+      panel.add(btnIDCheck);
+      
+      txtPw = new JTextField();
+      txtPw.setText("PW :");
+      txtPw.setEnabled(false);
+      txtPw.setEditable(false);
+      txtPw.setColumns(10);
+      txtPw.setBounds(51, 133, 33, 21);
+      panel.add(txtPw);
+      
+      txtPW = new JTextField();
+      txtPW.setColumns(10);
+      txtPW.setBounds(123, 133, 116, 21);
+      panel.add(txtPW);
+      
+      txtRpw = new JTextField();
+      txtRpw.setText("RPW :");
+      txtRpw.setEnabled(false);
+      txtRpw.setEditable(false);
+      txtRpw.setColumns(10);
+      txtRpw.setBounds(51, 172, 45, 21);
+      panel.add(txtRpw);
+      
+      txtRPW = new JTextField();
+      txtRPW.setColumns(10);
+      txtRPW.setBounds(123, 172, 116, 21);
+      panel.add(txtRPW);
+      
+      txtNick = new JTextField();
+      txtNick.setText("Nick :");
+      txtNick.setEnabled(false);
+      txtNick.setEditable(false);
+      txtNick.setColumns(10);
+      txtNick.setBounds(51, 206, 45, 21);
+      panel.add(txtNick);
+      
+      txtNick_1 = new JTextField();
+      txtNick_1.setColumns(10);
+      txtNick_1.setBounds(123, 206, 116, 21);
+      panel.add(txtNick_1);
+      
+      JButton btnNickCheck = new JButton("NickCheck");
+      btnNickCheck.setBounds(123, 238, 116, 23);
+      panel.add(btnNickCheck);
+      
+      txtName = new JTextField();
+      txtName.setText("Name :");
+      txtName.setEnabled(false);
+      txtName.setEditable(false);
+      txtName.setColumns(10);
+      txtName.setBounds(51, 273, 51, 21);
+      panel.add(txtName);
+      
+      txtName_1 = new JTextField();
+      txtName_1.setColumns(10);
+      txtName_1.setBounds(123, 273, 116, 21);
+      panel.add(txtName_1);
+      
+      txtHp = new JTextField();
+      txtHp.setText("HP :");
+      txtHp.setEnabled(false);
+      txtHp.setEditable(false);
+      txtHp.setColumns(10);
+      txtHp.setBounds(51, 311, 33, 21);
+      panel.add(txtHp);
+      
+      txtHP = new JTextField();
+      txtHP.setColumns(10);
+      txtHP.setBounds(123, 311, 116, 21);
+      panel.add(txtHP);
+      
+      txtEmail = new JTextField();
+      txtEmail.setText("Email :");
+      txtEmail.setEnabled(false);
+      txtEmail.setEditable(false);
+      txtEmail.setColumns(10);
+      txtEmail.setBounds(51, 347, 51, 21);
+      panel.add(txtEmail);
+      
+      txtEmail_1 = new JTextField();
+      txtEmail_1.setColumns(10);
+      txtEmail_1.setBounds(123, 347, 116, 21);
+      panel.add(txtEmail_1);
+      
+      txtSex = new JTextField();
+      txtSex.setText("SEX :");
+      txtSex.setEnabled(false);
+      txtSex.setEditable(false);
+      txtSex.setColumns(10);
+      txtSex.setBounds(51, 387, 45, 21);
+      panel.add(txtSex);
+      
+      JRadioButton rBM = new JRadioButton("\uB0A8\uC131");
+      buttonGroup.add(rBM);
+      rBM.setBounds(118, 386, 51, 23);
+      panel.add(rBM);
+      
+      JRadioButton rBF = new JRadioButton("\uC5EC\uC131");
+      buttonGroup.add(rBF);
+      rBF.setBounds(188, 386, 51, 23);
+      panel.add(rBF);
+      
+      JButton btnJoin = new JButton("\uAC00\uC785");
+      btnJoin.setBounds(51, 465, 73, 23);
+      panel.add(btnJoin);
+      
+      JButton btnCancel = new JButton("\uCDE8\uC18C");
+      btnCancel.setBounds(166, 465, 73, 23);
+      panel.add(btnCancel);
+   }
+}

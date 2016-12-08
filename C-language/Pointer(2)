@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    int num;
+    int *ptr;
+    int i;
+    
+    ptr=#
+    
+    printf("100이하의 정수를 입력하시오\n");
+    scanf("%d",ptr);
+    
+    for(i=0;i<*ptr;i++) printf("*");
+    
+    printf("\n"); 
+    
+    system("pause");
+    return 0;
+    
+}

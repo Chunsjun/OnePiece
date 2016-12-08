@@ -1,0 +1,52 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class FileServer {
+
+	public static void main(String[] args) throws IOException{
+		ServerSocket serverSocket = null;
+		try{
+			serverSocket = new ServerSocket(5555);
+		}catch(IOException e){
+			System.out.println("다음의 포트 번호에 연결할 수 없습니다 : 5555");
+			System.exit(1);
+		}
+		System.out.println("서버 시작! ");
+		Socket clientSocket = null;
+		try{
+			clientSocket = serverSocket.accept();
+		}catch(IOException e){
+			System.err.println("accept() 실패 ");
+			System.exit(1);
+		}
+		
+		PrintWriter out = new PrintWriter(clientSocket.getOutputStream(),true);
+		BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+		
+		String inputLine, outputLine;
+		
+		
+		outputLine ="접속한 것을 환영한다 후후후\n 파일명을 선택해주세요~ ";
+		out.println(outputLine);
+		
+		inputLine = in.readLine();
+		System.out.println("클라이언트 요청 :"+ inputLine);
+		
+		BufferedReader fin = new BufferedReader(new FileReader(inputLine));
+		int i=0;
+		while((i=fin.read())!=-1){
+			
+			out.write(i);
+			System.out.print((char)i );
+		}
+		out.flush();
+		
+		System.out.println("\n파일전송 완료~");
+	}
+
+}

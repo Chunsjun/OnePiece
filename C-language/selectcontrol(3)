@@ -1,0 +1,19 @@
+include <stdio.h>
+
+int main()
+{
+int num;
+char pet1, pet2, pet3;
+printf("1.dog\n"2.cat\n"3.chick\n");
+printf("what do you know: ");
+scanf("%d", &num);
+if(num==1)
+printf("dog");
+else if(num==2)
+printf("cat");
+else if(num==3)
+printf("chick");
+else
+printf("i don't know");
+return 0;
+}

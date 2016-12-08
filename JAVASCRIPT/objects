@@ -1,0 +1,115 @@
+JavaScript Objects
+❮ PreviousNext ❯
+Real Life Objects, Properties, and Methods
+In real life, a car is an object.
+
+A car has properties like weight and color, and methods like start and stop:
+
+Object	Properties	Methods
+	
+car.name = Fiat
+
+car.model = 500
+
+car.weight = 850kg
+
+car.color = white	
+car.start()
+
+car.drive()
+
+car.brake() 
+
+car.stop()
+All cars have the same properties, but the property values differ from car to car.
+
+All cars have the same methods, but the methods are performed at different times.
+
+JavaScript Objects
+You have already learned that JavaScript variables are containers for data values.
+
+This code assigns a simple value (Fiat) to a variable named car:
+
+var car = "Fiat";
+Try it Yourself »
+Objects are variables too. But objects can contain many values.
+
+This code assigns many values (Fiat, 500, white) to a variable named car:
+
+var car = {type:"Fiat", model:"500", color:"white"};
+Try it Yourself »
+The values are written as name:value pairs (name and value separated by a colon).
+
+JavaScript objects are containers for named values.
+
+Object Properties
+The name:values pairs (in JavaScript objects) are called properties.
+
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+Property	Property Value
+firstName	John
+lastName	Doe
+age	50
+eyeColor	blue
+Object Methods
+Methods are actions that can be performed on objects.
+
+Methods are stored in properties as function definitions.
+
+Property	Property Value
+firstName	John
+lastName	Doe
+age	50
+eyeColor	blue
+fullName	function() {return this.firstName + " " + this.lastName;}
+JavaScript objects are containers for named values called properties or methods.
+
+Object Definition
+You define (and create) a JavaScript object with an object literal:
+
+Example
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+Try it Yourself »
+Spaces and line breaks are not important. An object definition can span multiple lines:
+
+Example
+var person = {
+    firstName:"John",
+    lastName:"Doe",
+    age:50,
+    eyeColor:"blue"
+};
+Try it Yourself »
+Accessing Object Properties
+You can access object properties in two ways:
+
+objectName.propertyName
+or
+
+objectName["propertyName"]
+Example1
+person.lastName;
+Try it Yourself »
+Example2
+person["lastName"];
+Try it Yourself »
+Accessing Object Methods
+You access an object method with the following syntax:
+
+objectName.methodName()
+Example
+name = person.fullName();
+Try it Yourself »
+If you access the fullName method, without (), it will return the function definition:
+
+Example
+name = person.fullName;
+Try it Yourself »
+A method is actually a function definition stored as a property value.
+
+Do Not Declare Strings, Numbers, and Booleans as Objects!
+When a JavaScript variable is declared with the keyword "new", the variable is created as an object:
+
+var x = new String();        // Declares x as a String object
+var y = new Number();        // Declares y as a Number object
+var z = new Boolean();       // Declares z as a Boolean object

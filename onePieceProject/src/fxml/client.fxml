@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="566.0" prefWidth="687.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RootControll">
+   <children>
+      <Button fx:id="btn" layoutX="209.0" layoutY="262.0" mnemonicParsing="false" onAction="#startstop" prefHeight="16.0" prefWidth="93.0" text="시작">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+      <TextField fx:id="textdata" layoutX="18.0" layoutY="194.0" prefHeight="44.0" prefWidth="345.0"/>
+      <Button fx:id="send" disable="true" layoutX="367.0" layoutY="194.0" mnemonicParsing="false" onAction="#sendbtn" prefHeight="38.0" prefWidth="93.0" text="전송">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="ta" editable="false" layoutX="17.0" layoutY="8.0" prefHeight="170.0" prefWidth="443.0"/>
+      <TextField fx:id="nickname" layoutX="89.0" layoutY="262.0" prefHeight="29.0" prefWidth="102.0" disable="true"/>
+      <Label layoutX="31.0" layoutY="267.0" text="닉네임" />
+      <Label fx:id="state" layoutX="386.0" layoutY="277.0"/>
+      <ListView fx:id="listperson" layoutX="472.0" layoutY="38.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="526.0" layoutY="14.0" text="참여인원" />
+      <Label fx:id="person" layoutX="591.0" layoutY="14.0" text="0명" />
+      <Canvas fx:id="can" height="225.0" layoutX="29.0" layoutY="312.0" width="453.0" />
+      <TextField fx:id="bingo" layoutX="496.0" layoutY="489.0" prefHeight="29.0" prefWidth="102.0" />
+      <Button fx:id="bingobtn" layoutX="616.0" layoutY="489.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="52.0" text="정답" />
+      <Label fx:id="an" layoutX="528.0" layoutY="457.0"  />
+   </children>
+</AnchorPane>

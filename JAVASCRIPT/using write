@@ -1,0 +1,33 @@
+Using document.write()
+For testing purposes, it is convenient to use document.write():
+
+Example
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+
+<script>
+document.write(5 + 6);
+</script>
+
+</body>
+</html>
+Try it Yourself »
+Using document.write() after an HTML document is fully loaded, will delete all existing HTML:
+
+Example
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+
+<button onclick="document.write(5 + 6)">Try it</button>
+
+</body>
+</html>
+Try it Yourself »

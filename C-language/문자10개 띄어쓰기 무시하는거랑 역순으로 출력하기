@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(void)
+{
+    char arr[10];
+    int idx=0;
+     
+    while(idx != 10){
+        scanf(" %c",&arr[idx]);
+        idx++;
+    }
+     
+    idx--;
+     
+    while(idx != -1){
+        printf("%c",arr[idx]);
+        idx--;
+        }
+     
+     
+     
+    system("pause");
+    return 0;
+}

@@ -6,7 +6,7 @@ public class QuickSort {
 		}
 		System.out.println();
 	}
-	
+	 
 	/**
 	 * @param args
 	 */

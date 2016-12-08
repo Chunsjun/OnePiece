@@ -1,0 +1,135 @@
+JavaScript Operators
+❮ PreviousNext ❯
+Example
+Assign values to variables and add them together:
+
+var x = 5;         // assign the value 5 to x
+var y = 2;         // assign the value 2 to y
+var z = x + y;     // assign the value 7 to z (x + y)
+Try it Yourself »
+JavaScript Arithmetic Operators
+Arithmetic operators are used to perform arithmetic on numbers (literals or variables).
+
+Operator	Description
++	Addition
+-	Subtraction
+*	Multiplication
+/	Division
+%	Modulus
+++	Increment
+--	Decrement
+The addition operator (+) adds numbers:
+
+Adding
+var x = 5;
+var y = 2;
+var z = x + y;
+Try it Yourself »
+The multiplication operator (*) multiplies numbers.
+
+Multiplying
+var x = 5;
+var y = 2;
+var z = x * y;
+Try it Yourself »
+You will learn more about arithmetic in the next chaper.
+
+JavaScript Assignment Operators
+Assignment operators assign values to JavaScript variables.
+
+Operator	Example	Same As
+=	x = y	x = y
++=	x += y	x = x + y
+-=	x -= y	x = x - y
+*=	x *= y	x = x * y
+/=	x /= y	x = x / y
+%=	x %= y	x = x % y
+<<=	x <<= y	x = x << y
+>>=	x >>= y	x = x >> y
+>>>=	x >>>= y	x = x >>> y
+&=	x &= y	x = x & y
+^=	x ^= y	x = x ^ y
+|=	x |= y	x = x | y
+The assignment operator (=) assigns a value to a variable.
+
+Assignment
+var x = 10;
+Try it Yourself »
+The addition assignment operator (+=) adds a value to a variable.
+
+Assignment
+var x = 10;
+x += 5;
+Try it Yourself »
+JavaScript String Operators
+The + operator can also be used to add (concatenate) strings.
+
+When used on strings, the + operator is called the concatenation operator.
+
+Example
+txt1 = "John";
+txt2 = "Doe";
+txt3 = txt1 + " " + txt2;
+The result of txt3 will be:
+
+John Doe
+Try it Yourself »
+The += assignment operator can also be used to add (concatenate) strings:
+
+Example
+txt1 = "What a very ";
+txt1 += "nice day";
+The result of txt1 will be:
+
+What a very nice day
+Try it Yourself »
+Adding Strings and Numbers
+Adding two numbers, will return the sum, but adding a number and a string will return a string:
+
+Example
+x = 5 + 5;
+y = "5" + 5;
+z = "Hello" + 5;
+The result of x, y, and z will be:
+
+10
+55
+Hello5
+Try it Yourself »
+The rule is: If you add a number and a string, the result will be a string!
+
+JavaScript Comparison Operators
+Operator	Description
+==	equal to
+===	equal value and equal type
+!=	not equal
+!==	not equal value or not equal type
+>	greater than
+<	less than
+>=	greater than or equal to
+<=	less than or equal to
+?	ternary operator
+JavaScript Logical Operators
+Operator	Description
+&&	logical and
+||	logical or
+!	logical not
+Comparison and logical operators are described in the JS Comparisons chapter.
+
+JavaScript Type Operators
+Operator	Description
+typeof	Returns the type of a variable
+instanceof	Returns true if an object is an instance of an object type
+Type operators are described in the JS Type Conversion chapter.
+
+JavaScript Bitwise Operators
+Bit operators work on 32 bits numbers. Any numeric operand in the operation is converted into a 32 bit number. The result is converted back to a JavaScript number.
+
+Operator	Description	Example	Same as	Result	Decimal
+&	AND	x = 5 & 1	0101 & 0001	0001	 1
+|	OR	x = 5 | 1	0101 | 0001	0101	 5
+~	NOT	x = ~ 5	 ~0101	1010	 10
+^	XOR	x = 5 ^ 1	0101 ^ 0001	0100	 4
+<<	Zero fill left shift	x = 5 << 1	0101 << 1	1010	 10
+>>	Signed right shift	x = 5 >> 1	0101 >> 1	0010	  2
+>>>	Zero fill right shift

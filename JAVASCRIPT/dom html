@@ -1,0 +1,93 @@
+JavaScript HTML DOM - Changing HTML
+❮ PreviousNext ❯
+The HTML DOM allows JavaScript to change the content of HTML elements.
+
+Changing the HTML Output Stream
+JavaScript can create dynamic HTML content:
+
+Date: Thu Dec 08 2016 13:00:34 GMT+0900 (대한민국 표준시)
+
+In JavaScript, document.write() can be used to write directly to the HTML output stream:
+
+Example
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+document.write(Date());
+</script>
+
+</body>
+</html>
+Try it Yourself »
+Never use document.write() after the document is loaded. It will overwrite the document.
+
+Changing HTML Content
+The easiest way to modify the content of an HTML element is by using the innerHTML property.
+
+To change the content of an HTML element, use this syntax:
+
+document.getElementById(id).innerHTML = new HTML
+This example changes the content of a <p> element:
+
+Example
+<html>
+<body>
+
+<p id="p1">Hello World!</p>
+
+<script>
+document.getElementById("p1").innerHTML = "New text!";
+</script>
+
+</body>
+</html>
+Try it Yourself »
+This example changes the content of an <h1> element:
+
+Example
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="header">Old Header</h1>
+
+<script>
+var element = document.getElementById("header");
+element.innerHTML = "New Header";
+</script>
+
+</body>
+</html>
+Try it Yourself »
+Example explained:
+
+The HTML document above contains an <h1> element with id="header"
+We use the HTML DOM to get the element with id="header"
+A JavaScript changes the content (innerHTML) of that element
+Changing the Value of an Attribute
+To change the value of an HTML attribute, use this syntax:
+
+document.getElementById(id).attribute=new value
+This example changes the value of the src attribute of an <img> element:
+
+Example
+<!DOCTYPE html>
+<html>
+<body>
+
+<img id="myImage" src="smiley.gif">
+
+<script>
+document.getElementById("myImage").src = "landscape.jpg";
+</script>
+
+</body>
+</html>
+Try it Yourself »
+Example explained:
+
+The HTML document above contains an <img> element with id="myImage"
+We use the HTML DOM to get the element with id="myImage"
+A JavaScript changes the src attribute of that element from "smiley.gif" to "landscape.jpg"

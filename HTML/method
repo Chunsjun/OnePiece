@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chapter 2</title>
+</head>
+<body>
+<h1 id = header">Start Timer: </h1>
+<script>
+var header = document.getElementById('header');
+
+header.onClick = function() {
+setInterval(function () {
+this.innerHTML += '★';
+},1000);
+};
+</script>
+</body>
+</html>

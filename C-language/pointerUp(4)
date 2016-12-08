@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    int arr[5];
+    int *ptr;
+    int i;
+    
+    ptr=arr;
+    
+    
+    printf("정수 다섯 개를 입력하시오\n");
+    for(i=0;i<5;i++)
+    {   
+        scanf("%d",ptr + i);
+        } 
+    for(i=0;i<5;i++)
+    {   
+        if(i%2==0) printf("%d ",ptr[i]);
+        }
+        
+    printf("\n");
+    system("pause");
+    return 0;
+}

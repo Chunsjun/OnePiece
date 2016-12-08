@@ -1,0 +1,40 @@
+JavaScript HTML DOM Node List
+❮ PreviousNext ❯
+A node list is a collection of nodes
+
+HTML DOM Node List
+The getElementsByTagName() method returns a node list. A node list is an array-like collection of nodes.
+
+The following code selects all <p> nodes in a document:
+
+Example
+var x = document.getElementsByTagName("p");
+
+The nodes can be accessed by an index number. To access the second <p> node you can write:
+
+y = x[1];
+Try it Yourself »
+Note: The index starts at 0.
+
+HTML DOM Node List Length
+The length property defines the number of nodes in a node list:
+
+Example
+var myNodelist = document.getElementsByTagName("p");
+document.getElementById("demo").innerHTML = myNodelist.length;
+Try it Yourself »
+Example explained:
+
+Get all <p> elements in a node list
+Display the length of the node list
+The length property is useful when you want to loop through the nodes in a node list:
+
+Example
+Change the background color of all <p> elements in a node list:
+
+var myNodelist = document.getElementsByTagName("p");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+    myNodelist[i].style.backgroundColor = "red";
+}
+Try it Yourself »

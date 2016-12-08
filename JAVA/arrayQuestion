@@ -1,0 +1,46 @@
+public class ArraysQ { 
+ 
+ 
+ 	public double percentEven(int[] newArray){ 
+ 		double count=0; 
+ 		for (int i=0;i<newArray.length;i++){ 
+ 			if (newArray[i] % 2 == 0)count++; 
+ 		} 
+ 		return count/newArray.length * 100; 
+ 	} 
+ 	 
+ 	public int minGap (int[] array){ 
+   		if (array.length < 2) return 0; 
+   		int min = Math.abs(array[1] - array[0]); 
+   		for (int i=1;i<array.length-1;i++){ 
+     			if (Math.abs(array[i+1] - array[i]) < min)min=Math.abs(array[i+1]-array[i]); 
+ 	} 
+   		return min; 
+ 	} 
+ 	 
+ 	public void swapAll(int[] array1, int[] array2){ 
+ 		int[] temp = new int[array1.length]; 
+ 		for (int i=0; i<array1.length; i++){ 
+ 			temp[i] = array1[i]; 
+ 			array1[i] = array2[i]; 
+ 			array2[i] = temp[i]; 
+ 		} 
+ 	} 
+ 	 
+ 	public int[] stretch(int[] array){ 
+ 		int y = 0; 
+ 		int[] newArray = new int[array.length * 2]; 
+ 		for (int i=0; i<array.length; i++, y+=2){ 
+ 			newArray[y+1] = array[i]/2; 
+ 			if (!(array[i] % 2 == 0)){ 
+ 				newArray[y] = array[i]/2 + 1; 
+ 			} else { 
+ 				newArray[y] = array[i]/2; 
+ 			} 
+ 			 
+ 		} 
+ 		return newArray; 
+ 	} 
+ 	 
+ 	 
+ } 

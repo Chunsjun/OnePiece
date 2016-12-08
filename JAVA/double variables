@@ -1,0 +1,35 @@
+The Double Variable
+
+ 
+
+
+ The double variable can hold very large (or small) numbers. The maximum and minimum values are 17 followed by 307 zeros.
+
+The double variable is also used to hold floating point values. A floating point value is one like 8.7, 12.5, 10.1. In other words, it has a "point something" at the end. If you try to store a floating point value in an int variable, NetBeans will underline the faulty code. If you try to run the program, the compiler will throw up an error message.
+
+Let's get some practise using doubles.
+
+Change the int from your previous code to double. So change this:
+
+int first_number, second_number, answer;
+
+to this:
+
+double first_number, second_number, answer;
+
+Now change the values being stored:
+
+first_number = 10.5;
+second_number = 20.8;
+
+Leave the rest of the program as it is. Your coding window should look like this:
+
+Some Java code showing double variables
+
+Run your program again. The output window should look like this:
+
+Output of the addition
+
+Try changing the values stored in first_number and second_number. Use any values you like. Run your program and see what happens.
+
+In the next part, you'll learn about two more Java variable types: short and float.

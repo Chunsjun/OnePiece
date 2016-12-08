@@ -1,0 +1,73 @@
+This chapter covers all the basic I/O functions available in Python. For more functions, please refer to standard Python documentation.
+
+Printing to the Screen
+The simplest way to produce output is using the print statement where you can pass zero or more expressions separated by commas. This function converts the expressions you pass into a string and writes the result to standard output as follows −
+
+#!/usr/bin/python
+
+print "Python is really a great language,", "isn't it?"
+This produces the following result on your standard screen −
+
+Python is really a great language, isn't it?
+Reading Keyboard Input
+Python provides two built-in functions to read a line of text from standard input, which by default comes from the keyboard. These functions are −
+
+raw_input
+
+input
+
+The raw_input Function
+The raw_input([prompt]) function reads one line from standard input and returns it as a string (removing the trailing newline).
+
+#!/usr/bin/python
+
+str = raw_input("Enter your input: ");
+print "Received input is : ", str
+This prompts you to enter any string and it would display same string on the screen. When I typed "Hello Python!", its output is like this −
+
+Enter your input: Hello Python
+Received input is :  Hello Python
+The input Function
+The input([prompt]) function is equivalent to raw_input, except that it assumes the input is a valid Python expression and returns the evaluated result to you.
+
+#!/usr/bin/python
+
+str = input("Enter your input: ");
+print "Received input is : ", str
+This would produce the following result against the entered input −
+
+Enter your input: [x*5 for x in range(2,10,2)]
+Recieved input is :  [10, 20, 30, 40]
+Opening and Closing Files
+Until now, you have been reading and writing to the standard input and output. Now, we will see how to use actual data files.
+
+Python provides basic functions and methods necessary to manipulate files by default. You can do most of the file manipulation using a file object.
+
+The open Function
+Before you can read or write a file, you have to open it using Python's built-in open() function. This function creates a file object, which would be utilized to call other support methods associated with it.
+
+Syntax
+file object = open(file_name [, access_mode][, buffering])
+Here are parameter details:
+
+file_name: The file_name argument is a string value that contains the name of the file that you want to access.
+
+access_mode: The access_mode determines the mode in which the file has to be opened, i.e., read, write, append, etc. A complete list of possible values is given below in the table. This is optional parameter and the default file access mode is read (r).
+
+buffering: If the buffering value is set to 0, no buffering takes place. If the buffering value is 1, line buffering is performed while accessing a file. If you specify the buffering value as an integer greater than 1, then buffering action is performed with the indicated buffer size. If negative, the buffer size is the system default(default behavior).
+
+Here is a list of the different modes of opening a file −
+
+Modes	Description
+r	Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.
+rb	Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.
+r+	Opens a file for both reading and writing. The file pointer placed at the beginning of the file.
+rb+	Opens a file for both reading and writing in binary format. The file pointer placed at the beginning of the file.
+w	Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
+wb	Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
+w+	Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
+wb+	Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
+a	Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
+ab	Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
+a+	Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+ab+	Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.

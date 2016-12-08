@@ -1,0 +1,80 @@
+More Java Class Methods
+
+ 
+
+
+ 
+
+So we now have a student name and an exam name. Both are stored in the field names in the StudentResults class. We can now add an exam score.
+
+Add the following new method to your class, just after your examName method:
+
+A new method added to the java class
+
+This new method has the name examScore, with an int variable called aScore between its round brackets. It's set to return a String value. The method itself just combines the score with the string " out of 50". So if the value in aScore is 30, the text "30 out of 50" will be stored in the Exam_Score field.
+
+In your ExamDetails class, add the following line:
+
+String score = aStudent.examScore(30);
+
+So we call the new examScore method and hand it a value of 30. The value in the Exam_Score field is returned, and then stored in a string variable that we've called score.
+
+Add a new print line method so that your code looks like ours below:
+
+What your java Main method should look like now
+
+When the program is run, the Output window now looks like this:
+
+Output window showing the results of the code
+
+So we have the student name, the exam name, and the score out of 50. We can now add a grade to the output.
+
+We'll use a single letter for the grade: A, B, C, D, or E. If the students gets 41 or over, we'll an award an A; if the score is between 31 and 40, the grade will be B; for a score of 21 to 30 a C grade will be awarded; a D grade is between 11 and 20; and an E is for scores between 0 and 10.
+
+Add the following method to calculate the above grades (add it to your StudentResults class):
+
+A new java method to the exam grade
+
+Notice that this method is private. Just like field variables, making a method private means it can only be seen inside of this class. It can't be seen by the ExamDetails class.
+
+To get the grade, we'll set up another method inside of the StudentResults class. We'll use this to get the grade. Add the following method just above the getGrade method (though you can add it below, if you prefer: it doesn't make any difference to Java!):
+
+String examGrade(int aScore) {
+
+Exam_Grade = this.getGrade( aScore) ;
+return Exam_Grade;
+}
+
+This is the method we'll call from the ExamDetails class, rather than the getGrade method. The name of this new method is examGrade, and again we're passing in the student's score. Look at this line, though:
+
+Exam_Grade = this.getGrade( aScore );
+
+The getGrade method is being called, here, and we're passing it the score that was handed over. Calling one method from another is standard practice, and it allows you to simplify your code. The alternative is to have very long methods that are hard to read.
+
+Another thing to notice in the line above is the Java keyword this. The this keyword means "this class", rather than another class that may have the same method name. It avoids any confusion. It's strictly not necessary, and we could have left it out. The method call would still work without it:
+
+Exam_Grade = getGrade( aScore );
+
+The end result, though, is still the same: we're storing something in the Exam_Grade field variable, and that something will be the text "Grade is" plus a grade letter.
+
+Add the following line to your ExamDetails class, to test out your new methods:
+
+String grade = aStudent.examGrade(30);
+
+This line hands a value of 30 over to the examGrade method. The value in the Exam_Grade field variable is then returned, and stored in a variable called grade.
+
+With a print line, your ExamDetails class should look like this:
+
+Getting the exam grade
+
+Run your program to see the Output window:
+
+Output window
+
+If your program is not working properly, here's the full code for the StudentResults class:
+
+Full Java class code A
+
+Full Java class code  B
+
+In the next lesson, you'll learn about Method Overloading.

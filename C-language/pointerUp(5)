@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+double updown(double ptr)
+{   
+    ptr=10*ptr+0.5;
+    return floor(ptr)/10;
+}
+int main(void)
+{
+    double arr[5];
+    double *ptr;
+    int i;
+    
+    ptr=arr;
+    
+    printf("실수 다섯 개를 입력하시오\n");
+    for(i=0;i<5;i++)
+    {   
+        scanf("%lf",ptr+i);
+        
+    }
+    for(i=0;i<5;i++)
+    {   
+        printf("%.1f ",updown(*ptr));
+        ptr++;
+    }
+    system("pause");
+    return 0;
+}

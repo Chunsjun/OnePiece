@@ -1,0 +1,103 @@
+package com.goit.gojavaonline.module6.task1.module5Hw; 
+ 
+ 
+ 
+ 
+ import java.util.Scanner; 
+ 
+ 
+ 
+ 
+ public class ArrayRunner { 
+ 
+ 
+ 
+ 
+     private static Scanner scanner = new Scanner(System.in); 
+ 
+ 
+ 
+ 
+     public static void main(String[] args) throws NegativeArraySizeException { 
+ 
+ 
+         System.out.println("Enter array length: "); 
+         int size = scanner.nextInt(); 
+ 
+ 
+ 
+ 
+         try { 
+             if (size < 0) 
+                 throw new NegativeArraySizeException(); 
+ 
+ 
+ 
+ 
+         } catch (NegativeArraySizeException e) { 
+             System.out.println("Array length cannot be negative!!"); 
+             System.out.println("Try again: "); 
+             int size2 = scanner.nextInt(); 
+             NegativeElement(size2); 
+         } 
+ 
+ 
+         if (size > 0) { 
+             PositiveElement(size); 
+         } 
+     } 
+ 
+ 
+ 
+ 
+     private static void NegativeElement(int size2) { 
+ 
+ 
+ 
+ 
+         int[] array1 = new int[size2]; 
+         Array array = new Array(array1); 
+ 
+ 
+         System.out.println("Enter array elements: "); 
+ 
+ 
+         for (int i = 0; i < size2; i++) { 
+ 
+ 
+             array1[i] = scanner.nextInt(); 
+         } 
+         System.out.println("New array:" + array); 
+         System.out.println("Minimum is: " + array.findMinimum()); 
+         System.out.println("Maximum is: " + array.findMaximum()); 
+         array.sort(); 
+         System.out.println("Sorted array: " + array); 
+     } 
+ 
+ 
+ 
+ 
+     private static void PositiveElement(int size) { 
+ 
+ 
+         int[] array1 = new int[size]; 
+         Array array = new Array(array1); 
+ 
+ 
+         System.out.println("Enter array elements: "); 
+ 
+ 
+         for (int i = 0; i < size; i++) { 
+             array1[i] = scanner.nextInt(); 
+         } 
+         System.out.println("New array:" + array); 
+         System.out.println("Minimum is: " + array.findMinimum()); 
+         System.out.println("Maximum is: " + array.findMaximum()); 
+         array.sort(); 
+         System.out.println("Sorted array: " + array); 
+     } 
+ 
+ 
+ 
+ 
+ } 

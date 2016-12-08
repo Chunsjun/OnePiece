@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    int num;
+    int *ptr;
+    
+    ptr=#
+    
+    printf("정수 한 개를 입력하시오\n");
+    scanf("%d",ptr);
+    
+    
+    printf("%d...%d\n",*ptr/10,*ptr%10); 
+    system("pause");
+    return 0;
+}

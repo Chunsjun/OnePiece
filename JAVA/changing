@@ -1,0 +1,102 @@
+
+ 
+
+ 
+
+COMPUTER COURSES
+
+Home
+Beginners Computing
+Word 2007 to 2010
+Word 2000 to 2003
+Excel 2007 to 2010
+Excel to 2003
+Web Design
+Visual Basic .NET
+Beginners PHP
+C# .NET
+Java for Beginners
+> BUY THE BOOK OF THIS COURSE <
+ 
+
+
+ 
+
+How to Change the Properties of a Button on a Java Form
+
+Java Calculator Project: 1 2 3 4 5 6 7 8 9 10
+
+
+ 
+
+In the last part, you saw how to add a button to your Java form. In this lesson, you'll see how to change its properties.
+
+Go back to Design view and make sure your button is selected. We can change the text on the button. What we want is a number, one number for each button on the calculator. The text property is used for button text. So locate this property in the properties window. Delete the default and type the number 1 instead:
+
+The Text property of a Java Button
+
+Press the enter key on your keyboard and you should see the text change on your button. It will also be resized:
+
+The button text has changed
+
+You can change the size of the button in the properties window. Locate Horizontal Size and Vertical Size, under the Layout heading:
+
+The Size properties of buttons
+
+Change these values from the default to 50, 30:
+
+The Size properties have been changed
+
+You can also change the font and font size in the properties window. Make sure your button is selected. Now locate the font property. Click the small button to the right of the font row:
+
+The Font property of a Java button
+
+When you click the font button, you should see a dialogue box appear. Change the font size to 14 points, and make it bold:
+
+The Font dialogue box
+
+Your form should now look like this (to see the outline of the panel, just hover your mouse over it):
+
+The font has been changed on the button
+
+You now need to add nine more buttons in the same way, for the numbers 2 to 9, and a 0. You can do this easily by right-clicking a button and selecting Duplicate from the menu that appears. Change each variable name to btnTwo, btnThree, btnFour, etc. Delete the default text, and enter a number instead.
+
+When you're finished, your Navigator area should look like this:
+
+The number buttons in the Navigator area
+
+(Note that the 0 button has the name btnZero.)
+
+If your buttons are in the wrong place, click a button to select it. Hold down your left mouse button. Keep it held down and drag to a new location in the panel. To move all the buttons at once, select the panel and drag it to a new location:
+
+Moving all the buttons at once
+
+Only three more buttons to add: a plus button, an equals button, and a clear button. We'll add these to a panel of their own, and move them to the right of the calculator.
+
+If your form calculator doesn't have any room on the right, you can easily resize it.
+
+Click on just the form, and not the panel or the text field. If you do it right, you should see an orange rectangle surrounding the form. (You can select the JFrame item in the Navigator to select your form.) Now move your mouse to the edges of the form. The mouse pointer should change shape, as in the image below (bottom right):
+
+Resizing the form
+
+Hold down your left mouse button when the pointer changes shape. Now drag to a new size.
+
+Add a panel in the space you've just created:
+
+Add a new panel to the form
+
+Add three buttons to the new panel. Change the variables names to: btnPlus, btnEquals, and btnClear. For the text for the buttons, type a + symbol for the Plus button, a = symbol for equals button, and the word "clear" for the clear button. Change the font to the same as the number buttons, 14 point bold. The size for the plus and equals button should be the same as the number buttons: 50, 30. For the Clear button, change it to 70, 30. Your form should then look like this:
+
+Three more buttons added to the form
+
+The Navigator area of NetBeans should look like this:
+
+Navigator area showing all buttons objects
+
+You can run your form at this stage, just to see what it looks like:
+
+Finished Java form
+
+Looking quite nice, hey! Nothing will happen when you click on the buttons, though. We'll add some code shortly. First, a word about Events.
+
+ 

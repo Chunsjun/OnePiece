@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    double ave;    
+    double arr[10];
+    int i;
+    FILE * fp=fopen("input.txt","rt");
+    if(fp==NULL)
+    {  
+       puts("파일오픈 실패!");
+       return -1;
+    }
+    for(i=0;i<10;i++) fscanf(fp,"%lf ",&arr[i]);
+    for(i=0;i<10;i++) printf("%.2lf ",arr[i]);
+    printf("\n");
+     
+    ave=(arr[0]+arr[9])/2;
+         
+    FILE * fp1=fopen("output.txt","wt");
+    if(fp==NULL)
+    {
+       puts("파일오픈 실패!");
+       return -1;
+    } 
+    fprintf(fp1,"%.1f",ave);
+    system("pause");
+    return 0;
+}

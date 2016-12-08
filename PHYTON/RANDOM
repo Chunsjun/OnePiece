@@ -1,0 +1,56 @@
+Random Number Functions
+Random numbers are used for games, simulations, testing, security, and privacy applications. Python includes following functions that are commonly used.
+
+Function	Description
+choice(seq)
+
+A random item from a list, tuple, or string.
+randrange ([start,] stop [,step])
+
+A randomly selected element from range(start, stop, step)
+random()
+
+A random float r, such that 0 is less than or equal to r and r is less than 1
+seed([x])
+
+Sets the integer starting value used in generating random numbers. Call this function before calling any other random module function. Returns None.
+shuffle(lst)
+
+Randomizes the items of a list in place. Returns None.
+uniform(x, y)
+
+A random float r, such that x is less than or equal to r and r is less than y
+Trigonometric Functions
+Python includes following functions that perform trigonometric calculations.
+
+Function	Description
+acos(x)
+
+Return the arc cosine of x, in radians.
+asin(x)
+
+Return the arc sine of x, in radians.
+atan(x)
+
+Return the arc tangent of x, in radians.
+atan2(y, x)
+
+Return atan(y / x), in radians.
+cos(x)
+
+Return the cosine of x radians.
+hypot(x, y)
+
+Return the Euclidean norm, sqrt(x*x + y*y).
+sin(x)
+
+Return the sine of x radians.
+tan(x)
+
+Return the tangent of x radians.
+degrees(x)
+
+Converts angle x from radians to degrees.
+radians(x)
+
+Converts angle x from degrees to radians.

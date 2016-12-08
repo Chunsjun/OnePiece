@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.mybatis.persistence.mapper">
+	<select id="select" parameterType="java.util.Map" resultType="String">
+		SELECT
+		ID , PW , EMAIL
+		FROM TEST
+		<where>
+			<if test="id != null">
+				ID=#{id}
+			</if>
+			<if test="pw != null">
+				AND PW=#{pw}
+			</if>
+			<if test="email != null">
+				AND EMAIL=#{email}
+			</if>
+		</where>
+	</select>
+	
+	<select id="findPw" parameterType="java.util.Map" resultType="String">
+		SELECT
+		PW
+		FROM TEST
+		WHERE ID=#{id} AND EMAIL=#{email}
+	</select>
+	
+	<select id="findId" parameterType="String" resultType="String">
+		SELECT
+		ID
+		FROM TEST
+		WHERE EMAIL=#{email}
+	</select>
+	
+	<select id="checkId" parameterType="String" resultType="String">
+		SELECT
+		ID
+		FROM TEST
+		WHERE ID=#{id}
+	</select>
+	
+	<insert id="insert" parameterType="java.util.Map">
+		INSERT INTO TEST 
+		(ID, PW, EMAIL) 
+		VALUES 
+		(#{id}, #{pw}, #{email})
+	</insert>
+</mapper>

@@ -1,0 +1,42 @@
+Boolean Values
+
+
+ 
+
+A Boolean value is one with two choices: true or false, yes or no, 1 or 0. In Java, there is a variable type for Boolean values:
+
+boolean user = true;
+
+So instead of typing int or double or string, you just type boolean (with a lower case "b"). After the name of you variable, you can assign a value of either true or false. Notice that the assignment operator is a single equals sign ( = ). If you want to check if a variable "has a value of" something, you need two equal signs ( = =).
+
+Try this simple code:
+
+boolean user = true;
+
+if ( user == true) {
+System.out.println("it's true");
+}
+else {
+System.out.println("it's false");
+}
+
+So the first IF Statement checks if the user variable has a value of true. The else part checks if it is false. You don't need to say "else if ( user = = false)". After all, if something is not true then it's false. So you can just use else: there's only two choices with boolean values.
+
+The only other conditional operator on our lists is the NOT operator. You can use this with boolean values. Have a look at the following code:
+
+boolean user = true;
+
+if ( !user ) {
+System.out.println("it's flase");
+}
+else {
+System.out.println("it's true");
+}
+
+It's almost the same as the other boolean code, except for this line:
+
+if ( !user ) {
+
+This time, we have our NOT operator before the user variable. The NOT operator is a single exclamation mark ( ! ) and it goes before the variable you're tying to test. It's testing for negation, which means that it's testing for the opposite of what the value actually is. Because the user variable is set to true then !user will test for false values. If user was set to false then !user would test for true values. Think of it like this: if something is NOT true then what is it? Or if it's NOT false then what?
+
+In the next part, we'll look at Java Switch Statements.

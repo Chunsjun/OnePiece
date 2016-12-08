@@ -1,0 +1,39 @@
+Coding the Clear Button of our Java Calculator
+
+Java Calculator Project: 1 2 3 4 5 6 7 8 9 10
+
+ 
+
+
+ The only thing left to code for now is the Clear button. For this, we need to clear the total2 variable and set the text in the text field to a blank string.
+
+In Design view, double click your Clear button to create the code stub. Now add these two lines to your Clear button:
+
+total2 = 0;
+txtDisplay.setText("");
+
+Once you've added the lines, you can try your calculator out. Run the program and try adding numbers. You should find that your calculator adds up fine.
+
+ 
+
+
+Exercise
+There is one thing missing, however - a point symbol. At the moment, your calculator can't handle sums like 23.6 + 35.8. So add a point button to your form. Write the code for it. (Hint - it's practically the same code as for your number buttons.)
+
+ 
+
+Exercise
+Set the font property for your text field so that it's 14 point bold
+
+
+When you've completed the above exercises, you calculator should look something like ours:
+
+A completed Java Calculator that can add up
+
+ 
+
+Congratulations - you have now written a Java calculator program! OK, it can only add up, but it's a start.
+
+What we'll do now is to make it subtract, divide and multiply.
+
+ 

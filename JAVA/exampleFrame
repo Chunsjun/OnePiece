@@ -1,0 +1,30 @@
+import java.awt.*;
+
+class Form extends Frame 
+{
+ public Form(String title, int width, int height, boolean visible) {
+  super(title);
+  super.setSize(width, height);  // 프레임 크기
+  
+  Dimension screen =Toolkit.getDefaultToolkit().getScreenSize(); // 모니터화면의 해상도 얻기
+  
+  Dimension f1_size = super.getSize(); // 프레임크기
+  
+  // 프레임이 화면 중앙에 위치하도록 left, top 계산
+  int left = (screen.width / 2) - (f1_size.width / 2);
+  int top = (screen.height / 2) - (f1_size.height /2 );
+  
+  super.setLocation(left,  top); // left, top 설정
+  super.setResizable(true); // 크기조절 불가능 설정
+  super.setVisible(visible);  // 프레임이 보이도록 설정
+ }
+}
+
+ 
+
+public class FormTest {
+ public static void main(String[] args) {
+ 
+  Form f1 = new Form("프레임 예제입니다.", 500, 500, true);
+ }
+}

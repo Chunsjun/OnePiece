@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    int arr[100];    
+    int h=0;//5의 배수 
+    double sum=0;
+    int i;
+    double r=0;//평균
+     
+     
+    for(i=0; i!=100; i++){
+        scanf("%d",&arr[i]);
+        if(arr[i]==0) break;
+        if(arr[i]%5==0){
+        sum=sum+arr[i];
+        h++;
+        }//if
+    }//for 
+    r=sum/h;
+    printf("5의 배수 : %d개\n",h);
+    printf("합계 : %d\n",sum);
+    printf("평균 : %.1f\n",r); 
+     
+   
+     
+    system("pause");
+    return 0;
+}

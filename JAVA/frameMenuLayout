@@ -1,0 +1,109 @@
+import java.awt.EventQueue; 
+2 import java.awt.GridLayout; 
+3 import javax.swing.JFrame; 
+4 import javax.swing.JMenuItem; 
+5 import javax.swing.JPanel; 
+6 import javax.swing.UIManager; 
+7 //import javax.swing.UnsupportedLookAndFeelException; 
+8 import javax.swing.border.EmptyBorder; 
+9 import javax.swing.JMenuBar; 
+10 import javax.swing.JMenu; 
+11 import javax.swing.ImageIcon; 
+12 import javax.swing.JLabel; 
+13 
+ 
+14 @SuppressWarnings("serial") 
+15 public class frameMenuLayout extends JFrame { 
+16 
+ 
+17 	private JPanel contentPane; 
+18 	private JMenu mnFile; 
+19 	private JLabel lblWall; 
+20 
+ 
+ 	/** 
+ 	 * Create the frame. 
+ 	 */ 
+ 	public frameMenuLayout() 
+ 	{ 
+ 		setTitle("Layout MenuItem"); 
+ 		setResizable(false); 
+ 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+ 		setBounds(100, 100, 673, 465); 
+ 		 
+ 		JMenuBar menuBar = new JMenuBar(); 
+ 		setJMenuBar(menuBar); 
+ 		 
+ 		mnFile = new JMenu("File"); 
+ 		mnFile.setIcon(new ImageIcon(frameMenuLayout.class.getResource("/layoutMenuItem/new File.png"))); 
+ 		mnFile.getPopupMenu().setLayout(new GridLayout(0,3)); 
+ 		for(int a = 0;a<15;a++) 
+ 		{ 
+ 			mnFile.add(new JMenuItem("File Baru " + (a+1))); 
+ 		} 
+ 		 
+ 		menuBar.add(mnFile); 
+ 		contentPane = new JPanel(); 
+ 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5)); 
+ 		setContentPane(contentPane); 
+ 		contentPane.setLayout(null); 
+ 		 
+ 		lblWall = new JLabel(""); 
+ 		lblWall.setIcon(new ImageIcon(frameMenuLayout.class.getResource("/layoutMenuItem/wall.png"))); 
+ 		lblWall.setBounds(0, 0, 671, 406); 
+ 		contentPane.add(lblWall); 
+ 		setLocationRelativeTo(null); 
+ 	} 
+ 	 
+ 	/** 
+ 	 * Launch the application. 
+ 	 */ 
+ 	public static void main(String[] args) { 
+ 		EventQueue.invokeLater(new Runnable() { 
+ 			public void run()  
+ 			{ 
+ 				/* GTK Look and Feel for Linux 
+ 				for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())  
+ 				{ 
+ 				    if ("com.sun.java.swing.plaf.gtk.GTKLookAndFeel".equals(info.getClassName()))  
+ 				    {    
+ 				       try  
+ 				       { 
+ 						javax.swing.UIManager.setLookAndFeel(info.getClassName()); 
+ 						frameMenuLayout frame = new frameMenuLayout(); 
+ 						frame.setVisible(true); 
+ 				       }  
+ 				       catch (ClassNotFoundException e)  
+ 				       { 
+ 						// TODO Auto-generated catch block 
+ 						e.printStackTrace(); 
+ 				       }  
+ 				       catch (InstantiationException e)  
+ 				       { 
+ 						// TODO Auto-generated catch block 
+ 						e.printStackTrace(); 
+ 				       }  
+ 				       catch (IllegalAccessException e)  
+ 				       { 
+ 						// TODO Auto-generated catch block 
+ 						e.printStackTrace(); 
+ 				       }  
+ 				       catch (UnsupportedLookAndFeelException e) 
+ 				       { 
+ 						// TODO Auto-generated catch block 
+ 						e.printStackTrace(); 
+ 				       } 
+ 				       break; 
+ 				     }  
+ 				}*/ 
+ 				try { 
+ 					UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"); 
+ 					frameMenuLayout frame = new frameMenuLayout(); 
+ 					frame.setVisible(true); 
+ 				} catch (Exception e) { 
+ 					e.printStackTrace(); 
+ 				} 
+ 			} 
+ 		}); 
+ 	} 
+ } 

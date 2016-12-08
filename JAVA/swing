@@ -1,0 +1,55 @@
+import java.awt.Container;
+ 
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+ 
+public class EventFireGui extends JFrame {
+ 
+ private static final long serialVersionUID = -711163588504124217L;
+ 
+ public EventFireGui() {
+  super("Event Firer");
+  
+  setBounds(100 , 100 , 300 , 200);
+  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  
+  Container contentPane = this.getContentPane();
+  JPanel pane = new JPanel();
+  JButton buttonStart = new JButton("Start");
+  final JTextField textPeriod = new JTextField(5);
+  JLabel labelPeriod = new JLabel("Input period : ");
+  JCheckBox checkboxIsRandom = new JCheckBox("Fire randomly");
+  
+  checkboxIsRandom.addChangeListener(new ChangeListener() {
+   
+   @Override
+   public void stateChanged(ChangeEvent e) {
+    if(((JCheckBox)e.getSource()).isSelected())
+    {
+     textPeriod.setText("Random");
+     textPeriod.setEnabled(false);
+    }else
+    {
+     textPeriod.setText("");
+     textPeriod.setEnabled(true);
+    }
+   }
+  });
+  
+  buttonStart.setMnemonic('S');
+  
+  pane.add(buttonStart);
+  pane.add(labelPeriod);
+  pane.add(textPeriod);
+  pane.add(checkboxIsRandom);
+  contentPane.add(pane);
+  
+  setVisible(true);
+ }
+}

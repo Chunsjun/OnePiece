@@ -1,0 +1,67 @@
+abstract class Animal {                                                                
+ 
+ String name;
+ 
+ abstract void eat();
+ 
+ abstract void moving();
+ 
+}
+ 
+class Tiger extends Animal  {
+ 
+ String name ="호랭이";
+ String eat = "파스타";
+ @Override
+ void eat() {
+ 
+ System.out.println(name+"는 "+eat+"를 먹습니다.");
+ }
+ 
+ @Override
+ void moving() {
+ 
+ System.out.println(name+"는 사자네 집에 갑니다.");
+ 
+ }
+ 
+}
+ 
+ 
+class Fox extends Animal {
+ 
+ 
+ String name ="여우";
+ String eat ="생수";
+ 
+ @Override
+ void eat() {
+ 
+ System.out.println(name+"는 "+eat+"를 먹습니다.");
+ 
+ }
+ 
+ @Override
+ void moving() {
+ 
+ System.out.println(name+"는 늑대네 집에 갑니다.");
+ 
+ }
+}
+public class AnimalTest{
+ 
+ public static void main(String[] args) {
+ 
+ Tiger t = new Tiger();
+ Fox f = new Fox();
+ 
+ t.eat();
+ t.moving();
+ 
+ f.eat();
+ f.moving();
+ 
+ 
+ }
+   
+}

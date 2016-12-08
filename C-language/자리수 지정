@@ -1,0 +1,18 @@
+#include "stdafx.h"
+#include "stdlib.h"
+
+int main()
+{
+	int ch = 'A';
+	double pi2 = 6.283184;
+	printf("%c%c\n", ch, ch);
+	printf("%4c%4c\n", ch, ch);
+	printf("%-4c%-4c\n", ch, ch);
+	printf("%d%d\n", ch, ch);
+	printf("%4d%4d\n", ch, ch);
+	printf("%1d%1d\n", ch, ch);
+	printf("pi2 = %f%f\n", pi2, pi2);
+	printf("pi2 = %4.f\n", pi2);
+	printf("pi2 = %10.3f\n", pi2);
+	printf("pi2 = %10.1f\n", pi2);
+}

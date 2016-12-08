@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+int num;
+scanf("%d", &num);
+if(num%400 == 0)
+{
+printf("윤년");
+}
+else if(num%4==0 && num%100 !=0)
+{
+printf("윤년");
+}
+else
+{
+printf("평년");
+}
+return 0;
+}

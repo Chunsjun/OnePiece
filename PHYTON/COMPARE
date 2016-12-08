@@ -1,0 +1,29 @@
+Python Comparison Operators
+These operators compare the values on either sides of them and decide the relation among them. They are also called Relational operators.
+
+Assume variable a holds 10 and variable b holds 20, then −
+
+[ Show Example ]
+
+Operator	Description	Example
+==	If the values of two operands are equal, then the condition becomes true.	(a == b) is not true.
+!=	If values of two operands are not equal, then condition becomes true.
+<>	If values of two operands are not equal, then condition becomes true.	(a <> b) is true. This is similar to != operator.
+>	If the value of left operand is greater than the value of right operand, then condition becomes true.	(a > b) is not true.
+<	If the value of left operand is less than the value of right operand, then condition becomes true.	(a < b) is true.
+>=	If the value of left operand is greater than or equal to the value of right operand, then condition becomes true.	(a >= b) is not true.
+<=	If the value of left operand is less than or equal to the value of right operand, then condition becomes true.	(a <= b) is true.
+Python Assignment Operators
+Assume variable a holds 10 and variable b holds 20, then −
+
+[ Show Example ]
+
+Operator	Description	Example
+=	Assigns values from right side operands to left side operand	c = a + b assigns value of a + b into c
++= Add AND	It adds right operand to the left operand and assign the result to left operand	c += a is equivalent to c = c + a
+-= Subtract AND	It subtracts right operand from the left operand and assign the result to left operand	c -= a is equivalent to c = c - a
+*= Multiply AND	It multiplies right operand with the left operand and assign the result to left operand	c *= a is equivalent to c = c * a
+/= Divide AND	It divides left operand with the right operand and assign the result to left operand	c /= a is equivalent to c = c / ac /= a is equivalent to c = c / a
+%= Modulus AND	It takes modulus using two operands and assign the result to left operand	c %= a is equivalent to c = c % a
+**= Exponent AND	Performs exponential (power) calculation on operators and assign value to the left operand	c **= a is equivalent to c = c ** a
+//= Floor Division	It performs floor division on operators and assign value to the left operand	c //= a is equivalent to c = c // a

@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int small(int a, int b) {
+    return(a < b) ? a : b;
+ 
+}
+ 
+int big(int a, int b) {
+    return(a > b) ? a : b;
+}
+ 
+int main(void)
+{
+    int i, a, b, cnt=0, sum=0;
+ 
+    scanf_s("%d %d", &a, &b);
+ 
+    for (i = small(a, b); i <= big(a, b); i++) {
+        if (i % 3 == 0 || i % 5 == 0) {
+            cnt++;
+            sum += i;
+ 
+        }
+    }
+    printf("합계 : %d \n", sum);
+        printf("평균 : %.1lf", (float)sum / cnt);
+        system("pause");
+        return 0;
+ 
+}

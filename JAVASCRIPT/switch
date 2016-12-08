@@ -1,0 +1,106 @@
+JavaScript Switch Statement
+❮ PreviousNext ❯
+The switch statement is used to perform different actions based on different conditions.
+
+The JavaScript Switch Statement
+Use the switch statement to select one of many blocks of code to be executed.
+
+Syntax
+switch(expression) {
+    case n:
+        code block
+        break;
+    case n:
+        code block
+        break;
+    default:
+        default code block
+}
+This is how it works:
+
+The switch expression is evaluated once.
+The value of the expression is compared with the values of each case.
+If there is a match, the associated block of code is executed.
+Example
+The getDay() method returns the weekday as a number between 0 and 6. (Sunday=0, Monday=1, Tuesday=2 ..)
+
+Use the weekday number to calculate weekday name:
+
+switch (new Date().getDay()) {
+    case 0:
+        day = "Sunday";
+        break;
+    case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case 6:
+        day = "Saturday";
+}
+The result of day will be:
+
+Thursday
+Try it Yourself »
+The break Keyword
+When JavaScript reaches a break keyword, it breaks out of the switch block.
+
+This will stop the execution of more code and case testing inside the block.
+
+When a match is found, and the job is done, it's time for a break. There is no need for more testing.
+
+A break can save a lot of execution time because it "ignores" the execution of all the rest of the code in the switch block.
+
+It is not necessary to break the last case in a switch block. The block breaks (ends) there anyway.
+
+The default Keyword
+The default keyword specifies the code to run if there is no case match:
+
+Example
+The getDay() method returns the weekday as a number between 0 and 6.
+
+If today is neither Saturday (6) nor Sunday (0), write a default message:
+
+switch (new Date().getDay()) {
+    case 6:
+        text = "Today is Saturday";
+        break; 
+    case 0:
+        text = "Today is Sunday";
+        break; 
+    default: 
+        text = "Looking forward to the Weekend";
+}
+The result of text will be:
+
+Looking forward to the Weekend
+Try it Yourself »
+Common Code and Fall-Through
+Sometimes, in a switch block, you will want different cases to use the same code, or fall-through to a common default.
+
+Note from the next example, that cases can share the same code block, and that the default case does not have to be the last case in a switch block:
+
+Example
+switch (new Date().getDay()) {
+    case 1:
+    case 2:
+    case 3:
+    default: 
+        text = "Looking forward to the Weekend";
+        break; 
+    case 4:
+    case 5:
+        text = "Soon it is Weekend";
+        break; 
+    case 0:
+    case 6:

@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    int arr[10];
+    int i;
+    int *ptr;
+    int h=0,j=0;
+    
+    ptr=arr;
+    
+    printf("10개의 정수를 입력하시오\n");
+    for(i=0;i<10;i++)
+    {   
+        scanf("%d",ptr);
+        ptr++;
+    } 
+    
+    ptr=arr;
+    
+    for(i=0;i<10;i++)
+    {   
+        if((*ptr)%2==0)
+        {  
+            j++;
+            ptr++;
+        }
+        else
+        {
+            h++;
+            ptr++;
+        }
+    }
+    printf("홀수 : %d개\n짝수 : %d개\n",h,j);   
+    system("pause");
+    return 0;
+}

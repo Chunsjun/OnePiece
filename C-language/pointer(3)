@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    int num1, num2, num3;
+    int *ptr1,*ptr2,*ptr3;
+    
+    ptr1=&num1;
+    ptr2=&num2;
+    ptr3=&num3;
+            
+    printf("두 개의 정수를 입력하시오\n");
+    scanf("%d %d",ptr1,ptr2);
+        
+    if(*ptr1>*ptr2)
+    *ptr3=*ptr1-*ptr2;
+    else
+    *ptr3=*ptr2-*ptr1;
+    
+    printf("%d\n",*ptr3); 
+    system("pause");
+    return 0;
+}

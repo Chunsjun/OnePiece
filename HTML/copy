@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chapter 2</title>
+<script>
+var a = {};
+var b = a;
+
+a.value = 10;
+
+alert('a: ' + JSON.stringify(a));
+alert('b: ' + JSON.stringify(b));
+</script>
+</head>
+<body>
+</body>
+</html>

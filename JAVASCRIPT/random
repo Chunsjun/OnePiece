@@ -1,0 +1,47 @@
+JavaScript Random
+❮ PreviousNext ❯
+Math.random()
+Math.random() returns a random number between 0 (inclusive),  and 1 (exclusive):
+
+Example
+Math.random();              // returns a random number
+Try it Yourself »
+Math.random() always returns a number lower than 1.
+
+JavaScript Random Integers
+Math.random() used with Math.floor() can be used to return random integers.
+
+Example
+Math.floor(Math.random() * 10);     // returns a number between 0 and 9
+Try it Yourself »
+Example
+Math.floor(Math.random() * 11);      // returns a number between 0 and 10
+Try it Yourself »
+Example
+Math.floor(Math.random() * 100);     // returns a number between 0 and 99
+Try it Yourself »
+Example
+Math.floor(Math.random() * 101);     // returns a number between 0 and 100
+Try it Yourself »
+Example
+Math.floor(Math.random() * 10) + 1;  // returns a number between 1 and 10
+Try it Yourself »
+Example
+Math.floor(Math.random() * 100) + 1; // returns a number between 1 and 100
+Try it Yourself »
+A Proper Random Function
+As you can see from the examples above, it might be a good idea to create a proper random function to use for all random integer purposes.
+
+This JavaScript function always returns a random number between min (included) and max (excluded):
+
+Example
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+}
+Try it Yourself »
+This JavaScript function always returns a random number between min and max (both included):
+
+Example
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}

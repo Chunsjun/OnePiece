@@ -1,0 +1,62 @@
+JavaScript Object Methods
+❮ PreviousNext ❯
+JavaScript Methods
+JavaScript methods are the actions that can be performed on objects.
+
+A JavaScript method is a property containing a function definition.
+
+Property	Value
+firstName	John
+lastName	Doe
+age	50
+eyeColor	blue
+fullName	function() {return this.firstName + " " + this.lastName;}
+Methods are functions stored as object properties.
+
+Accessing Object Methods
+You create an object method with the following syntax:
+
+methodName : function() { code lines }
+You access an object method with the following syntax:
+
+objectName.methodName()
+You will typically describe fullName() as a method of the person object, and fullName as a property.
+
+The fullName property will execute (as a function) when it is invoked with ().
+
+This example accesses the fullName() method of a person object:
+
+Example
+name = person.fullName();
+Try it Yourself »
+If you access the fullName property, without (), it will return the function definition:
+
+Example
+name = person.fullName;
+Try it Yourself »
+Using Built-In Methods
+This example uses the toUpperCase() method of the String object, to convert a text to uppercase:
+
+var message = "Hello world!";
+var x = message.toUpperCase();
+The value of x, after execution of the code above will be:
+
+HELLO WORLD!
+Adding New Methods
+Adding methods to an object is done inside the constructor function:
+
+Example
+function person(firstName, lastName, age, eyeColor) {
+    this.firstName = firstName;  
+    this.lastName = lastName;
+    this.age = age;
+    this.eyeColor = eyeColor;
+    this.changeName = function (name) {
+        this.lastName = name;
+    };
+}
+The changeName() function assigns the value of name to the person's lastName property.
+
+Now You Can Try:
+myMother.changeName("Doe");
+Try it Yourself »

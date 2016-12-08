@@ -1,0 +1,15 @@
+abstract class A{    //    추상클래스 A임
+    abstract void me();    // 클래스나 메서드에 하나라도 abstact가 붙으면 그 클래스 전부가 추상이 됨
+}
+class B extends A{    // 상속받는 클래스도 추상이 되어야 하지만  그러지 않게 하기 위해서는 추상클래스내의 메서드를 오버라이딩 하면 된다.
+    void me() {    // me()라는 메서드를 오버라이딩을 함으로서 추상이 되는걸 피할 수  있다.
+        System.out.println("abc");    // 호출시 abc 출력
+    }    
+}
+
+class Test{    
+    public static void main(String args[]){
+        A a=new B();    // A클래스 타입이지만 참조하는것은 B클래스의 값이다.
+        a.me();    // B클래스의 me메서드를 호출
+    }
+}

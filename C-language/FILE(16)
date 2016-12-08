@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc, char *args[]) {               
+    char * filename = NULL;
+    FILE * fp = NULL;
+    char buffer[1024] = {0,};
+    if (argc < 2) {
+        exit(1);
+    }
+    filename = args[1];
+    fp = fopen(filename, "r");
+    while (fread(buffer, 1, sizeof(buffer) - 1, fp) > 0) {
+        printf("%s", buffer);
+        memset(buffer, 0, sizeof(buffer));
+    }
+    
+    fclose(fp);
+    return 0;
+    
+}

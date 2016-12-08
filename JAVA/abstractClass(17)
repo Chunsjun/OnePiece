@@ -1,0 +1,41 @@
+public class DeleteAction implements Action {
+ @Override
+ public void execute(Scanner sc) {
+  
+  System.out.println("삭제할 회원의 이름을 입력하세요.");
+  System.out.print("이름 : ");
+  String name = sc.next();
+  deleteMember(name);
+ }
+
+ private void deleteMember(String name) {
+  int deleteIndex = -1;
+  MemberVO[] members = MemberMain.members;
+  MemberVO[] temp=null;
+  for(int i=0;i<members.length;i++){
+   if(members[i].getName().equals(name)){
+    deleteIndex = i;
+   }
+  }
+
+  if(deleteIndex == -1){
+   System.out.println("회원 정보가 존재하지 않습니다.");
+   return;
+  }
+  if(members.length >= 1){
+   temp = new MemberVO[members.length - 1];
+   //원본 배열에서 회원 정보 객체 하나를 삭제할 것이므로 배열 크기보다 하나 작게 생성해야 된다,
+   for(int i=0;i<members.length;i++){
+   
+    if(i == deleteIndex){
+     continue;
+    }
+    else if(i > deleteIndex){
+     temp[i-1] = members[i];
+    }
+    temp[i] = members[i];
+   }
+  } 
+  MemberMain.members = temp;
+ }
+}

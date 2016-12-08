@@ -1,0 +1,60 @@
+#include
+<stdio.h> 
+
+
+union uni 
+
+
+{ 
+
+
+    char     first; 
+
+
+    char     second; 
+
+
+    char     third; 
+
+
+}; 
+
+
+int main() 
+
+
+{ 
+
+
+    union uni data; 
+
+
+    data.first = 'A'; 
+
+
+    printf("first = %c\n", data.first); 
+
+
+    printf("second = %c\n", data.second); 
+
+
+    printf("third = %c\n", data.third); 
+
+
+    data.second = 'B'; 
+
+
+    printf("first = %c\n", data.first); 
+
+
+    printf("second = %c\n", data.second); 
+
+
+    printf("third = %c\n", data.third); 
+
+
+    return 0; 
+
+
+}
+

@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+ int main() {
+ struct st {
+ int id;
+ char *name;
+ char *address;
+ } employee, *stptr;
+ stptr = &employee;
+ employee.id = 3;
+ stptr->name = "홍길동";
+stptr->address = "서울";
+printf("직원 안내: 아이디=%d\n%s\n%s\n", stptr->id, stptr->name,
+ stptr->address);
+ return 0;
+ }

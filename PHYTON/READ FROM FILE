@@ -1,0 +1,39 @@
+Read From a File
+Use the with open syntax to read from files. This will automatically close files for you.
+
+Bad:
+
+f = open('file.txt')
+a = f.read()
+print a
+f.close()
+Good:
+
+with open('file.txt') as f:
+    for line in f:
+        print line
+The with statement is better because it will ensure you always close the file, even if an exception is raised inside the with block.
+
+Line Continuations
+When a logical line of code is longer than the accepted limit, you need to split it over multiple physical lines. The Python interpreter will join consecutive lines if the last character of the line is a backslash. This is helpful in some cases, but should usually be avoided because of its fragility: a white space added to the end of the line, after the backslash, will break the code and may have unexpected results.
+
+A better solution is to use parentheses around your elements. Left with an unclosed parenthesis on an end-of-line the Python interpreter will join the next line until the parentheses are closed. The same behavior holds for curly and square braces.
+
+Bad:
+
+my_very_big_string = """For a long time I used to go to bed early. Sometimes, \
+    when I had put out my candle, my eyes would close so quickly that I had not even \
+    time to say “I’m going to sleep.”"""
+
+from some.deep.module.inside.a.module import a_nice_function, another_nice_function, \
+    yet_another_nice_function
+Good:
+
+my_very_big_string = (
+    "For a long time I used to go to bed early. Sometimes, "
+    "when I had put out my candle, my eyes would close so quickly "
+    "that I had not even time to say “I’m going to sleep.”"
+)
+
+from some.deep.module.inside.a.module import (
+    a_nice_function, another_nice_function, yet_another_nice_function)

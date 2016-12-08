@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main (void)
+{
+    int num=0,num1=0;
+    char a='Y';
+     
+    while(a=='Y' || a=='y')
+    {
+        printf("밑변의 길이 = ");
+        scanf("%d",&num);
+        printf("높이 = ");
+        scanf("%d",&num1);
+        //1.0을 미리곱해야 실수가 되기때문이다. 
+        printf("입력한 삼각형의 넓이는 %.1f입니다.\n",1.0*num*num1/2);
+         
+        printf("계속하시겠습니까?");
+        scanf("%s",&a);
+    }//while
+     
+     
+     
+     
+    system("pause");
+    return 0;
+}

@@ -1,0 +1,49 @@
+tring Special Operators
+Assume string variable a holds 'Hello' and variable b holds 'Python', then −
+
+Operator	Description	Example
++	Concatenation - Adds values on either side of the operator	a + b will give HelloPython
+*	Repetition - Creates new strings, concatenating multiple copies of the same string	a*2 will give -HelloHello
+[]	Slice - Gives the character from the given index	a[1] will give e
+[ : ]	Range Slice - Gives the characters from the given range	a[1:4] will give ell
+in	Membership - Returns true if a character exists in the given string	H in a will give 1
+not in	Membership - Returns true if a character does not exist in the given string	M not in a will give 1
+r/R	Raw String - Suppresses actual meaning of Escape characters. The syntax for raw strings is exactly the same as for normal strings with the exception of the raw string operator, the letter "r," which precedes the quotation marks. The "r" can be lowercase (r) or uppercase (R) and must be placed immediately preceding the first quote mark.	print r'\n' prints \n and print R'\n'prints \n
+%	Format - Performs String formatting	See at next section
+String Formatting Operator
+One of Python's coolest features is the string format operator %. This operator is unique to strings and makes up for the pack of having functions from C's printf() family. Following is a simple example −
+
+#!/usr/bin/python
+
+print "My name is %s and weight is %d kg!" % ('Zara', 21) 
+When the above code is executed, it produces the following result −
+
+My name is Zara and weight is 21 kg!
+Here is the list of complete set of symbols which can be used along with % −
+
+Format Symbol	Conversion
+%c	character
+%s	string conversion via str() prior to formatting
+%i	signed decimal integer
+%d	signed decimal integer
+%u	unsigned decimal integer
+%o	octal integer
+%x	hexadecimal integer (lowercase letters)
+%X	hexadecimal integer (UPPERcase letters)
+%e	exponential notation (with lowercase 'e')
+%E	exponential notation (with UPPERcase 'E')
+%f	floating point real number
+%g	the shorter of %f and %e
+%G	the shorter of %f and %E
+Other supported symbols and functionality are listed in the following table −
+
+Symbol	Functionality
+*	argument specifies width or precision
+-	left justification
++	display the sign
+<sp>	leave a blank space before a positive number
+#	add the octal leading zero ( '0' ) or hexadecimal leading '0x' or '0X', depending on whether 'x' or 'X' were used.
+0	pad from left with zeros (instead of spaces)
+%	'%%' leaves you with a single literal '%'
+(var)	mapping variable (dictionary arguments)
+m.n.	m is the minimum total width and n is the number of digits to display after the decimal point (if appl.)

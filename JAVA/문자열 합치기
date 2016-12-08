@@ -1,0 +1,35 @@
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Quest05 {
+	public static void main(String[] args) throws IOException{
+		//문자열 읽어오는 스트림 열기
+		BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+		BufferedReader br2 = new BufferedReader(new FileReader("plain.txt"));
+		//문자열 출력 버퍼스트림
+		BufferedWriter bw = new BufferedWriter(new FileWriter("concat.txt"));
+		
+		//문자열로 한줄씩 읽어오거나, int로 한 글자씩 읽어오거나~
+		String c;
+		int ch;
+		
+		//한 글자씩 읽기 실습
+		while((ch=br.read())!=-1){
+			bw.write(ch); 
+		}
+		
+		//한줄씩 읽기 실습
+		while((c=br2.readLine())!=null)
+			bw.write(c);
+		
+		//플러쉬로 버퍼를 비운다.
+		bw.flush();
+		
+		System.out.println("합치기 종료");
+		
+	}
+}

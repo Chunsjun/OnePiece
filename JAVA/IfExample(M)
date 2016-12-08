@@ -1,0 +1,14 @@
+public class IfExample {
+public static void main(String[] args) {
+int score = 93;
+
+if(score>=90) {
+System.out.println("점가 90보 큽다.");
+System.out.println("등급은 a 입니다.");
+}
+
+if(score<90)
+System.out.println("점수가 90보다 작습닌다.");
+System.out.println("등급은 b입니다.");
+}
+}

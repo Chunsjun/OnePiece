@@ -1,0 +1,117 @@
+Java Form Events
+
+Java Calculator Project: 1 2 3 4 5 6 7 8 9 10
+
+ 
+
+
+ In the last lesson, you design your Java calculator. In the lesson, you'll learn about events for Java form objects.
+
+ 
+
+In programming terms, an event is when something special happens. For forms, this means things like buttons being clicked, the mouse moving, text being entered into text fields, the programming closing, and a whole lot more.
+
+Events are objects in Java. They come from a series of classes stored in java.util.EvenObject. When a button is clicked, the button is said to be the source of the event. But the very act of clicking generates an event object. The event object then looks for an object that is listening out for, say, a mouse click, or a keystroke, or any other event that can happen on a form. A text field, for example, can be listening out for key strokes. Or a drop down box could be listening out for which item in the list was clicked.
+
+Different objects (sources) fire different event. For a button, the event that is fired is the ActionListener. For a text field, it's the KeyEvent. Think of like this: the event object is responsible for passing messages back and forward between form objects that have had something happen to them, and objects that are waiting for things to happen.
+
+If all this sounds a bit complicated, then don't worry - it is complicated! But some programming examples might clear things up. First, a word about how our calculator will work.
+
+If we want to add 3 + 2, we first need to click the 3 button. The number 3 will then appear in the text field. The plus button is clicked next, and this alerts the program to the fact that we want to add things. It will also clear the text field ready for the next number. The next number is 2, and we store this value along with the 3. The equals button is clicked to get the total, and this is where we take the stored numbers (3 and 2) and add them together. Finally, the answer is stored in the text field.
+
+The first problem is how to get at the numbers on the buttons. We can do this by returning the text property of the button. Once we have the text, we can put it into the text box. But we need an ActionEvent for when the button is clicked.
+
+In Design view in NetBeans, select your number 1 button. Now have a look at the Navigator window in the bottom left. Locate your btnOne button. Now right click to see the following menu appear:
+
+NetBeans context menu for a Java button
+
+Select Event from the menu. From the submenu, click on Action, and then actionPerformed:
+
+Adding a button event
+
+When you click on actionPerformed, you will create a code stub for btnOne:
+
+private void btnOneActionPerformed(java.awt.event.ActionEvent evt) {
+
+// TODO add your handling code here:
+
+}
+
+The first line is a bit long. But it's just a method with an ActionEvent object between the round brackets. When the button is clicked, whatever code we write between the curly brackets will get executed.
+
+ 
+
+Writing code for the numbers buttons on our Java Calculator
+
+To get text from a form object, you can use the getText method of the object (if it has one). So to get the text from btnOne we could use this code:
+
+String btnOneText = btnOne.getText( );
+
+To get text from our text field, we could do this:
+
+String textfieldText = txtDisplay.getText( );
+
+However, if wanted to put something into the text field, the method to use is setText:
+
+txtDisplay.setText( btnOneText );
+
+Try it out. Add this code to your code stub:
+
+private void btnOneActionPerformed(java.awt.event.ActionEvent evt) {
+
+String btnOneText = btnOne.getText( );
+txtDisplay.setText(btnOneText);
+
+}
+
+Run your program and test it out. Click your 1 button and you should find that the number 1 appears in the text field:
+
+Testing out number  buttons for a Java Calculator
+
+There is a problem, however. What if you want to enter the number 11, or the number 111? When you click the button repeatedly, nothing else happens. It's always a 1, no matter how many times you click.
+
+The reason is that our code doesn't keep whatever was in the text field previously. It just puts the number 1 there. If we wanted the number 11, we would have to keep the first 1. To do that, you can simply get the text from the text field and combine it with the button text. Amend the first line of your code to this:
+
+String btnOneText = txtDisplay.getText() + btnOne.getText();
+
+Now we're saying get the text from the text field and combine it with the button text. Store the result in the variable called btnOneText.
+
+Run your program again, and click your number 1 button a few times. You should find that the text field will display a series of 1's:
+
+Retaining the numbers in the Text Field
+
+We can add the same code for all the number buttons on the calculator. Go back to design view. Instead of right-clicking in the Navigator area, another way to add an Action for a button is to simply double click it. So double click your number 2 button. A code stub will be created, just like last time.
+
+Add the following code to it:
+
+private void btnTwoActionPerformed( java.awt.event.ActionEvent evt ) {
+
+String btnTwoText = txtDisplay.getText() + btnTwo.getText();
+txtDisplay.setText( btnTwoText );
+
+}
+
+The only difference with the code is the name of the String variable (now called btnTwoText), and the fact that we're getting the text from btnTwo. In between the round brackets of setText, we pass the name of the String variable.
+
+Run your program again. You should now be able to click the 1 and the 2 buttons and have the text appear in the text field:
+
+The 1 and 2 buttons are now working
+
+Add the same code for all of your calculator buttons. So double click each button to get the code stub, and add the two lines of code for each button. You will need to change the name of the String variable. Here's the code for button 3:
+
+String btnThreeText = txtDisplay.getText() + btnThree.getText();
+txtDisplay.setText( btnThreeText );
+
+You can copy and paste the code you already have. Then just change the String variable name, the name of the button after the btn part, and the part between the round brackets of setText. If you see any underlines then you know you've done something wrong.
+
+When you've finished, the code for all the number button should look like this:
+
+The code for all the number buttons on our Java Calculator
+
+Run your calculator and test it out. You should be able to enter all the numbers from 0 to 9:
+
+All the calculator number buttons are now working
+
+In the next part, you'll write the Java code for the Plus button on your calculator.
+
+ 

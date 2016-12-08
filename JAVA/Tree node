@@ -1,0 +1,70 @@
+
+public class ThreeLeafTree {
+	Node root;
+	
+	public void addNode(int key, String name) {
+		
+		Node newNode = new Node(key, name);
+		
+		if(root == null) {
+			root = newNode;
+		} else {
+			Node focusNode = root;
+			Node parent;
+			
+			while(true) {
+				parent = focusNode;
+				if(key < focusNode.key) {
+					focusNode = focusNode.leftChild;
+					
+					if(focusNode == null) {
+						parent.leftChild = newNode;
+						return;
+						
+					}
+				} else if(key < focusNode.key) {
+					focusNode = focusNode.middleChild;
+					if(focusNode == null) {
+						parent.middleChild = newNode;
+						return;
+					}
+				} else {
+					focusNode = focusNode.rightChild;
+					if(focusNode == null) {
+						parent.rightChild = newNode;
+						return;
+					}
+				}
+			}
+		}
+		
+		
+	}
+	public int countInternalNodes(Node node) {
+		if(node == null) {
+			return 0;
+		}
+		if(node.leftChild != null && node.middleChild != null && node.rightChild != null) {
+			return 1 + countInternalNodes(node.leftChild) + countInternalNodes(node.middleChild) + countInternalNodes(node.rightChild);
+		
+		}
+		return countInternalNodes(node.leftChild) + countInternalNodes(node.middleChild) + countInternalNodes(node.rightChild);
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		ThreeLeafTree theTree = new ThreeLeafTree();
+		
+		theTree.addNode(1, "I1");
+		theTree.addNode(2, "E1");
+		theTree.addNode(3, "E2");
+		theTree.addNode(4, "E3");
+		theTree.addNode(5, "I2");
+		theTree.addNode(6, "E4");
+		theTree.addNode(7, "E5");
+		
+		System.out.println(theTree.root);		
+		
+	}
+}

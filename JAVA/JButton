@@ -1,0 +1,37 @@
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.plaf.basic.*;
+import javax.swing.border.*;
+public class Test {
+public void go() {
+JButton button = new JButton("JButton");
+JPanel panel1 = new JPanel();
+JPanel panel2 = new JPanel();
+BasicArrowButton up=
+new BasicArrowButton(BasicArrowButton.NORTH);
+BasicArrowButton down =
+new BasicArrowButton(BasicArrowButton.SOUTH);
+BasicArrowButton right=
+new BasicArrowButton(BasicArrowButton.WEST);
+BasicArrowButton left =
+new BasicArrowButton(BasicArrowButton.EAST);
+panel2.add(up);
+panel2.add(down);
+panel2.add(right);
+panel2.add(left);
+panel2.setBorder(new TitledBorder("Basic Arrow Button"));
+JToggleButton toggle = new JToggleButton("Toggle");
+JRadioButton radio = new JRadioButton("Radio");
+panel1.add(button);
+panel1.add(panel2);
+panel1.add(toggle);
+panel1.add(radio);
+JFrame frame = new JFrame("JButton Test");
+frame.getContentPane().add(panel1);
+frame.setSize(400,100);
+frame.setVisible(true);
+}
+public static void main(String args[]) {
+new Test().go();
+}
+}

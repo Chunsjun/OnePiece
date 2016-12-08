@@ -1,0 +1,166 @@
+JavaScript Bitwise Operators
+Operator	Description	Example	Same as	Result	Same as
+&	AND	5 & 1	0101 & 0001	 1	0001
+|	OR	5 | 1	0101 | 0001	 5	0101
+~	NOT	~ 5	 ~0101	 10	1010
+^	XOR	5 ^ 1	0101 ^ 0001	 4	0100
+<<	Zero fill left shift	5 << 1	0101 << 1	 10	1010
+>>	Signed right shift	5 >> 1	0101 >> 1	  2	0010
+>>>	Zero fill right shift	5 >>> 1	0101 >>> 1	  2	0010
+The examples above uses 4 bits unsigned examples. But JavaScript uses 32-bit signed numbers.
+
+Because of this, in JavaScript, ~ 5 will not return 10. It will return -6.
+
+~00000000000000000000000000000101 will return 11111111111111111111111111111010
+
+Bitwise AND
+When a bitwise AND is performed on a pair of bits, it returns 1 if both bits are 1.
+
+One bit example:
+Operation	Result
+0 & 0	0
+0 & 1	0
+1 & 0	0
+1 & 1	1
+4 bits example:
+Operation	Result
+1111 & 0000	0000
+1111 & 0001	0001
+1111 & 0010	0010
+1111 & 0100	0100
+Bitwise OR
+When a bitwise OR is performed on a pair of bits, it returns 1 if one of the bits are 1:
+
+One bit example:
+Operation	Result
+0 | 0	0
+0 | 1	1 
+1 | 0	1
+1 | 1	1
+4 bits example:
+Operation	Result
+1111 | 0000	1111
+1111 | 0001	1111
+1111 | 0010	1111
+1111 | 0100	1111
+Bitwise XOR
+When a bitwise XOR is performed on a pair of bits, it returns 1 if the bits are different:
+
+One bit example:
+Operation	Result
+0 ^ 0	0
+0 ^ 1	1 
+1 ^ 0	1
+1 ^ 1	0 
+4 bits example:
+Operation	Result
+1111 ^ 0000	1111
+1111 ^ 0001	1110
+1111 ^ 0010	1101
+1111 ^ 0100	1011
+JavaScript Bitwise Operations
+JavaScript bitwise operations works on 32 bits signed integers.
+
+Any number in a bitwise operation is converted into a 32 bit signed integer.
+
+The result of a bitwise operation is converted back into a JavaScript number.
+
+JavaScript Bitwise AND (&)
+Bitwise AND returns 1 only if both bits are 1:
+
+Decimal	Binary
+5	00000000000000000000000000000101
+1	00000000000000000000000000000001
+5 & 1	00000000000000000000000000000001 (1)
+Example
+var x = 5 & 1;
+Try it Yourself »
+JavaScript Bitwise OR (|)
+Bitwise or returns 1 if one of the bits are 1:
+
+Decimal	Binary
+5	00000000000000000000000000000101
+1	00000000000000000000000000000001
+5 | 1	00000000000000000000000000000101 (5)
+Example
+var x = 5 | 1;
+Try it Yourself »
+JavaScript Bitwise XOR (^)
+Bitwise XOR returns 1 if the bits are different:
+
+Decimal	Binary
+5	00000000000000000000000000000101
+1	00000000000000000000000000000001
+5 ^ 1	00000000000000000000000000000100 (4)
+Example
+var x = 5 ^ 1;
+Try it Yourself »
+JavaScript Bitwise NOT (~)
+Decimal	Binary
+5	00000000000000000000000000000101
+~5	11111111111111111111111111111010 (-6)
+Example
+var x = ~5;
+Try it Yourself »
+JavaScript (Zero Fill) Bitwise Left Shift (<<)
+This is a zero fill left shift. One ore more zero bits are pushed in from the right, and the leftmost bits fall off:
+
+Decimal	Binary
+5	00000000000000000000000000000101
+5 << 1	00000000000000000000000000001010 (10)
+Example
+var x = 5 << 1;
+Try it Yourself »
+JavaScript (Sign Preserving) Bitwise Right Shift (>>)
+This is a sign preserving right shift. Copies of the leftmost bit are pushed in from the left, and the rightmost bits fall off:
+
+Decimal	Binary
+-5	11111111111111111111111111111011
+-5 >> 1	11111111111111111111111111111101 (-3)
+Example
+var x = -5 >> 1;
+Try it Yourself »
+JavaScript (Zero Fill) Right Shift (>>>)
+This is a zero fill right shift. One or more zero bits are pushed in from the left, and the rightmost bits fall off:
+
+Decimal	Binary
+5	00000000000000000000000000000101
+5 >>> 1	00000000000000000000000000000010 (2)
+Example
+var x = 5 >>> 1;
+Try it Yourself »
+32-bit Signed Integers
+32 bits integers with only one bit set is easy to understand:
+
+Binary Representation	Decimal value
+00000000000000000000000000000001	1
+00000000000000000000000000000010	2
+00000000000000000000000000000100	4
+00000000000000000000000000001000	8
+00000000000000000000000000010000	16
+00000000000000000000000000100000	32
+00000000000000000000000001000000	64
+Setting a few more bits reveals the binary pattern:
+
+Binary Representation	Decimal value
+00000000000000000000000000000101	5 (4 + 1)
+00000000000000000000000000101000	40 (32 + 8)
+00000000000000000000000000101101	45 (32 + 8 + 4 + 1)
+Negative numbers are stored in two's complement format. This means that a negative number is the bitwise NOT of the number plus 1.
+
+Binary Representation	Decimal value
+00000000000000000000000000000101	5
+11111111111111111111111111111011	-5
+00000000000000000000000000101000	40
+11111111111111111111111111011000	-40
+Converting Decimal to Binary
+Example
+function dec2bin(dec){
+    return (dec >>> 0).toString(2);
+}
+Try it Yourself »
+Converting Binary to Decimal
+Example
+function bin2dec(bin){
+    return parseInt(bin, 2).toString(10);
+}
