@@ -1,0 +1,108 @@
+XML Applications
+❮ PreviousNext ❯
+This chapter demonstrates some HTML applications using XML, HTTP, DOM, and JavaScript.
+
+The XML Document Used
+In this chapter we will use the XML file called "cd_catalog.xml".
+
+Display XML Data in an HTML Table
+This example loops through each <CD> element, and displays the values of the <ARTIST> and the <TITLE> elements in an HTML table:
+
+Example
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse:collapse;
+}
+th, td {
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+
+<table id="demo"></table>
+
+<script>
+function loadXMLDoc() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xmlhttp.open("GET", "cd_catalog.xml", true);
+  xmlhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Artist</th><th>Title</th></tr>";
+  var x = xmlDoc.getElementsByTagName("CD");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+</body>
+</html>
+Try it Yourself »
+For more information about using JavaScript and the XML DOM, go to DOM Intro.
+
+Display the First CD in an HTML div Element
+Ths example uses a function to display the first CD element in an HTML element with id="showCD":
+
+Example
+displayCD(0);
+
+function displayCD(i) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myFunction(this, i);
+        }
+    };
+    xmlhttp.open("GET", "cd_catalog.xml", true);
+    xmlhttp.send();
+}
+
+function myFunction(xml, i) {
+    var xmlDoc = xml.responseXML; 
+    x = xmlDoc.getElementsByTagName("CD");
+    document.getElementById("showCD").innerHTML =
+    "Artist: " +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "<br>Title: " +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "<br>Year: " + 
+    x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
+}
+Try it Yourself »
+Navigate Between the CDs
+To navigate between the CDs, in the example above, add a next() and previous() function:
+
+Example
+function next() {
+  // display the next CD, unless you are on the last CD
+  if (i < x.length-1) {
+    i++;
+    displayCD(i);
+  }
+}
+
+function previous() {
+  // display the previous CD, unless you are on the first CD 
+  if (i > 0) {
+  i--;
+  displayCD(i);
+  }
+}
+Try it Yourself »
