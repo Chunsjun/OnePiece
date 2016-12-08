@@ -1,0 +1,73 @@
+JavaScript Scope
+❮ PreviousNext ❯
+Scope is the set of variables you have access to.
+
+JavaScript Scope
+In JavaScript, objects and functions are also variables.
+
+In JavaScript, scope is the set of variables, objects, and functions you have access to.
+
+JavaScript has function scope: The scope changes inside functions.
+
+Local JavaScript Variables
+Variables declared within a JavaScript function, become LOCAL to the function.
+
+Local variables have local scope: They can only be accessed within the function.
+
+Example
+// code here can not use carName
+
+function myFunction() {
+    var carName = "Volvo";
+
+    // code here can use carName
+
+}
+Try it Yourself »
+Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.
+
+Local variables are created when a function starts, and deleted when the function is completed.
+
+Global JavaScript Variables
+A variable declared outside a function, becomes GLOBAL.
+
+A global variable has global scope: All scripts and functions on a web page can access it. 
+
+Example
+var carName = " Volvo";
+
+// code here can use carName
+
+function myFunction() {
+
+    // code here can use carName 
+
+}
+Try it Yourself »
+Automatically Global
+If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable.
+
+This code example will declare a global variable carName, even if the value is assigned inside a function.
+
+Example
+myFunction();
+
+// code here can use carName 
+
+function myFunction() {
+    carName = "Volvo";
+}
+Try it Yourself »
+Do NOT create global variables unless you intend to.
+
+In "Strict Mode" automatically global variables will fail.
+
+Global Variables in HTML
+With JavaScript, the global scope is the complete JavaScript environment.
+
+In HTML, the global scope is the window object. All global variables belong to the window object.
+
+Example
+var carName = "Volvo";
+
+// code here can use window.carName
