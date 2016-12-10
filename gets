@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+
+{
+
+ int i;
+ int length;
+ char line[2048]; 
+ 
+ printf("입력하세요. >>\n");
+ gets(line);
+ printf("\n문자열을 거꾸로 출력합니다.\n");
+ length=strlen(line);
+ 
+ if(length >2048)
+ {
+  printf("문자 버퍼 크기를 초과하였습니다.\n");
+  return 0;
+ }
+ 
+ for (i=length-1;i>-1;i--)
+ {
+    printf("%c", line[i]);
+ }
+ 
+ printf("\n");
+ return 0;
+ 
+}
