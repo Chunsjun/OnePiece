@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static size_t s_strnspn_r(const char * str1, const char * str2, size_t size) {
+    size_t len = strnlen(str1, size);
+    size_t i, j;
+    for (i = 0; i < len; i++) {
+        char ch = str1[len - i - 1];
+        for (j = 0; str2[j]; j++) {             
+            if (str2[j] == ch) {
+                break;
+            }
+        }
+        if (!str2[j]) {
+            break;
+        }
+    }
+    return len - i;
+}
+
+static void s_trim(const char * text, char * out, size_t size) {
+    int s = strspn(text, " \t\n");
+    int e= s_strnspn_r(text + s, " \t\n", strlen(text + s));
+    int length = e;
+    strncpy(out, text + s, (length > size ? size - 1 : length));
+}
+
+static void s_parse_conf(const char * text, char * name, int size_name, char * value, int size_value) {
+    char name_buffer[1024] = {0,};
+    size_t c = strcspn(text, ":");
+    if (c == strlen(text)) { // not found ':'
+ s_trim(text, name, size_name);
+        return;
+    }
+    strncpy(name_buffer, text, c);
+    s_trim(name_buffer, name, size_name);
+    s_trim(text + c + 1, value, size_value);
+}
+
+static void s_write_conf(FILE * fp, const char * name, const char * value) {
+    char buffer[1024] = {0,};
+    snprintf(buffer, sizeof(buffer), "%s : %s\n", name, value);
+    fwrite(buffer, strlen(buffer), 1, fp);
+}
+
+static void s_test_write(const char * filename) {
+    FILE * fp;
+    fp = fopen(filename, "w");
+    if (!fp) {
+        perror("fopen()");
+        exit(1);
+    }
+    s_write_conf(fp, "Name", "Steve Bolt");
+    s_write_conf(fp, "Age", "26");
+    fclose(fp);
+}
+
+static void s_test_read(const char * filename) {
+    FILE * fp;
+    char buffer[1024] = {0,};
+    fp = fopen(filename, "r");
+    if (!fp) {
+        perror("fopen()");
+        exit(1);
+    }
+   while (fgets(buffer, sizeof(buffer), fp)) {
+        char name[128] = {0,};
+        char value[128] = {0,};
+        s_parse_conf(buffer, name, sizeof(name), value, sizeof(value));
+        printf("Key : \"%s\", Value: \"%s\"\n", name, value);
+    }
+    fclose(fp);
+}
+
+int main(int argc, char *args[]) {
+    if (argc < 2) {
+        printf("Error: file name required\n");
+        exit(1);
+    }
+    s_test_write(args[1]);
+    s_test_read(args[1]);
+    return 0;
+}

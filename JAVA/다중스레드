@@ -1,0 +1,36 @@
+package 챕23스레드;
+import java.util.Date;
+
+class printDate extends Thread{
+	Date d;
+	int i=0;
+	printDate(int i){
+		this.i=i;
+	}
+	public void run(){
+		while(true){
+			d = new Date(System.currentTimeMillis());
+			try {
+				Thread.sleep(1000);
+				System.out.print(d);
+				message();
+			} catch (InterruptedException e) {
+			}
+			
+		}
+	}
+	public synchronized void message(){
+		if(i==0)
+			System.out.println(" 안녕하세요?");
+		if(i==1)
+			System.out.println(" 안녕히 계세요~");
+	}
+}
+public class Quest02 {
+	public static void main(String[] args) {
+		Thread t = new printDate(0);
+		t.start();
+		Thread t1 = new printDate(1);
+		t1.start();
+	}
+}

@@ -1,0 +1,54 @@
+JSON How To
+❮ PreviousNext ❯
+A common use of JSON is to read data from a web server, and display the data in a web page.
+
+For simplicity, this can be demonstrated by using a string as input (instead of a file).
+
+JSON Example - Object From String
+Create a JavaScript string containing JSON syntax:
+
+var text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+JSON syntax is a subset of JavaScript syntax.
+
+The JavaScript function JSON.parse(text) can be used to convert a JSON text into a JavaScript object:
+
+var obj = JSON.parse(text);
+Use the new JavaScript object in your page:
+
+Example
+<p id="demo"></p> 
+
+<script>
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName; 
+</script>
+Try it Yourself »
+Using eval()
+Older browsers without the support for the JavaScript function JSON.parse() can use the eval() function to convert a JSON text into a JavaScript object:
+
+Example
+var obj = eval ("(" + text + ")");
+Try it Yourself »
+The eval() function can compile and execute any JavaScript.
+This represents a potential security problem. Try to avoid it.
+
+It is safer to use a JSON parser to convert a JSON text to a JavaScript object.
+
+A JSON parser will recognize only JSON text and will not compile scripts.
+
+In browsers that provide native JSON support, JSON parsers are also faster.
+
+Native JSON support is included in all major browsers and in the latest ECMAScript (JavaScript) standard:
+
+Web Browsers Support
+Firefox 3.5
+Internet Explorer 8
+Chrome
+Opera 10
+Safari 4
+For older browsers, a JavaScript library is available at https://github.com/douglascrockford/JSON-js.
+
+The JSON format was originally specified by Douglas Crockford.

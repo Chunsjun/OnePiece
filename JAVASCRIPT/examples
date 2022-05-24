@@ -1,0 +1,47 @@
+AJAX Examples
+❮ PreviousNext ❯
+Try it Yourself - Examples
+Simple Examples
+A simple AJAX example
+Create a simple XMLHttpRequest, and retrieve data from a TXT file.
+
+An AJAX example with a callback function
+Create a XMLHttpRequest with a callback function, and retrieve data from a TXT file.
+
+Examples explained
+
+Request Header Information
+Retrieve all header information of a resource (file)
+Retrieve specific header information of a resource (file)
+Examples explained
+
+Request XML Files
+Load an XML file with AJAX
+Create an XMLHttpRequest to retrieve data from an XML file.
+
+Retrieve the content of an XML file
+Create an XMLHttpRequest to retrieve data from an XML file and display the data in an HTML table.
+
+Examples explained
+
+Retrieve Server Data with PHP and ASP
+Retrieve the content of a PHP file
+How a web page can communicate with a web server while a user type characters in an input field.
+
+Retrieve the content of an ASP file
+How a web page can communicate with a web server while a user type characters in an input field.
+
+Examples explained
+
+Retrieve Database Information
+Retrieve content from a database
+How a web page can fetch information from a database with AJAX.
+
+Examples explained
+
+AJAX Applications
+View an XML CD catalog
+Display XML data in an HTML table
+Show XML data inside an HTML div element
+Navigate through XML nodes
+A simple CD catalog application

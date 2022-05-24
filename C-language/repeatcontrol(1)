@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+int num;
+
+num=1;
+while(num<=15)
+{
+printf("%d", num);
+num++;
+}
+return 0;
+}

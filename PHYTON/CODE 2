@@ -1,0 +1,63 @@
+Calling a function with keyword arguments can be done in multiple ways in Python, for example it is possible to follow the order of arguments in the definition without explicitly naming the arguments, like in send('Hello', 'World', 'Cthulhu', 'God'), sending a blind carbon copy to God. It would also be possible to name arguments in another order, like in send('Hello again', 'World', bcc='God', cc='Cthulhu'). Those two possibilities are better avoided without any strong reason to not follow the syntax that is the closest to the function definition: send('Hello', 'World', cc='Cthulhu', bcc='God').
+
+As a side note, following YAGNI principle, it is often harder to remove an optional argument (and its logic inside the function) that was added “just in case” and is seemingly never used, than to add a new optional argument and its logic when needed.
+
+The arbitrary argument list is the third way to pass arguments to a function. If the function intention is better expressed by a signature with an extensible number of positional arguments, it can be defined with the *args constructs. In the function body, args will be a tuple of all the remaining positional arguments. For example, send(message, *args) can be called with each recipient as an argument:send('Hello', 'God', 'Mom', 'Cthulhu'), and in the function body args will be equal to ('God', 'Mom', 'Cthulhu').
+However, this construct has some drawbacks and should be used with caution. If a function receives a list of arguments of the same nature, it is often more clear to define it as a function of one argument, that argument being a list or any sequence. Here, if send has multiple recipients, it is better to define it explicitly: send(message, recipients) and call it with send('Hello', ['God', 'Mom', 'Cthulhu']). This way, the user of the function can manipulate the recipient list as a list beforehand, and it opens the possibility to pass any sequence, including iterators, that cannot be unpacked as other sequences.
+
+The arbitrary keyword argument dictionary is the last way to pass arguments to functions. If the function requires an undetermined series of named arguments, it is possible to use the **kwargs construct. In the function body, kwargs will be a dictionary of all the passed named arguments that have not been caught by other keyword arguments in the function signature.
+The same caution as in the case of arbitrary argument list is necessary, for similar reasons: these powerful techniques are to be used when there is a proven necessity to use them, and they should not be used if the simpler and clearer construct is sufficient to express the function’s intention.
+
+It is up to the programmer writing the function to determine which arguments are positional arguments and which are optional keyword arguments, and to decide whether to use the advanced techniques of arbitrary argument passing. If the advice above is followed wisely, it is possible and enjoyable to write Python functions that are:
+
+easy to read (the name and arguments need no explanations)
+easy to change (adding a new keyword argument does not break other parts of the code)
+Avoid the magical wand
+A powerful tool for hackers, Python comes with a very rich set of hooks and tools allowing you to do almost any kind of tricky tricks. For instance, it is possible to do each of the following:
+
+change how objects are created and instantiated
+change how the Python interpreter imports modules
+it is even possible (and recommended if needed) to embed C routines in Python.
+However, all these options have many drawbacks and it is always better to use the most straightforward way to achieve your goal. The main drawback is that readability suffers greatly when using these constructs. Many code analysis tools, such as pylint or pyflakes, will be unable to parse this “magic” code.
+
+We consider that a Python developer should know about these nearly infinite possibilities, because it instills confidence that no impassable problem will be on the way. However, knowing how and particularly when not to use them is very important.
+
+Like a kung fu master, a Pythonista knows how to kill with a single finger, and never to actually do it.
+
+We are all responsible users
+As seen above, Python allows many tricks, and some of them are potentially dangerous. A good example is that any client code can override an object’s properties and methods: there is no “private” keyword in Python. This philosophy, very different from highly defensive languages like Java, which give a lot of mechanisms to prevent any misuse, is expressed by the saying: “We are all responsible users”.
+
+This doesn’t mean that, for example, no properties are considered private, and that no proper encapsulation is possible in Python. Rather, instead of relying on concrete walls erected by the developers between their code and other’s, the Python community prefers to rely on a set of conventions indicating that these elements should not be accessed directly.
+
+The main convention for private properties and implementation details is to prefix all “internals” with an underscore. If the client code breaks this rule and accesses these marked elements, any misbehavior or problems encountered if the code is modified is the responsibility of the client code.
+
+Using this convention generously is encouraged: any method or property that is not intended to be used by client code should be prefixed with an underscore. This will guarantee a better separation of duties and easier modification of existing code; it will always be possible to publicize a private property, but making a public property private might be a much harder operation.
+
+Returning values
+When a function grows in complexity it is not uncommon to use multiple return statements inside the function’s body. However, in order to keep a clear intent and a sustainable readability level, it is preferable to avoid returning meaningful values from many output points in the body.
+
+There are two main cases for returning values in a function: the result of the function return when it has been processed normally, and the error cases that indicate a wrong input parameter or any other reason for the function to not be able to complete its computation or task.
+
+If you do not wish to raise exceptions for the second case, then returning a value, such as None or False, indicating that the function could not perform correctly might be needed. In this case, it is better to return as early as the incorrect context has been detected. It will help to flatten the structure of the function: all the code after the return-because-of-error statement can assume the condition is met to further compute the function’s main result. Having multiple such return statements is often necessary.
+
+However, when a function has multiple main exit points for its normal course, it becomes difficult to debug the returned result, so it may be preferable to keep a single exit point. This will also help factoring out some code paths, and the multiple exit points are a probable indication that such a refactoring is needed.
+
+def complex_function(a, b, c):
+    if not a:
+        return None  # Raising an exception might be better
+    if not b:
+        return None  # Raising an exception might be better
+    # Some complex code trying to compute x from a, b and c
+    # Resist temptation to return x if succeeded
+    if not x:
+        # Some Plan-B computation of x
+    return x  # One single exit point for the returned value x will help
+              # when maintaining the code.
+Idioms
+A programming idiom, put simply, is a way to write code. The notion of programming idioms is discussed amply at c2 and at Stack Overflow.
+
+Idiomatic Python code is often referred to as being Pythonic.
+
+Although there usually is one — and preferably only one — obvious way to do it; the way to write idiomatic Python code can be non-obvious to Python beginners. So, good idioms must be consciously acquired.
+
+Some common Python idioms follow:

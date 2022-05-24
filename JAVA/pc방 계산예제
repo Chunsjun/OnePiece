@@ -1,0 +1,22 @@
+import java.util.Calendar;
+
+public class 피시방시간계산예제 {
+	public static void main(String[] args) {
+		Calendar date3 = Calendar.getInstance();
+		date3.setTimeInMillis(System.currentTimeMillis());
+
+		Calendar date4 = Calendar.getInstance();
+		date4.setTimeInMillis(System.currentTimeMillis() + 1000 * 60 * 6);
+
+		System.out.println("지금 시 :" + date3.get(Calendar.HOUR));
+		System.out.println("지금 분 :" + date3.get(Calendar.MINUTE));
+
+		System.out.println("지금 시 :" + date4.get(Calendar.HOUR));
+		System.out.println("지금 분 :" + date4.get(Calendar.MINUTE));
+		long differ = (date4.getTimeInMillis() - date3.getTimeInMillis()) / 1000;
+
+		System.out.println("사용시간부터 지금까지 " + differ / 60 + "분이 지났다~");
+		int money = (int) (differ / 60) * 100 / 6;
+		System.out.println("사용요금은 " + money + "원이다.");
+	}
+}

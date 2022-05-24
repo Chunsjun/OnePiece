@@ -5,7 +5,7 @@
  				date = Date.now(); 
  
 
- 		if(!params.sort){ 
+ 		if(!params.sort){  
  			params.sort = 'DESC'; 
  		} 
  

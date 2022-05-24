@@ -1,0 +1,23 @@
+#include "stdafx.h"
+#include "stdlib.h"
+#define L 2
+#define N 3#
+define M 4int 
+main(void)
+{
+   char cName[][N][M] = {  {{'A', 'B', 'C', '\0'}, {'D', 'E', 'F', '\0'}, {'G', 'H', 'I', '\0'}},  {{'J', 'K', 'L', '\0'}, {'M', 'N', 'O', '\0'}, {'P', 'Q', 'R', '\0'}} };
+   int i, j, k;
+   printf("sizeof(cName) = %d\n", sizeof(cName));
+   printf("\n** 배열 이름과 관련된 주소 출력 **\n");
+   printf("cName = %p\n", cName);
+   printf("cName[0] = %p, &cName[0] = %p, 7CName[0][0][0] = %p\n", cName[0], &cName[0], &cName[0][0][0]);
+   printf("cName[1] = %p, &cName[1] = %p, 7CName[1][0][0] = %p\n", cName[1], &cName[1], &cName[1][0][0]);
+   printf("cName+1 = %p, &cName+1 = %p\n", cName + 1, &cName + 1);
+   printf("cName[0]+1=%p, &cName[0]+1 = %p\n", cName[0] + 1, &cName[0] + 1);
+   printf("cName[1]+1=%p, &cName[1]+1 = %p\n", cName[1] + 1, &cName[1] + 1); 
+   printf("\ncName[0][0]+1 = %p, &cName[0][0]+1=%p\n", cName[0][0] + 1, &cName[0][0] + 1);
+   for (i = 0; i < L; i++)  
+   for (j = 0; j < N; j++)   
+   printf("cName[%d][%d] = %s, cName[%d][%d] = %p, &cNama[%d][%d] = %p\n",    i, j, cName[i][j], i, j, cName[i][j], i,    j, &cName[i][j]);
+   printf("\n** for 문 두 개를 이용한 cName 배열의 주소와 값 출력 **\n");
+   for (i = 0; i < L; i++)  for (j = 0; j < N; j++)   for (k = 0; k < M; k++)    printf("&cName[%d][%d][%d] = %p, cName[%d][%d][%d] = %c\n",     i, j, k, &cName[i][j][k], i, j, k, cName[i][j][k]);}

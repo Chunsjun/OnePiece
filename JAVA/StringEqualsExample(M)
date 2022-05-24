@@ -1,0 +1,29 @@
+public class StringEqualsExample {
+public static void main(String[] args) {
+String strVar1 = "MoonBoHyun";
+String strVar2 = "MoonBoHyun";
+
+if(strVar1 == strVar2) {
+System.out.println("strVar1 and strVar2 is same");
+}else {
+System.out.println("strVar1 and strVar2 is different");
+}
+
+if(strVar1.equals(strVar2)) {
+System.out.println("strVar1 and strVar2 is same string");
+}
+
+String strVar3 = new String("MoonBoHyun");
+String strVar4 = new String("MoonBoHyun");
+
+if(strVar3 == strVar4) {
+System.out.println("strVar3 and strVar4 is same");
+}else {
+System.out.println("strVar3 and strVar4 is different");
+}
+
+if(strvar3.equals(strVar4)) {
+System.out.println("strVar3 and strVar4 is same string");
+}
+}
+}

@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    int arr[10];
+    int i;
+    int small=1000;
+     
+     
+    for(i=0; i<10; i++){
+       scanf("%d",&arr[i]);
+       if(small>arr[i])
+       small=arr[i];
+       }
+       printf("10개의 정수중 가장작은 정수는:%d",small);
+     
+     
+     
+             
+     
+ 
+    system("pause");
+    return 0;
+}

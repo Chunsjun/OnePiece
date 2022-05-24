@@ -1,0 +1,23 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+public class ListCombo extends JPanel{
+ 
+static String ids[] = {"June","Ward","Beaver","Wally","Eddie","Lumpy"};
+public ListCombo(){
+setLayout(new BorderLayout());
+JList list = new JList(ids);
+add(new JScrollPane(list), "Center");
+JComboBox combo = new JComboBox();
+for( int i =0; i <100 ; i++)
+combo.addItem(Integer.toString(i));
+add(combo,"South");
+}
+public static void main(String args[]){
+JFrame f = new JFrame();
+ListCombo list = new ListCombo();
+f.getContentPane().add(list);
+f.pack();
+f.setVisible(true);
+}
+}

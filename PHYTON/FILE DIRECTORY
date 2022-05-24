@@ -1,0 +1,42 @@
+Example
+Following is the example to go into "/home/newdir" directory −
+
+#!/usr/bin/python
+import os
+
+# Changing a directory to "/home/newdir"
+os.chdir("/home/newdir")
+The getcwd() Method
+The getcwd() method displays the current working directory.
+
+Syntax
+os.getcwd()
+Example
+Following is the example to give current directory −
+
+#!/usr/bin/python
+import os
+
+# This would give location of the current directory
+os.getcwd()
+The rmdir() Method
+The rmdir() method deletes the directory, which is passed as an argument in the method.
+
+Before removing a directory, all the contents in it should be removed.
+
+Syntax:
+os.rmdir('dirname')
+Example
+Following is the example to remove "/tmp/test" directory. It is required to give fully qualified name of the directory, otherwise it would search for that directory in the current directory.
+
+#!/usr/bin/python
+import os
+
+# This would  remove "/tmp/test"  directory.
+os.rmdir( "/tmp/test"  )
+File & Directory Related Methods
+There are three important sources, which provide a wide range of utility methods to handle and manipulate files & directories on Windows and Unix operating systems. They are as follows −
+
+File Object Methods: The file object provides functions to manipulate files.
+
+OS Object Methods: This provides methods to process files as well as directories.

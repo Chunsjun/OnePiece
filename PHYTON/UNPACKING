@@ -1,0 +1,62 @@
+Unpacking
+If you know the length of a list or tuple, you can assign names to its elements with unpacking. For example, since enumerate() will provide a tuple of two elements for each item in list:
+
+for index, item in enumerate(some_list):
+    # do something with index and item
+You can use this to swap variables as well:
+
+a, b = b, a
+Nested unpacking works too:
+
+a, (b, c) = 1, (2, 3)
+In Python 3, a new method of extended unpacking was introduced by PEP 3132:
+
+a, *rest = [1, 2, 3]
+# a = 1, rest = [2, 3]
+a, *middle, c = [1, 2, 3, 4]
+# a = 1, middle = [2, 3], c = 4
+Create an ignored variable
+If you need to assign something (for instance, in Unpacking) but will not need that variable, use __:
+
+filename = 'foobar.txt'
+basename, __, ext = filename.rpartition('.')
+Note
+Many Python style guides recommend the use of a single underscore “_” for throwaway variables rather than the double underscore “__” recommended here. The issue is that “_” is commonly used as an alias for the gettext() function, and is also used at the interactive prompt to hold the value of the last operation. Using a double underscore instead is just as clear and almost as convenient, and eliminates the risk of accidentally interfering with either of these other use cases.
+Create a length-N list of the same thing
+Use the Python list * operator:
+
+four_nones = [None] * 4
+Create a length-N list of lists
+Because lists are mutable, the * operator (as above) will create a list of N references to the same list, which is not likely what you want. Instead, use a list comprehension:
+
+four_lists = [[] for __ in xrange(4)]
+Note: Use range() instead of xrange() in Python 3
+
+Create a string from a list
+A common idiom for creating strings is to use str.join() on an empty string.
+
+letters = ['s', 'p', 'a', 'm']
+word = ''.join(letters)
+This will set the value of the variable word to ‘spam’. This idiom can be applied to lists and tuples.
+
+Searching for an item in a collection
+Sometimes we need to search through a collection of things. Let’s look at two options: lists and sets.
+
+Take the following code for example:
+
+s = set(['s', 'p', 'a', 'm'])
+l = ['s', 'p', 'a', 'm']
+
+def lookup_set(s):
+    return 's' in s
+
+def lookup_list(l):
+    return 's' in l
+Even though both functions look identical, because lookup_set is utilizing the fact that sets in Python are hashtables, the lookup performance between the two is very different. To determine whether an item is in a list, Python will have to go through each item until it finds a matching item. This is time consuming, especially for long lists. In a set, on the other hand, the hash of the item will tell Python where in the set to look for a matching item. As a result, the search can be done quickly, even if the set is large. Searching in dictionaries works the same way. For more information see this StackOverflow page. For detailed information on the amount of time various common operations take on each of these data structures, see this page.
+
+Because of these differences in performance, it is often a good idea to use sets or dictionaries instead of lists in cases where:
+
+The collection will contain a large number of items
+You will be repeatedly searching for items in the collection
+You do not have duplicate items.
+For small collections, or collections which you will not frequently be searching through, the additional time and memory required to set up the hashtable will often be greater than the time saved by the improved search speed.

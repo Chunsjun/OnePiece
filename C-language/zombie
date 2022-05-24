@@ -1,0 +1,17 @@
+ifndef ZOMBIE_H
+#define ZOMBIE_H
+
+#include "entity.h"
+
+typedef struct zombie_t {
+	entity_t super;
+	int feasting;
+	int hibernating;
+	// zombie-specific members here
+} zombie_t;
+
+entity_t* zombieCreate(int x, int y);
+int zombieAct(zombie_t* zombie);
+int zombieDie(zombie_t* zombie);
+
+#endif

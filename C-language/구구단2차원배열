@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+    int arr[3][9];
+    int i,p;
+     
+    for(i=2; i<5; i++)
+        for(p=1; p<10; p++)
+            arr[i][p] = i*p;
+             
+     
+    for(i=2; i<5; i++)
+    {
+        printf("%d단\n",i); 
+        for(p=1; p<10; p++)
+            printf("%d X %d = %d\n",i,p, arr[i][p]);
+             
+            }     
+             
+     
+     
+             
+     
+              
+              
+              
+  
+    system("pause");
+    return 0;
+}

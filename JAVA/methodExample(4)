@@ -1,0 +1,24 @@
+class  MethodTest04{
+
+		public static void LoveMessage(String name, int n){
+			for (int i = 0 ; i <= n ; i++ ){
+				System.out.println(name + "야(아), 사랑해!");  
+			}
+			return;
+		}
+		// 메소드의 정의
+
+		public static void main(String[] args) {
+			LoveMessage("길동",10); // 메소드 호출
+
+			int a = 20;
+			System.out.println("a의 값은"  + a);
+
+			LoveMessage("감찬",5);
+
+			String addr = "서울";
+			System.out.println("주소 :  " + addr );
+
+			LoveMessage("순신",7);
+		}
+	}

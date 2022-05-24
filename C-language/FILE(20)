@@ -1,0 +1,26 @@
+#include <stdio.h>
+                 
+void main()
+{
+       FILE * fp1 = fopen("input.txt", "rt"); // input.txt 파일을 읽기용으로 선언
+       FILE * fp2 = fopen("output.txt", "wt"); // output.txt 파일을 쓰기용으로 선언
+       if(fp1 == NULL || fp2 == NULL) {
+              puts("파일 오픈 실패");
+              return;
+       }
+       
+       char str[30];
+       int ch1, ch2;
+
+       ch1 = getc(stdin);  // steam부분에 stdin을 넣어서 표준 입력함수와 같은 효과를 보인다
+       ch2 = fgetc(stdin);
+       fgets(str, sizeof(str), fp1); //fp1의 내용을 읽어 들여 str크기의 str 변수에 복사
+
+       putc(ch1, stdout);
+       fputc(ch2, stdout);
+       fputs(str, sizeof(str), fp2); // 문자열을 출력하지만 개행은 되지 않는다
+
+       fclose(fp1); // fopen으로 열어준 FILE 포인터형은
+       fclose(fp2); // 반드시 fclose로 닫아주어야한다
+
+}

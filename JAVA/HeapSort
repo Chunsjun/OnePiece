@@ -1,0 +1,55 @@
+// 슈도 코드
+class heap{
+  keytype[] S; // S의 인덱스는 1부터 n까지
+  int heapsize; // heapsize는 0~n 사이
+}
+
+void heapsort( int n, heap H ){
+  makeheap(n, H);
+  removekeys(n, H, H.S);
+}
+
+void makeheap( int n, heap H){ // H 는 결국 heap이 됨
+  index i; // n개 키가 배열 H.S에 있다고 가정
+  H.heapsize = n;
+  for( i=[n/2] ; i >= 1 ; i--) // 깊이가 d-1인 자식마디를 가짐
+    siftdown(H, i);
+}
+
+void removekeys( int n, heap H , keytype [] S){
+  index i;
+  for( i=n ; i >= 1 ; i--)
+    S[i] = root(i);
+}
+
+keytype root(index i){
+  keytype keyout;
+  keyout = H.S[1]; // 루트에서 키 추출
+  H.S[1] = H.S[heapsize]; // 리프를 루트키로 이동
+  heapsize = heapsize - 1; // 리프 노드 지움
+  siftdown(H, 1); // 힙 성질 회복
+  return keytout;
+}
+
+public static void siftdown(heap H, index i){
+  index parent, largerchild;
+  keytype siftkey;
+  boolean spotfound;
+  
+  siftkey = H.S[i];
+  parent = i;
+  spotfound = false;
+  while( 2*parent <= H.heapsize && !spotfound){
+    if( 2*parent < H.heapsize && H.S[2*parent] < H.S[2*parent +1] )
+      largerchild = 2*parent + 1; // 오른쪽 자식마디의 인덱스는 부모마디의 인덱스보다 2배보다 1많다.
+    else
+      largerchild = 2*parnet; // 왼쪽 마디의 인덱스는 부모의 2배이다.
+    
+    if( siftkey < H.S[largerchild] ){
+      H.S[parent] = H.S[largerchild];
+      parent = largerchild;
+    }else
+      spotfound = true;
+  }
+  H.S[parent] = siftkey;
+}

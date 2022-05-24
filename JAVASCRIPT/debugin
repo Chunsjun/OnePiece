@@ -1,0 +1,103 @@
+JavaScript Debugging
+❮ PreviousNext ❯
+It is easy to get lost writing JavaScript code without a debugger.
+
+JavaScript Debugging
+It is difficult to write JavaScript code without a debugger.
+
+Your code might contain syntax errors, or logical errors, that are difficult to diagnose.
+
+Often, when JavaScript code contains errors, nothing will happen. There are no error messages, and you will get no indications where to search for errors.
+
+Normally, errors will happen, every time you try to write some new JavaScript code.
+
+JavaScript Debuggers
+Searching for errors in programming code is called code debugging.
+
+Debugging is not easy. But fortunately, all modern browsers have a built-in debugger.
+
+Built-in debuggers can be turned on and off, forcing errors to be reported to the user.
+
+With a debugger, you can also set breakpoints (places where code execution can be stopped), and examine variables while the code is executing.
+
+Normally, otherwise follow the steps at the bottom of this page, you activate debugging in your browser with the F12 key, and select "Console" in the debugger menu.
+
+The console.log() Method
+If your browser supports debugging, you can use console.log() to display JavaScript values in the debugger window:
+
+Example
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+
+<script>
+a = 5;
+b = 6;
+c = a + b;
+console.log(c);
+</script>
+
+</body>
+</html>
+Try it Yourself »
+Setting Breakpoints
+In the debugger window, you can set breakpoints in the JavaScript code.
+
+At each breakpoint, JavaScript will stop executing, and let you examine JavaScript values.
+
+After examining values, you can resume the execution of code (typically with a play button).
+
+The debugger Keyword
+The debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function.
+
+This has the same function as setting a breakpoint in the debugger.
+
+If no debugging is available, the debugger statement has no effect.
+
+With the debugger turned on, this code will stop executing before it executes the third line.
+
+Example
+var x = 15 * 5;
+debugger;
+document.getElementbyId("demo").innerHTML = x;
+Try it Yourself »
+Major Browsers' Debugging Tools
+Normally, you activate debugging in your browser with F12, and select "Console" in the debugger menu.
+
+Otherwise follow these steps:
+
+Chrome
+Open the browser.
+From the menu, select tools.
+From tools, choose developer tools.
+Finally, select Console.
+Firefox Firebug
+Open the browser.
+Go to the web page:
+http://www.getfirebug.com
+Follow the instructions how to:
+install Firebug
+Internet Explorer
+Open the browser.
+From the menu, select tools.
+From tools, choose developer tools.
+Finally, select Console.
+Opera
+Open the browser.
+Go to the webpage:
+http://dev.opera.com
+Follow the instructions how to:
+add a Developer Console button to your toolbar.
+Safari Firebug
+Open the browser.
+Go to the webpage:
+http://safari-extensions.apple.com
+Follow the instructions how to:
+install Firebug Lite.
+Safari Develop Menu
+Go to Safari, Preferences, Advanced in the main menu.
+Check "Enable Show Develop menu in menu bar".
+When the new option "Develop" appears in the menu:
+Choose "Show Error Console".

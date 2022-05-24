@@ -1,0 +1,346 @@
+package edu.ks.exam1;
+
+import java.util.Scanner;
+
+
+
+public class J0502_2 {
+
+
+
+	private int jumsu1;
+
+	private int jumsu2;
+
+	private int jumsu3;
+
+	private int jumsu4;
+
+	private int jumsu5;
+
+	
+
+	public static void main(String[] args) {
+
+		Scanner scan = new Scanner(System.in);
+
+		
+
+		String ans;
+
+		String number;
+
+		String name;
+
+		int total;
+
+		Student[] student= new Student[50]; 
+
+		int avr=0;
+
+		int i =0;
+
+		hakjumc hj = new hakjumc();
+
+		J0502_2 a = new J0502_2();
+
+		do{
+
+			System.out.println("성적을 입력할 학생이 있으면 y 없으면 n을 입력하세요.");
+
+			ans = scan.next();
+
+			if(ans.equals("n")) break;
+
+			for(int j=0;j<4;j++)
+
+			student[i] = new Student();
+
+			
+
+			System.out.println("학번 : ");
+
+			student[i].setBunho(scan.next());
+
+			System.out.println("이름 : ");
+
+			student[i].setName(scan.next());
+
+			System.out.println("출석점수 : ");
+
+			student[i].setJumsu1(scan.nextInt());
+
+			System.out.println("과제점수 : ");
+
+			student[i].setJumsu2(scan.nextInt());
+
+			System.out.println("수시시험 : ");
+
+			student[i].setJumsu3(scan.nextInt());
+
+			System.out.println("중간고사 : ");
+
+			student[i].setJumsu4(scan.nextInt());
+
+			System.out.println("기말고사 : ");
+
+			student[i].setJumsu5(scan.nextInt());
+
+			
+
+			total = student[i].getJumsu1()+student[i].getJumsu2()+student[i].getJumsu3()+student[i].getJumsu4()+student[i].getJumsu5();
+
+			student[i].setTotal(total);
+
+			
+
+			System.out.println("평균 : "+student[i].getTotal()/5);
+
+			hj.setTotal(student[i].getTotal()/5);
+
+			avr+=student[i].getTotal()/5;
+
+			
+
+			student[i].setGrade(hj.hakjum());
+
+			
+
+			System.out.println("학점 : "+student[i].getGrade());//학점계산 클래스로 호출
+
+			i++;
+
+		}while(i<50);
+
+		
+
+		System.out.println("종료");
+
+		System.out.println("****성적 평가표****");
+
+		System.out.println("학번  \t이름  \t  평균\t  학점");
+
+		for(i=0; student[i] != null;i++){
+
+			System.out.print(student[i].getBunho()+"\t"+student[i].getName()+"\t"+student[i].getTotal()/5+"\t"+student[i].getGrade());
+
+		System.out.println();
+
+		}
+
+		System.out.println("평균점수는 "+(double)(avr)+"입니다.");
+
+	}
+
+}
+
+
+
+
+class hakjumc{
+
+	private int total;
+
+	private String grade;
+
+	public void setTotal(int total){
+
+		this.total = total;
+
+	}
+
+	
+
+	
+
+	public String hakjum(){
+
+		
+
+		switch(total/10){
+
+		
+
+		case 10:
+
+		case 9:
+
+			grade = "A";
+
+			break;
+
+		case 8:
+
+			grade = "B";
+
+			break;
+
+		case 7:
+
+			grade = "C";
+
+			break;
+
+		case 6:
+
+			grade = "D";
+
+			break;
+
+		default : grade = "F";
+
+		}
+
+		
+
+		return grade;
+
+	}
+
+	
+
+}
+
+------------------main-------------------
+
+get,set 클래스 입니다.
+
+package edu.ks.exam1;
+
+
+
+public class Student {
+
+	
+
+	private String bunho;
+
+	private String name;
+
+	private int jumsu1;
+
+	private int jumsu2;
+
+	private int jumsu3;
+
+	private int jumsu4;
+
+	private int jumsu5;
+
+	private int total;
+
+	private String grade;
+
+	
+
+	
+
+	public String getBunho() {
+
+		return bunho;
+
+	}
+
+	public void setBunho(String bunho) {
+
+		this.bunho = bunho;
+
+	}
+
+	public String getName() {
+
+		return name;
+
+	}
+
+	public void setName(String name) {
+
+		this.name = name;
+
+	}
+
+	public int getJumsu1() {
+
+		return jumsu1;
+
+	}
+
+	public void setJumsu1(int jumsu1) {
+
+		this.jumsu1 = jumsu1;
+
+	}
+
+	public int getJumsu2() {
+
+		return jumsu2;
+
+	}
+
+	public void setJumsu2(int jumsu2) {
+
+		this.jumsu2 = jumsu2;
+
+	}
+
+	public int getJumsu3() {
+
+		return jumsu3;
+
+	}
+
+	public void setJumsu3(int jumsu3) {
+
+		this.jumsu3 = jumsu3;
+
+	}
+
+	public int getJumsu4() {
+
+		return jumsu4;
+
+	}
+
+	public void setJumsu4(int jumsu4) {
+
+		this.jumsu4 = jumsu4;
+
+	}
+
+	public int getJumsu5() {
+
+		return jumsu5;
+
+	}
+
+	public void setJumsu5(int jumsu5) {
+
+		this.jumsu5 = jumsu5;
+
+	}
+
+	public int getTotal() {
+
+		return total;
+
+	}
+
+	public void setTotal(int total) {
+
+		this.total = total;
+
+	}
+
+	public String getGrade() {
+
+		return grade;
+
+	}
+
+	public void setGrade(String grade) {
+
+		this.grade = grade;
+
+	}
+
+}

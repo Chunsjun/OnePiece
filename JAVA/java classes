@@ -1,0 +1,22 @@
+Java Classes
+
+ 
+
+
+ In this section, you'll learn how to write your own Java classes, and how to create objects from them. You've already made a start on classes in the previous section. But we'll go into more detail now. In case you're confused about the difference between an object and class, though, when we talk about a class we're talking about the code itself, the code that sits around doing nothing. When you put the code to work it's an object.
+
+When you create a class, you're writing code to do a particular job. That job might be to do with an employee, but not the company's sales figures at the same time. You would write a separate class for the sales figures. That way, you can re-use the employee class in another project. The sales figures would be redundant data.
+
+When you're trying to come up with your own ideas for classes you should bear in mind that redundancy issue and ask yourself, "Is there any code in this class that doesn't need to be here?"
+
+For this section's example, we'll write a class that deals with exams. For our example class, we'll make things simple. We'll record the name of the person taking the exam, which exam it was, the score out of 50, and a grade.
+
+Let's make a start.
+
+Create a new Java project for this. Call the package exams, and then change the name of the Main method to ExamDetails. You should then have the following code:
+
+The blank ExamDetails Java class
+
+We'll create a second class to handle the exam data. So, in NetBeans, click File from the menu bar at the top. From the File menu, select New File. Highlight Java from the Categories list, and Java Class from the File Types list. Then click Next. On the next screen, enter StudentResults as the class name. Then click Finish. NetBeans will create a second class in your project. You can delete any default comments.
+
+In the next lesson, you'll learn about Field Variables.

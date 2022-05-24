@@ -1,0 +1,22 @@
+#include "stdafx.h"
+#include "stdlib.h"
+void Test(void);
+int num = 10;
+int main()
+{ 
+  int num = 20;
+  while (1) 
+  {  
+     int num = 30;
+     printf("num=%d\n", num++);
+     if (num > 25)   
+     break;
+  } 
+  printf("num=%d\n", num);
+  Test();
+  return 0;
+}
+void Test(void)
+{ 
+  printf("num=%d\n", num);
+}

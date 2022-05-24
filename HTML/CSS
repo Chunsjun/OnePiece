@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<titl>유미나의 홈페이지</title>
+<style type="text/css">
+img {
+float:right;
+}
+.mybox {
+width: 600px;
+background-color: pink;
+}
+.float_off {
+clear: right;
+}
+</style>
+</head>
+<body>
+<div class="mybox">
+<img src="internet.png"></img>
+인터넷이 보이면 그림책에서는 FTTF 및 ADSL, 블로그 등 컴퓨터 업계 이외의 사람도 상식으로 꼭 알아 두면 좋은 주제를 다루고 있습니다.
+<p class="float_off">
+대상에 제한 없이 많은 분이 읽으셨으면 합니다.
+</p>
+<div>
+</body>
+</html>
+

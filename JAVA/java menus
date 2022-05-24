@@ -1,0 +1,72 @@
+Java Menus
+
+Java Form Controls: 1 2 3 4 5 6 7
+
+
+ 
+
+You can add menus to your Java forms, things like File, Edit, View, etc. Each menu has menu items, and these in turn can have sub menus.
+
+You can start a new project for this, or just return to Design view and use the project you have. We'll use a new project.
+
+In the NetBeans palette, locate the Menu Bar item, listed under Swing Menus:
+
+The NetBeans Palette showing the Java Menu Bar
+
+Drag one to the top of your form. When you let the mouse button go, you'll have a default File and Edit menu bar:
+
+The default menu bar
+
+There's no menu items added by default, though. To add your own, click on the File menu item to select it. With the File menu item selected, right-click. A new menu will appear. Select Add From Palette > Menu Item:
+
+Adding a menu item
+
+A Menu Item will be added to your File menu:
+
+A menu item has been added
+
+What we'll do is to add menu items to open and save a file.
+
+Double click on the default text jMenuItem1. It will then be highlighted, so that you can type over it: (Or right-click and select Edit Text from the menu that appears.)
+
+Type over the default text
+
+Type Open, then press the enter key on your keyboard:
+
+An Open item has been added to the menu
+
+Add another menu item in the way. This time, type Save as the menu item:
+
+Add a Save item
+
+As you can see above, you can add shortcuts for your menu items. Click on to the Open menu item, then onto the shortcut for it:
+
+Select the Shortcut for the menu item
+
+With the shortcut item selected, have a look at the properties window:
+
+Properties for a menu item
+
+Locate the Accelerator item, and click the small button to the right of the row. A dialogue box appears:
+
+The accelerator dialogue box
+
+You can set which shortcut keys you want for a menu item from this dialogue box. An open shortcut is usually CTRL + O.
+
+Hold down the CTRL on your keyboard and type an O in the Key Stroke box. Shift + O will appear in the text area:
+
+A shorcut added for the CTRL and O keys
+
+Click OK, and the shortcut will be added to your Java menu item:
+
+The shortcut on the menu
+
+To see if all this works, click back on the Open menu item to highlight it. Now right click. From the menu that appears, select Events > Action > Action Performed. This will create a code stub for the menu item. Enter the following for the code:
+
+javax.swing.JOptionPane.showMessageDialog( FormObjects.this, "Open" );
+
+This is just a message box.
+
+Run your program and try it out. Click File > Open and you should see the message box appear. Click OK to get rid of it. Now try your shortcut. Hold down the Ctrl key on your keyboard. Keep it held down and press the letter O. Again, the menu should appear.
+
+Stop your program and return to your code stub. Comment out the message box. What we'll do is to write code to display a File Open dialogue box. A user can then select a file to be opened. We'll do that in the next part.

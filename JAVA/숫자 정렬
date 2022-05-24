@@ -1,0 +1,72 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Quest1_1 {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader inputStream = null;
+		PrintWriter outputStream = null;
+		ArrayList aList = new ArrayList();
+		ArrayList dList = new ArrayList();
+		int num;
+		try {
+
+			// in = new DataInputStream(new BufferedInputStream(new
+			// FileInputStream("datain.txt")));
+			inputStream = new BufferedReader(new FileReader("datain.txt"));
+			outputStream = new PrintWriter(new FileWriter("dataout.txt"));
+
+			
+			//알고리즘 : 텍스트에서 한줄씩 읽어와(String) 정수로 파싱, 에러나면 실수로 파싱..
+			// 개선점 : 이거를 애초에 에러호출이 아니라, 정수 가능한지 여부를 알면 조건문으로 치환가능한데 어떻게 해야할지...
+			String l;
+			int i;
+			double double_a;
+			while ((l = inputStream.readLine()) != null) {
+				try {
+
+					System.out.println(l + "");
+					i = Integer.parseInt(l);
+					aList.add(i);
+
+				} catch (NumberFormatException e) {
+					System.out.println("다른 수 입력 ");
+					double_a = Double.parseDouble(l);
+					dList.add(double_a);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+			}
+			Collections.sort(aList);
+			Collections.sort(dList);
+			
+			System.out.print("총 입력한 문자는 : ");
+			for (int a : aList)
+				System.out.print(" " + a);
+			System.out.println();
+			
+			System.out.print("총 입력한 소수 문자는 : ");
+			for (double a : dList)
+				System.out.print(" " + a);
+
+		} catch (FileNotFoundException e) {
+			System.out.println("파일이 존재하지않습니다");
+		} finally {
+			if (inputStream != null) {
+				inputStream.close();
+			}
+			if (outputStream != null)
+				outputStream.close();
+		}
+	}
+
+}
+

@@ -1,0 +1,24 @@
+#include "stdafx.h"
+#include "stdlib.h"
+#define X 4
+#define Y 7
+int main(void)
+{ char *pWeek[Y] = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sa" };
+  char aWeek[Y][X] = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+  char *pC; int i, j;
+  printf("sizeof(pWeek) = %d\n", sizeof(pWeek));
+  printf("sizeof(aWeek) = %d\n", sizeof(aWeek));
+  printf("포인터 배열 pWeek의 각 요소에 할당된 주소와 저장된 주소 출력\n");
+  for (i = 0; i < Y; i++)  
+     printf("(pWeek[%d] = %p, pWeek[%d] = %p\n", i, &pWeek[i], i, pWeek[i]); printf("pWeek 배열의 시작 주소와 오프셋을 이용한 주소 출력\n");
+     for (i = 0; i < Y; i++)  
+        printf("(pWeek + %d) = %p, *(pWeek + %d) = %p\n", i, (pWeek + i), i, *(pWeek + i));
+        printf("pWeek 배열에 저장된 문자열을 %%s로 출력\n");
+        for (i = 0; i < Y; i++)  
+           printf("pWeek[%d] = %s, pWeek[%d] = %s\n", i, pWeek[i], i, *(pWeek + i));
+           printf("pWeek 배열의 문자 포인터를 이용하여 %%c로 모든 문자 출력\n");
+           for (i = 0; i < Y; i++) 
+           { 
+              pC = pWeek[i];
+              for (; *pC != '\0'; pC++)
+              printf("%c", *pC);  printf("\n");  printf("2차원 문자 배열 aWeek에서 문자 포인터를 이용하여 %%c로 모든 문자 출력\n");  pC = aWeek[0];  for (i = 0; i < X*Y; i++, pC++)  {   if (*pC != '\0')    printf("%c", *pC);   else    printf("\n");  }  printf("1차원 포인터 배열을 2차원 배열처럼 첨자를 사용하여 %%c로 모든 문자 출력\n");  for (i = 0; i < Y; i++)  {   for (j = 0; j < X; j++)    printf("%c", pWeek[i][j]);   printf("\n");  } }}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>나의 홈페이지</title>
+</head>
+<body>
+나의 홈페이지에 오신 걸 환영합니다.
+메시지를 나타내려면
+여기 body 내에 서술하면 된다.
+지금은 body 태그를 연습 중 입니다.
+
+</body>
+</html>

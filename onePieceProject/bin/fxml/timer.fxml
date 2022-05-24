@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" 
+	  minHeight="-Infinity" minWidth="-Infinity" 
+	  prefHeight="200.0" prefWidth="150.0" 
+      xmlns="http://javafx.com/javafx/8" 
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="server.Timer">
+      
+   <children>
+      <Label fx:id="timer" layoutX="55.0" layoutY="50.0" text="Timer" />
+      <Button fx:id="button" layoutX="40.0" layoutY="140.0" mnemonicParsing="false" text="Start" onAction="#start"/>
+   </children>
+</Pane>

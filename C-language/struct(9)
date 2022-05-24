@@ -1,0 +1,101 @@
+#include<stdio.h> 
+
+
+#include<stdlib.h> 
+
+
+struct Park 
+
+
+{ 
+
+
+    char hakbun[12]; //학번 
+
+
+    char name[16]; //학생이름 
+
+
+    int kor; //국어점수 
+
+
+    int eng; //영어점수 
+
+
+    int mat; //수학점수 
+
+
+}; 
+
+
+int main() 
+
+
+{    //구조체배열선언 
+
+
+    struct Park data[3]; 
+
+
+    int i; 
+
+
+for(i=0; i<3; i++) 
+
+
+{ 
+
+
+        fflush(stdin); printf("학번입력=> "); 
+
+
+        gets(data[i].hakbun); 
+
+
+        fflush(stdin); 
+
+
+        printf("이름입력 => ");     gets(data[i].name); 
+
+
+        printf("국어점수입력 => "); scanf("%d", &data[i].kor); 
+
+
+        printf("영어점수입력 => "); scanf("%d", &data[i].eng); 
+
+
+        printf("수학점수입력 => "); scanf("%d", &data[i].mat); 
+
+
+     } 
+
+
+    system("cls"); 
+
+
+    printf(" hakbun name kor eng mat \n"); 
+
+
+    printf("---------------------------------------------- \n"); 
+
+
+    for(i=0; i<3; i++) 
+
+
+    { 
+
+
+        printf(" %8s %15s %4d %4d %4d \n", 
+
+
+     data[i].hakbun, data[i].name, data[i].kor, data[i].eng, data[i].mat ); 
+
+
+    } 
+
+
+    return 0; 
+
+
+}
+

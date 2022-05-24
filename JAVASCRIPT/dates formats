@@ -1,0 +1,123 @@
+JavaScript Date Formats
+❮ PreviousNext ❯
+JavaScript Date Input
+There are generally 4 types of JavaScript date input formats:
+
+Type	Example
+ISO Date	"2015-03-25" (The International Standard)
+Short Date	"03/25/2015"
+Long Date	"Mar 25 2015" or "25 Mar 2015"
+Full Date	"Wednesday March 25 2015"
+The ISO format follows a strict standard in JavaScript.
+
+The other formats are not so well defined and might be browser specific.
+
+JavaScript Date Output
+Independent of input format, JavaScript will (by default) output dates in full text string format:
+
+Wed Mar 25 2015 09:00:00 GMT+0900 (대한민국 표준시)
+JavaScript ISO Dates
+ISO 8601 is the international standard for the representation of dates and times.
+
+The ISO 8601 syntax (YYYY-MM-DD) is also the preferred JavaScript date format:
+
+Example (Complete date)
+var d = new Date("2015-03-25");
+Try it Yourself »
+The computed date will be relative to your time zone.
+Depending on your time zone, the result above will vary between March 24 and March 25.
+
+It can be written without specifying the day (YYYY-MM):
+
+Example (Year and month)
+var d = new Date("2015-03");
+Try it Yourself »
+Time zones will vary the result above between February 28 and March 01.
+
+It can be written without month and day (YYYY):
+
+Example (Only year)
+var d = new Date("2015");
+Try it Yourself »
+Time zones will vary the result above between December 31 2014 and January 01 2015.
+
+It can be written with added hours, minutes, and seconds (YYYY-MM-DDTHH:MM:SS):
+
+Example (Complete date plus hours, minutes, and seconds)
+var d = new Date("2015-03-25T12:00:00");
+Try it Yourself »
+The T in the date string, between the date and time, indicates UTC time.
+
+UTC (Universal Time Coordinated)  is the same as GMT (Greenwich Mean Time).
+
+JavaScript Short Dates.
+Short dates are written with an "MM/DD/YYYY" syntax like this:
+
+Example
+var d = new Date("03/25/2015");
+Try it Yourself »
+WARNINGS !
+In some browsers, months or days with no leading zeroes may produce an error:
+
+Example
+var d = new Date("2015-3-25");
+The behavior of "YYYY/MM/DD" and "DD-MM-YYYY" is undefined. Some browsers will guess the format. Some will return NaN.
+
+Example
+var d = new Date("2015/03/25"); 
+
+var d = new Date("25-03-YYY");
+JavaScript Long Dates.
+Long dates are most often written with a "MMM DD YYYY" syntax like this:
+
+Example
+var d = new Date("Mar 25 2015");
+Try it Yourself »
+Month and day can be in any order:
+
+Example
+var d = new Date("25 Mar 2015");
+Try it Yourself »
+And, month can be written in full (January), or abbreviated (Jan):
+
+Example
+var d = new Date("January 25 2015");
+Try it Yourself »
+Example
+var d = new Date("Jan 25 2015");
+Try it Yourself »
+Commas are ignored. Names are case insensitive:
+
+Example
+var d = new Date("JANUARY, 25, 2015");
+Try it Yourself »
+Full Date Format
+JavaScript will accept date strings in "full JavaScript format":
+
+Example
+var d = new Date("Wed Mar 25 2015 09:56:24 GMT+0100 (W. Europe Standard Time)");
+Try it Yourself »
+JavaScript will ignore errors both in the day name and in the time parentheses:
+
+Example
+var d = new Date("Fri Mar 25 2015 09:56:24 GMT+0100 (Tokyo Time)");
+Try it Yourself »
+Time Zones
+JavaScript accepts these time zones:
+
+Time Zone	Description
+UTC	Coordinated Universal Time
+GMT	Greenwich Mean Time
+EDT	(US) Eastern Daylight Time
+CDT	(US) Central Daylight Time
+MDT	(US) Mountain Daylight Time
+PDT	(US) Pacific Daylight Time
+EST	(US) Eastern Standard Time
+CST	(US) Central Standard Time
+MST	(US) Mountain Standard Time
+PST	(US) Pacific Standard Time
+When setting a date, without specifying the time zone, JavaScript will use the browser's time zone.
+
+When getting a date, without specifying the time zone, the result is converted to the browser's time zone.
+
+In other words: If a date/time is created in GMT (Greenwich Mean Time), the date/time will be converted to CDT (Central US Daylight Time) if a user browses from central US.

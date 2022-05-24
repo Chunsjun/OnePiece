@@ -1,0 +1,18 @@
+public class ListAction implements Action {
+ @Override
+ public void execute(Scanner sc) {
+  
+  MemberVO[] members = MemberMain.members;
+  //static영역에 공유되어있는 회원 정보 목록을 저장하고 있는 배열 객체의 참조 값을 얻어오는 부분이다.
+  if(members.length >= 1){
+   for(int i=0;i<members.length;i++){
+    System.out.println("이름 : " + members[i].getName() + ", 전화번호 : " + members[i].getTel()
+      + ",국가 : " + members[i].getNation() + ", 나이 : " + members[i].getAge() + ",이메일 : "
+      + members[i].getEmail());
+   }
+  }
+  else{
+   System.out.println("회원 정보가 존재하지 않습니다.");
+  }
+ }
+}

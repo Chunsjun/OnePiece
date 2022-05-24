@@ -1,0 +1,15 @@
+Makefile
+Location	./Makefile
+Purpose	Generic management tasks.
+If you look at most of my projects or any Pocoo project, you’ll notice a Makefile laying around. Why? These projects aren’t written in C... In short, make is a incredibly useful tool for defining generic tasks for your project.
+
+Sample Makefile:
+
+init:
+    pip install -r requirements.txt
+
+test:
+    py.test tests
+
+.PHONY: init test
+Other generic management scripts (e.g. manage.py or fabfile.py) belong at the root of the repository as well.

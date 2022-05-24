@@ -1,0 +1,52 @@
+Add a Button to a Java Form
+
+Java Calculator Project: 1 2 3 4 5 6 7 8 9 10
+
+
+ 
+
+You add a button to a form in the same way you do for text fields - drag and drop. However, as we're going to be adding lots of buttons, it's a good idea to add the buttons to a control called a Panel. If you need to move the buttons, you can then just move the Panel instead. All the buttons will then move with the Panel.
+
+So locate the Panel control in the Palette:
+
+The Panel control  in the Netbeans Palette 
+
+Drag one on to your form. You can't see a Panel, as they'll have the same colour as the form. But you can select it:
+
+A Panel control has been added to the Java form
+
+Drag the sizing handles so that the Panel fills most of the form:
+
+The Panel has been resized
+
+We can now add a button.
+
+Locate the Button control in the Palette:
+
+The Button control in the Netbeans palette
+
+Drag one on to your Panel control:
+
+A button being dragged on to a Java form
+
+You should then see a button with sizing handles and position lines:
+
+A button dropped on to the form
+
+The default name of the button is jButton1. Change this name just like you did for the text field: right click in the Navigator area, and select Change variable name. Change the name of the button to btnOne:
+
+A renamed Java form button
+
+The name of the button will have changed in the Navigator:
+
+The Netbeans navigator showing  a renamed button
+
+A new line of code has also been added:
+
+Java Instance variables have been set up  for the button and panel
+
+The new variable name is btnOne, and it is a JButton object, which is a Swing control. Note, too, that a variable has been set up for the panel (we've left this on the default name).
+
+In the next part, you'll learn how to change the properties of Java buttons.
+
+ 

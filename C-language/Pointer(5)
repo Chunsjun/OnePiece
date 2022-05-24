@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int max(int i,int arr[])
+{
+    int k;
+    int max;
+     
+    max=arr[0];
+    for(k=0;k<i;k++)
+    {   
+        if(arr[k]>max)
+        max=arr[k];
+    }
+    return max;
+}
+int min(int i,int arr[])
+{
+    int k;
+    int min;
+     
+    min=arr[0];
+    for(k=0;k<i;k++)
+    {   
+        if(arr[k]<min)
+        min=arr[k];
+    }
+    return min;
+}
+int main(void)
+{
+    int i,k;
+     
+    printf("정수 n을 입력하시오.\n");
+    scanf("%d",&i);
+     
+    int arr[i];
+     
+    printf("n개의 정수를 입력하시오.\n");
+    for(k=0;k<i;k++) scanf("%d",&arr[k]);
+     
+    printf("최대값 : %d\n",max(i,arr));
+    printf("최소값 : %d\n",min(i,arr));
+    system("pause");
+    
+    return 0;
+    
+}

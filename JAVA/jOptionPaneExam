@@ -1,0 +1,32 @@
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class JOptionPaneExam extends JFrame
+{
+	public JOptionPaneExam()
+	{
+		super("타이틀ㅋㅋ");
+		
+		//간단한 메시지창
+		JOptionPane.showMessageDialog(this, "축하합니다");
+		
+		//간단한 확인창
+		System.out.println(JOptionPane.showConfirmDialog(this, "선택하시겠습니까?"));
+		//   Yes : 0
+		//    No : 1
+		//CANCEL : 2
+		
+		//사용자 입력창(간단한 입력값 받는 창)
+		System.out.println(JOptionPane.showInputDialog(this, "이름은?"));
+		
+		setSize(500,400);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public static void main(String[] args)
+	{
+		new JOptionPaneExam();
+
+	}
+}

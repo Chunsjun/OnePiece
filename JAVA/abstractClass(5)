@@ -1,0 +1,37 @@
+abstract class Dog{               //추상 메서드를 포함하므로 추상클래스로 선언한다
+     void SwingTail(){
+          System.out.println("살랑살랑");
+     }
+ abstract void Bark();             //추상 메서드를 포함한다
+}
+
+ 
+
+//===========================================================================
+//Dog 추상클래스를 상속한 클래스들
+
+class Jindo extends Dog{
+     void Bark(){     //추상메서드는 서브클래스에서 반드시 재정의 되어야 한다
+          System.out.println("멍멍");
+     }
+}
+
+ 
+
+class Chihuahua extends Dog{
+ void Bark(){
+      System.out.println("왈왈");
+     }
+ }
+//============================================================================
+
+
+public class JavaBasicYoo {
+ public static void main(String args[]){
+      Jindo Jindol = new Jindo();
+      Chihuahua Happy = new Chihuahua();
+  
+      Jindol.Bark();
+      Happy.Bark();
+     }
+    }

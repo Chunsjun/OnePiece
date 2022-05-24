@@ -1,0 +1,122 @@
+A function is a block of organized, reusable code that is used to perform a single, related action. Functions provide better modularity for your application and a high degree of code reusing.
+
+As you already know, Python gives you many built-in functions like print(), etc. but you can also create your own functions. These functions are called user-defined functions.
+
+Defining a Function
+You can define functions to provide the required functionality. Here are simple rules to define a function in Python.
+
+Function blocks begin with the keyword def followed by the function name and parentheses ( ( ) ).
+
+Any input parameters or arguments should be placed within these parentheses. You can also define parameters inside these parentheses.
+
+The first statement of a function can be an optional statement - the documentation string of the function or docstring.
+
+The code block within every function starts with a colon (:) and is indented.
+
+The statement return [expression] exits a function, optionally passing back an expression to the caller. A return statement with no arguments is the same as return None.
+
+Syntax
+def functionname( parameters ):
+   "function_docstring"
+   function_suite
+   return [expression]
+By default, parameters have a positional behavior and you need to inform them in the same order that they were defined.
+
+Example
+The following function takes a string as input parameter and prints it on standard screen.
+
+def printme( str ):
+   "This prints a passed string into this function"
+   print str
+   return
+Calling a Function
+Defining a function only gives it a name, specifies the parameters that are to be included in the function and structures the blocks of code.
+
+Once the basic structure of a function is finalized, you can execute it by calling it from another function or directly from the Python prompt. Following is the example to call printme() function −
+
+#!/usr/bin/python
+
+# Function definition is here
+def printme( str ):
+   "This prints a passed string into this function"
+   print str
+   return;
+
+# Now you can call printme function
+printme("I'm first call to user defined function!")
+printme("Again second call to the same function")
+When the above code is executed, it produces the following result −
+
+I'm first call to user defined function!
+Again second call to the same function
+Pass by reference vs value
+All parameters (arguments) in the Python language are passed by reference. It means if you change what a parameter refers to within a function, the change also reflects back in the calling function. For example −
+
+#!/usr/bin/python
+
+# Function definition is here
+def changeme( mylist ):
+   "This changes a passed list into this function"
+   mylist.append([1,2,3,4]);
+   print "Values inside the function: ", mylist
+   return
+
+# Now you can call changeme function
+mylist = [10,20,30];
+changeme( mylist );
+print "Values outside the function: ", mylist
+Here, we are maintaining reference of the passed object and appending values in the same object. So, this would produce the following result −
+
+Values inside the function:  [10, 20, 30, [1, 2, 3, 4]]
+Values outside the function:  [10, 20, 30, [1, 2, 3, 4]]
+There is one more example where argument is being passed by reference and the reference is being overwritten inside the called function.
+
+#!/usr/bin/python
+
+# Function definition is here
+def changeme( mylist ):
+   "This changes a passed list into this function"
+   mylist = [1,2,3,4]; # This would assig new reference in mylist
+   print "Values inside the function: ", mylist
+   return
+
+# Now you can call changeme function
+mylist = [10,20,30];
+changeme( mylist );
+print "Values outside the function: ", mylist
+The parameter mylist is local to the function changeme. Changing mylist within the function does not affect mylist. The function accomplishes nothing and finally this would produce the following result:
+
+Values inside the function:  [1, 2, 3, 4]
+Values outside the function:  [10, 20, 30]
+Function Arguments
+You can call a function by using the following types of formal arguments:
+
+Required arguments
+
+Keyword arguments
+
+Default arguments
+
+Variable-length arguments
+
+Required arguments
+Required arguments are the arguments passed to a function in correct positional order. Here, the number of arguments in the function call should match exactly with the function definition.
+
+To call the function printme(), you definitely need to pass one argument, otherwise it gives a syntax error as follows −
+
+#!/usr/bin/python
+
+# Function definition is here
+def printme( str ):
+   "This prints a passed string into this function"
+   print str
+   return;
+
+# Now you can call printme function
+printme()
+When the above code is executed, it produces the following result:
+
+Traceback (most recent call last):
+  File "test.py", line 11, in <module>
+    printme();
+TypeError: printme() takes exactly 1 argument (0 given)

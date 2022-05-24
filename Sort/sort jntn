@@ -3,7 +3,7 @@
 main (){
 
 int earth[15]={3,44,38,5,47,15,36,26,38,2,46,4,19,50,48};
-int i,o,swap,n;
+int i,o,swap,n; 
 
 for(i=0,o=1;i<o;i++,o++){
 

@@ -1,0 +1,26 @@
+abstract class Employee{
+String name,phone;
+Employee(){}
+Employee(String name,String phone){
+this.name=name;
+this.phone=phone;
+}
+public abstract String getInfo(); // abstract 추상 메소드(불구 메소드)
+// 추상 클래스는 다른 클래스의 슈퍼 클래스 역활을 한다.
+// 다른 클래스에 상속을 해줄 목적으로만 사용된다.
+// 추상 클래스를 상속 받은 클래스에서는 상속받은 클래스를 반드시 오버라이딩해줘야 한다.
+}
+
+class C070521 extends Employee{
+C070521(String name,String phone){
+super(name,phone);
+}
+public static void main(String[] args){
+Employee a = new C070521("김대경","그런거없다");
+System.out.print(a.phone);
+}
+public String getInfo(){
+return name+phone;
+}
+
+}

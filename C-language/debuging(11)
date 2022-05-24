@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main()
+{
+char a;
+int num;
+scanf("%c %d", &a, &num);
+
+if(num>=18)
+{
+switch(a)  
+{
+case 'M':
+printf("MAN");
+break;
+case 'F':
+printf("WOMEN");
+break;
+}
+}
+else
+{
+swtich(a)
+{
+case 'M':
+printf("BOY");
+break;  
+case 'F':
+printf("GIRL");
+break;
+}
+}
+return 0;
+}

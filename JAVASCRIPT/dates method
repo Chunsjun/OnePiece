@@ -1,0 +1,150 @@
+JavaScript Date Methods
+❮ PreviousNext ❯
+Date methods let you get and set date values (years, months, days, hours, minutes, seconds, milliseconds)
+
+Date Get Methods
+Get methods are used for getting a part of a date. Here are the most common (alphabetically):
+
+Method	Description
+getDate()	Get the day as a number (1-31)
+getDay()	Get the weekday as a number (0-6)
+getFullYear()	Get the four digit year (yyyy)
+getHours()	Get the hour (0-23)
+getMilliseconds()	Get the milliseconds (0-999)
+getMinutes()	Get the minutes (0-59)
+getMonth()	Get the month (0-11)
+getSeconds()	Get the seconds (0-59)
+getTime()	Get the time (milliseconds since January 1, 1970)
+The getTime() Method
+getTime() returns the number of milliseconds since January 1, 1970:
+
+Example
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getTime();
+</script>
+Try it Yourself »
+The getFullYear() Method
+getFullYear() returns the year of a date as a four digit number:
+
+Example
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getFullYear();
+</script>
+Try it Yourself »
+The getDay() Method
+getDay() returns the weekday as a number (0-6):
+
+Example
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getDay();
+</script>
+Try it Yourself »
+In JavaScript, the first day of the week (0) means "Sunday", even if some countries in the world consider the first day of the week to be "Monday"
+
+You can use an array of names, and getDay() to return the weekday as a name:
+
+Example
+<script>
+var d = new Date();
+var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+document.getElementById("demo").innerHTML = days[d.getDay()];
+</script>
+Try it Yourself »
+Date Set Methods
+Set methods are used for setting a part of a date. Here are the most common (alphabetically):
+
+Method	Description
+setDate()	Set the day as a number (1-31)
+setFullYear()	Set the year (optionally month and day)
+setHours()	Set the hour (0-23)
+setMilliseconds()	Set the milliseconds (0-999)
+setMinutes()	Set the minutes (0-59)
+setMonth()	Set the month (0-11)
+setSeconds()	Set the seconds (0-59)
+setTime()	Set the time (milliseconds since January 1, 1970)
+The setFullYear() Method
+setFullYear() sets a date object to a specific date. In this example, to January 14, 2020:
+
+Example
+<script>
+var d = new Date();
+d.setFullYear(2020, 0, 14);
+document.getElementById("demo").innerHTML = d;
+</script>
+Try it Yourself »
+The setDate() Method
+setDate() sets the day of the month (1-31):
+
+Example
+<script>
+var d = new Date();
+d.setDate(20);
+document.getElementById("demo").innerHTML = d;
+</script>
+Try it Yourself »
+The setDate() method can also be used to add days to a date:
+
+Example
+<script>
+var d = new Date();
+d.setDate(d.getDate() + 50);
+document.getElementById("demo").innerHTML = d;
+</script>
+Try it Yourself »
+If adding days, shifts the month or year, the changes are handled automatically by the Date object.
+
+Date Input - Parsing Dates
+If you have a valid date string, you can use the Date.parse() method to convert it to milliseconds.
+
+Date.parse() returns the number of milliseconds between the date and January 1, 1970:
+
+Example
+<script>
+var msec = Date.parse("March 21, 2012");
+document.getElementById("demo").innerHTML = msec;
+</script>
+Try it Yourself »
+You can then use the number of milliseconds to convert it to a date object:
+
+Example
+<script>
+var msec = Date.parse("March 21, 2012");
+var d = new Date(msec);
+document.getElementById("demo").innerHTML = d;
+</script>
+Try it Yourself »
+Compare Dates
+Dates can easily be compared.
+
+The following example compares today's date with January 14, 2100:
+
+Example
+var today, someday, text;
+today = new Date();
+someday = new Date();
+someday.setFullYear(2100, 0, 14);
+
+if (someday > today) {
+    text = "Today is before January 14, 2100.";
+} else {
+    text = "Today is after January 14, 2100.";
+}
+document.getElementById("demo").innerHTML = text;
+Try it Yourself »
+JavaScript counts months from 0 to 11. January is 0. December is 11.
+
+UTC Date Methods
+UTC date methods are used for working UTC dates (Univeral Time Zone dates):
+
+Method	Description
+getUTCDate()	Same as getDate(), but returns the UTC date
+getUTCDay()	Same as getDay(), but returns the UTC day
+getUTCFullYear()	Same as getFullYear(), but returns the UTC year
+getUTCHours()	Same as getHours(), but returns the UTC hour
+getUTCMilliseconds()	Same as getMilliseconds(), but returns the UTC milliseconds
+getUTCMinutes()	Same as getMinutes(), but returns the UTC minutes
+getUTCMonth()	Same as getMonth(), but returns the UTC month
+getUTCSeconds()	Same as getSeconds(), but returns the UTC seconds

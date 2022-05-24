@@ -1,0 +1,52 @@
+
+import java.util.Scanner; 
+ 
+ 
+ public class Main { 
+ 
+ 
+ 	public static void main(String[] args) { 
+ 
+ 
+ 		Scanner input = new Scanner(System.in); 
+ 
+ 
+ 		System.out.printf("Input the row number: "); 
+ 		int row = input.nextInt(); 
+ 		System.out.printf("Input the column number: "); 
+ 		int col = input.nextInt(); 
+ 		 
+ 		int[][] matrix1 = new int[row][col]; 
+ 		int[][] matrix2 = new int[row][col]; 
+ 		int[][] matrix = new int[row][col]; 
+ 		 
+ 		System.out.printf("\nInput the Matrix 1:\n"); 
+ 		for (int i = 0; i < row; i++) { 
+ 			System.out.printf("Input the row %d: ", i + 1); 
+ 			for (int j = 0; j < col; j++) { 
+ 				matrix1[i][j] = input.nextInt(); 
+ 			} 
+ 		} 
+ 
+ 
+ 		System.out.printf("\nInput the Matrix 2:\n"); 
+ 		for (int i = 0; i < row; i++) { 
+ 			System.out.printf("Input the row %d: ", i + 1); 
+ 			for (int j = 0; j < col; j++) { 
+ 				matrix2[i][j] = input.nextInt(); 
+ 			} 
+ 		} 
+ 		 
+ 		input.close(); 
+ 
+ 
+ 		System.out.printf("\nThe final matrix after addition:\n"); 
+ 		for (int i = 0; i < row; i++) { 
+ 			for (int j = 0; j < col; j++) { 
+ 				matrix[i][j] = matrix1[i][j] + matrix2[i][j]; 
+ 				System.out.printf("%d\t", matrix[i][j]); 
+ 			} 
+ 			System.out.println(); 
+ 		} 
+ 	} 
+ } 

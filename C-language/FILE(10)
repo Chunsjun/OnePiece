@@ -1,0 +1,186 @@
+#include <stdio.h>
+#include <string.h>
+#include <fcntl.h>          
+ 
+#define MAXNAME 40
+ 
+typedef struct
+{
+    int age;
+    int ID;
+    float score;
+    char name[MAXNAME];
+}Student;
+ 
+int ReadStudents(char* filename, Student **student_arr);
+void SortStudents(int n, Student *student_arr);
+void WriteStudents_fopen(char* filename, int n, Student *student_arr);
+void ReadKthStudent_fopen(char *filename, int k, Student *student_sel);
+ 
+void WriteStudents_open(char* filename, int n, Student *student_arr);
+void ReadKthStudent_open(char *filename, int k, Student *student_sel);
+ 
+void ReadKthNStudents(char *filename, int k, Student *student_arr, int n);
+ 
+ 
+int main() {
+    Student *student_arr, *temp_arr, student_sel, *std_sel_arr;
+    int student_num, search_selct, search_start, selct_num;
+ 
+    search_selct = 6;
+    search_start = 2;
+    selct_num = 5;
+ 
+    printf("=========Read Start=========\n");
+    student_num = ReadStudents("data.txt", &student_arr);
+    printf("=========Read Fin=========\n\n");
+ 
+    printf("=========Sort Start=========\n");
+    SortStudents(student_num, student_arr);
+    printf("=========Sort Fin=========\n\n");
+ 
+    printf("=========Write Start=========\n");
+    WriteStudents_open("result.bin", student_num, student_arr);
+    printf("=========Write Fin=========\n\n");
+ 
+    printf("=========(%dth) Start=========\n", search_selct);
+   ReadKthStudent_open("result.bin", search_selct, &student_sel);
+    printf("Check student(%dth)in main : %d %d %f %s\n", search_selct, student_sel.age, student_sel.ID, student_sel.score, &student_sel.name);
+    printf("=========Read(%dth) Fin=========\n\n", search_selct);
+     
+     
+    printf("==========Read(set) Start========= \n");
+     
+    std_sel_arr = (Student*)malloc(sizeof(Student) * selct_num);
+    ReadKthNStudents("result.bin", 2, std_sel_arr, selct_num);
+    printf("Check students in main\n");
+    temp_arr = std_sel_arr;
+    for (int i = 0; i < selct_num; i++)
+    {
+        printf("%d %d %f %s\n", temp_arr->age, temp_arr->ID, temp_arr->score, temp_arr->name);
+        temp_arr++;
+    }
+ 
+    printf("=========Read(set) Fin========= \n");
+ 
+    return 0;
+}
+ 
+int ReadStudents(char* filename, Student **student_arr) {
+    FILE *fp;
+    Student *temp_arr;
+    char tempLine[255];
+    int student_num = 0;
+ 
+    fp = fopen(filename, "r");
+ 
+    while (!feof(fp)) {
+        fgets(tempLine, sizeof(tempLine), fp);
+        student_num++;
+    }
+ 
+    *student_arr = (Student *)malloc(sizeof(Student)*student_num);
+    temp_arr = *student_arr;
+    
+ 
+    fseek(fp, 0, SEEK_SET);
+ 
+    char first_Name[MAXNAME], last_Name[MAXNAME];
+    for (int i = 0;i<student_num;i++)
+    {
+        fscanf(fp, "%d %d %f %s %s", &temp_arr->age, &temp_arr->ID, &temp_arr->score, &last_Name, &first_Name);
+        strcat(last_Name, " ");
+        strcat(last_Name, first_Name);
+        strcpy(temp_arr->name, last_Name);
+        printf("%d %d %f %s\n", temp_arr->age, temp_arr->ID, temp_arr->score, &temp_arr->name);
+        temp_arr++;
+    }
+ 
+    fclose(fp);
+ 
+    return student_num;
+}
+ 
+void SortStudents(int n, Student *student_arr) {
+    Student swap_temp;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1 - i; j++) {
+            if (strcmp((student_arr + j)->name, (student_arr + j + 1)->name) > 0) {
+                swap_temp = *(student_arr + j);
+                *(student_arr + j) = *(student_arr + j + 1);
+                *(student_arr + j + 1) = swap_temp;
+            }
+        }
+    }
+}
+ 
+void ReadKthStudent_fopen(char *filename, int k, Student *student) {
+    FILE *fp;
+    fp = fopen(filename, "rb");
+]    fseek(fp, sizeof(Student)*(k - 1), SEEK_SET);
+    fread(student, sizeof(Student), 1, fp);
+    printf("Check student(%dth)in function : %d %d %f %s\n",k, student->age, student->ID, student->score, &student->name);
+ 
+    fclose(fp);
+}
+ 
+void WriteStudents_fopen(char* filename, int n, Student *student_arr)
+{
+    FILE * fp;
+    int student_size;
+    fp = fopen(filename, "wb");
+    Student *temp_arr;
+ 
+    student_size = sizeof(Student);
+    temp_arr = student_arr;
+    printf("Check sorted Datas\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d. %d %d %f %s\n", i + 1, temp_arr->age, temp_arr->ID, temp_arr->score, temp_arr->name);
+        fwrite(temp_arr, student_size, 1, fp);
+        temp_arr++;
+    }
+    fclose(fp);
+}
+ 
+void ReadKthStudent_open(char *filename, int k, Student *student) {
+    Student temp;
+    int fd;
+    fd = open(filename, O_RDONLY);
+ 
+    lseek(fd, (k - 1)*sizeof(Student), SEEK_SET);
+    read(fd, student, sizeof(*student));
+    printf("Check student(%dth)in function : %d %d %f %s\n", k, student->age, student->ID, student->score, &student->name);
+ 
+    close(fd);
+}
+ 
+void WriteStudents_open(char* filename, int n, Student *student_arr)
+{
+    int fd, student_size;
+    fd = open(filename, O_WRONLY);
+    Student *temp_arr;
+ 
+    student_size = sizeof(Student);
+    temp_arr = student_arr;
+    printf("Check sorted Datas\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d. %d %d %f %s\n", i + 1, temp_arr->age, temp_arr->ID, temp_arr->score, temp_arr->name);
+        write(fd, temp_arr, student_size);
+        temp_arr++;
+    }
+    close(fd);
+}
+ 
+void ReadKthNStudents(char *filename, int k, Student *student_arr, int n) {
+    Student temp;
+    int fd;
+    int Student_size = sizeof(Student);
+    fd = open(filename, O_RDONLY);
+ 
+    lseek(fd, (k - 1)*sizeof(Student), SEEK_SET);
+    read(fd, student_arr, Student_size*n);
+ 
+    close(fd);
+}

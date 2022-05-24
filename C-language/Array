@@ -1,12 +1,12 @@
 #include <stdio.h>
-#include "stdafx.h"
+#include "stdafx.h"     
 
 int main()
 {
 	int arr[5];
 	int max, min, sum, i;
 
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < 5; i++) 
 	{
 		printf("입력: ");
 		scanf("%d", &arr[i]);
@@ -26,6 +26,5 @@ int main()
 	printf("최솟값: %d\n", min);
 	printf("총 합: %d\n", sum);
 	return 0;
-}
-
 	
+}

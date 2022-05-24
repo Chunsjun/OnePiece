@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="656.0" prefWidth="767.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.RootControll">
+   <children>
+      <Button fx:id="btn" layoutX="476.0" layoutY="343.0" mnemonicParsing="false" onAction="#stratstop" prefHeight="45.0" prefWidth="111.0" text="서버열기" />
+      <Label fx:id="state" layoutX="619.0" layoutY="356.0" text="서버가 닫혔습니다." />
+      <TextArea fx:id="ta" editable="false" layoutX="472.0" layoutY="18.0" prefHeight="118.0" prefWidth="254.0" />
+      <Button fx:id="sendbtn" layoutX="369.0" layoutY="350.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="65.0" text="전송" />
+      <TextField fx:id="textdata" layoutX="14.0" layoutY="350.0" prefHeight="29.0" prefWidth="340.0" />
+      <TextArea fx:id="cta" editable="false" layoutX="14.0" layoutY="19.0" prefHeight="322.0" prefWidth="430.0" />
+      <Label layoutX="567.0" layoutY="145.0" text="참여 인원" />
+      <Label fx:id="person" layoutX="639.0" layoutY="145.0" text="0명" />
+      <ListView fx:id="listperson" layoutX="476.0" layoutY="173.0" prefHeight="145.0" prefWidth="254.0" />
+      <Button fx:id="all" layoutX="645.0" layoutY="615.0" mnemonicParsing="false" text="모두지우기" />
+      <Canvas fx:id="can" height="225.0" layoutX="14.0" layoutY="417.0" width="453.0" />
+      <Button fx:id="black" layoutX="490.0" layoutY="492.0" mnemonicParsing="false" text="B" />
+      <Button fx:id="red" layoutX="579.0" layoutY="492.0" mnemonicParsing="false" text="R" textFill="RED" />
+      <Button fx:id="blue" layoutX="678.0" layoutY="492.0" mnemonicParsing="false" text="B" textFill="#000dff" />
+      <Button fx:id="green" layoutX="490.0" layoutY="563.0" mnemonicParsing="false" text="G" textFill="#00ff07" />
+      <Button fx:id="yellow" layoutX="580.0" layoutY="563.0" mnemonicParsing="false" text="Y" textFill="#fffc00" />
+      <Button fx:id="white" layoutX="660.0" layoutY="563.0" mnemonicParsing="false" text="지우개" />
+      <TextField fx:id="question" disable="true" layoutX="523.0" layoutY="438.0" />
+      <Label layoutX="591.0" layoutY="413.0" text="문제" />
+      <Button fx:id="gamestart" layoutX="506.0" layoutY="615.0" mnemonicParsing="false" text="게임시작" />
+      <Button fx:id="timer" layoutX="673.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#timer" text="Timer" />
+   </children>
+</AnchorPane>

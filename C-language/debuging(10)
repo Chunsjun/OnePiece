@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main()
+{
+double a, b;
+scanf("%lf %'f", &a, &b);
+
+if(a&&b>=4.0)
+{
+printf("A");
+}
+else if(a&&b >= 3.0)
+{
+printf("B");
+}
+else
+{
+printf("C");
+} 
+return 0;
+}

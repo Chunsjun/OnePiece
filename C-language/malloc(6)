@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <string.h>
+ 
+//틀리진 않지만 위험한 함수
+void fun_realloc(char *arr) {
+    arr = (char *)realloc(arr, 10 * sizeof(char));
+    arr[5] = 'f';
+    arr[6] = 'g';
+    arr[7] = '\0';
+}
+ 
+//잘못된 함수
+void fun_realloc2(char *arr) {
+    printf("포이터 전 arr2[0] : %c, 주소 : %d\n", arr[0], &arr[0]);
+    printf("포인터 후 arr2[1] : %c, 주소 : %d\n", arr[1], &arr[1]);
+    *arr = (char *)realloc(arr, 10 * sizeof(char));
+    printf("포인터 후 arr2[0] : %c, 주소 : %d\n", arr[0], &arr[0]);
+    printf("포인터 후 arr2[1] : %c, 주소 : %d\n", arr[1], &arr[1]);
+    arr[5] = 'f';
+    arr[6] = 'g';
+    arr[7] = '\0';
+}
+ 
+//올바른 함수
+void fun_realloc3(char **arr) {
+    printf("포이터 전 arr2[0] : %c, 주소 : %d\n", arr[0], &arr[0]);
+    printf("포인터 후 arr2[1] : %c, 주소 : %d\n", arr[1], &arr[1]);
+    *arr = (char *)realloc(arr, 10 * sizeof(char));
+    printf("포인터 후 arr2[0] : %c, 주소 : %d\n", arr[0], &arr[0]);
+    printf("포인터 후 arr2[1] : %c, 주소 : %d\n", arr[1], &arr[1]);
+    arr[5] = 'f';
+    arr[6] = 'g';
+    arr[7] = '\0';
+}
+ 
+int main()
+{
+    char *arr = (char *)malloc(6 * sizeof(char));
+    char *arr2 = (char *)malloc(6 * sizeof(char));
+    arr[0] = 'a';
+    arr[1] = 'b';
+    arr[2] = 'c';
+    arr[3] = 'd';
+    arr[4] = 'e';
+    arr[5] = '\0';
+    strcpy(arr2, arr);
+    printf("전 arr : %s, 주소 : %d\n", arr, arr);
+    printf("전 arr2 : %s, 주소 : %d\n", arr2, arr2);
+ 
+    fun_realloc(arr);
+    fun_realloc2(arr2);
+ 
+    printf("후 arr : %s, 주소 : %d\n", arr, arr);
+    printf("후 arr2 : %s, 주소 : %d\n", arr2, arr2);
+ 
+    return 0;
+}

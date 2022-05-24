@@ -1,0 +1,32 @@
+Structure of the Repository
+It’s Important.
+Just as Code Style, API Design, and Automation are essential for a healthy development cycle, Repository structure is a crucial part of your project’s architecture.
+
+When a potential user or contributor lands on your repository’s page, they see a few things:
+
+Project Name
+Project Description
+Bunch O’ Files
+Only when they scroll below the fold will the user see your project’s README.
+
+If your repo is a massive dump of files or a nested mess of directories, they might look elsewhere before even reading your beautiful documentation.
+
+Dress for the job you want, not the job you have.
+Of course, first impressions aren’t everything. You and your colleagues will spend countless hours working with this repository, eventually becoming intimately familiar with every nook and cranny. The layout of it is important.
+
+Sample Repository
+tl;dr: This is what Kenneth Reitz recommends.
+
+This repository is available on GitHub.
+
+README.rst
+LICENSE
+setup.py
+requirements.txt
+sample/__init__.py
+sample/core.py
+sample/helpers.py
+docs/conf.py
+docs/index.rst
+tests/test_basic.py
+tests/test_advanced.py

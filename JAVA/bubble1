@@ -1,0 +1,15 @@
+private static int [] bubbleSort(int [] numberSet) {
+
+        for (int i = 0; i < numberSet.length -1; i++) {
+            for (int j = i + 1; j < numberSet.length; j++) {
+                int localVar = i;
+                if (numberSet[localVar] > numberSet[j]) {
+                    int temp = numberSet[i];
+                    numberSet[i] = numberSet[j];
+                    numberSet[j] = temp;
+                }
+                localVar++;
+            }
+        }
+        return numberSet;
+    }

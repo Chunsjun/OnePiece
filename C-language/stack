@@ -1,0 +1,17 @@
+%{
+#include"relipmoC.h"
+#include"floatstack.h"
+#include<stack>
+using namespace std;
+#define YYSTACKSIZE 20000
+/* change the prototype for "yyparse" */
+#define YYPARSE_PARAM
+#define YYPARSE_PARAM_TYPE LabelTab &curLabelTab, BlockTab &curBlockTab
+extern bool VERBOSE;
+extern StringTab curStringTab;
+extern SymTab curSymTab;
+extern FuncTab curFuncTab;
+SYMTYPE opcode;
+extern int yylex( void );
+extern int yylineno;               //line number from start.l
+FloatStack floatStack;

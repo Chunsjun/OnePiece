@@ -1,0 +1,107 @@
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+class ClientFrame extends JFrame implements ActionListener {
+	JButton button, but_input;
+	JTextArea ta;
+	JTextField tf;
+
+	// out , in 설정
+	static PrintWriter out = null;
+	static BufferedReader in = null;
+
+	public ClientFrame() {
+		setSize(500, 600);
+		setTitle("클라이언트 채팅");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		// 패널1
+		JPanel panel = new JPanel();
+		button = new JButton("클라이언트입니다!!");
+		button.addActionListener(this);
+		// 패널2
+		JPanel panel2 = new JPanel();
+		ta = new JTextArea(30, 30);
+		tf = new JTextField(30);
+		but_input = new JButton("입력");
+		but_input.addActionListener(this);
+
+		panel2.add(button);
+		panel.add(ta);
+		panel.add(tf);
+		panel.add(but_input);
+		add(panel2, BorderLayout.NORTH);
+		add(panel);
+		setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == but_input) {
+			String s = "클라이언트 : " + tf.getText();
+			ta.append(s+"\n");
+			out.println(s);
+			tf.setText("");
+		}
+	}
+
+	public void client() throws IOException {
+		Socket socket = null;
+
+		try {
+			socket = new Socket("localhost", 5555);
+			out = new PrintWriter(socket.getOutputStream(), true);
+			in = new BufferedReader(new InputStreamReader(
+					socket.getInputStream()));
+
+		} catch (UnknownHostException e) {
+			System.err.println("localhost에 접근할 수 없습니다.");
+			System.exit(1);
+		} catch (IOException eg) {
+			System.err.println("입출력 오류11");
+			System.exit(1);
+		}
+		
+
+		String fromServer;
+		
+
+		while ((fromServer = in.readLine()) != null) {
+			
+			String s =fromServer+"\n";
+			//System.out.println(s);
+			ta.append(s);
+			System.out.println(fromServer);
+			if (fromServer.equals("quit"))
+				break;
+		}
+
+		out.close();
+		in.close();
+		socket.close();
+	}
+
+}
+
+public class Gui_EchoClient {
+
+	public static void main(String[] args) throws IOException {
+		ClientFrame f = new ClientFrame();
+		f.client();
+
+	}
+
+}

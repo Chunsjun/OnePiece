@@ -1,0 +1,133 @@
+import java.awt.*;
+ import java.awt.event.*;
+ import javax.swing.*;
+ public class stopwatch extends jframe implements actionlistener, runnable
+ {
+ container con;
+ jbutton start,stop,reset;
+ boolean is;
+ jpanel top,center;
+ long hour=0;
+ long min=0;
+ long sec=0;
+ long msec=0;
+ string time=00 : 00 : 00 . 00;
+ canvas can;
+ public stopwatch()
+ {
+ init();
+ setdefaultcloseoperation(exit_on_close);
+ setsize(300,120);
+ setvisible(true);
+ }
+ public void init()
+ {
+ con=getcontentpane();
+ start=new jbutton(시작);
+stop=new jbutton(중지);
+reset=new jbutton(재설정);
+top=new jpanel();
+
+ start.addactionlistener(this);
+ stop.addactionlistener(this);
+ reset.addactionlistener(this);
+ top.add(start);
+ top.add(stop);
+ top.add(reset);
+
+ con.add(top,north);
+
+ }
+ public void actionperformed(actionevent e)
+ {
+ jbutton jb=(jbutton)e.getsource();
+ if (jb==start)
+ {
+ is=true;
+ }
+ else if (jb==stop)
+ {
+ is=false;
+ }
+ else if (jb==reset)
+ {
+ resettimes();
+ }
+ }
+ public long minustimes()
+ {
+
+ long total=(hour*60*60*100)+(min*60*100)+(sec*100)+msec+1;
+ if (total=0)
+ {
+ is=false;
+ }
+ return total;
+ }
+ public void resettimes()
+ {
+ hour=0;
+ min=0;
+ sec=0;
+ msec=0;
+ time=00 : 00 : 00 . 00;
+ is=false;
+ repaint();
+ }
+
+ public void settimes()
+ {
+ long total=minustimes();
+
+ hour=(long)((total/100)/(60*60));
+ min=(long)((total/100)%(60*60)/60);
+ sec=(long)((total/100)%(60*60)%60);
+ msec=(long)(total-((hour*60*60*100)+(min*60*100)+(sec*100)));
+
+ string []times=new string[4];
+ times[0]=hour+;
+ times[1]=min+;
+ times[2]=sec+;
+ times[3]=msec+;
+ for (int i=0; i times.length ; ++i )
+ {
+ if (times[i].length()2)
+ {
+ times[i]=0+times[i];
+ }
+ }
+ time=times[0]+ : +times[1]+ : +times[2]+ . +times[3];
+ }
+ public void paint(graphics g)
+ {
+ g=getgraphics();
+
+ g.setcolor(color.white);
+ g.fillrect(0,70,400,100);
+ g.setcolor(color.black);
+ g.drawstring(time,100,100);
+ top.updateui();
+ }
+ public void run()
+ {
+ while (true)
+ {
+ if (is)
+ {
+ try
+ {
+ settimes();
+ repaint();
+ thread.sleep(10);
+ }
+ catch (exception e)
+ {
+ }
+ }
+ }
+ }
+ public static void main(string[] args)
+ {
+ new thread(new stopwatch()).start();
+ }
+ }
